@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="연습생부터 재벌 회장까지. 매 분기 고르고, 돈 쓰고, 빚지고, 투자하는 연예계 인생 시뮬레이션."><meta property="og:title" content="데뷔각"><meta property="og:description" content="연습생부터 재벌 회장까지. 매 분기 고르고, 돈 쓰고, 빚지고, 투자하는 연예계 인생 시뮬레이션."><meta property="og:type" content="website"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D92B7F'/%3E%3Cpath d='M16 6l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L16 21l-6.1 3.4 1.5-6.8-5.2-4.6 6.9-.7z' fill='%23fff'/%3E%3C/svg%3E"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style></head><body><title>데뷔각</title>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="연습생부터 재벌 회장까지. 매 분기 고르고, 돈 쓰고, 빚지고, 투자하는 연예계 인생 시뮬레이션."><meta property="og:title" content="데뷔각"><meta property="og:description" content="연습생부터 재벌 회장까지. 매 분기 고르고, 돈 쓰고, 빚지고, 투자하는 연예계 인생 시뮬레이션."><meta property="og:type" content="website"><meta name="theme-color" content="#F5F3F8" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#110F17" media="(prefers-color-scheme: dark)"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="데뷔각"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D92B7F'/%3E%3Cpath d='M16 6l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L16 21l-6.1 3.4 1.5-6.8-5.2-4.6 6.9-.7z' fill='%23fff'/%3E%3C/svg%3E"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style></head><body><title>데뷔각</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap">
 <style>
@@ -231,6 +231,56 @@ footer.foot{margin-top:48px;border-top:1px solid var(--rule);padding-top:14px;fo
 @media (max-width:560px){.endgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.asset{grid-template-columns:minmax(0,1fr) 90px}.asset .tr{grid-column:1/-1;justify-content:flex-start}.asset svg{width:90px}.gname{font-size:20px}.pcard{transform:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
+/* ---------- phone ---------- */
+button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.herogo{margin-top:22px}
+@media (max-width:600px){
+ .wrap{padding-inline:16px}
+ .hero{margin-top:10px;gap:22px}
+ .hero h1{font-size:clamp(64px,22vw,96px)}
+ .pcard{max-width:210px;transform:none}
+ .facts{gap:14px 22px;margin-top:18px}.facts b{font-size:28px}
+ .herogo{width:100%}
+ section.block{margin-top:36px}
+ .gbar{padding-block:8px}
+ .gb1{gap:6px 8px}
+ .gname{font-size:19px}
+ .gmeta{order:10;flex-basis:100%;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .gb1 .sp{display:none}
+ #fansChip{display:none}
+ .chipv{font-size:12px;padding:3px 9px}
+ .gbar .pillbtn{padding:4px 10px;font-size:12px}
+ .ap i{width:10px;height:10px}.ap span{display:none}
+ .tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -16px;padding:0 16px}
+ .tabs::-webkit-scrollbar{display:none}
+ .tabs button{flex:none;padding:10px 12px;font-size:14.5px}
+ .ggrid{margin-top:6px;gap:12px}
+ .ggrid>div:nth-child(2)>.panel{padding:0;border:0;background:transparent}
+ .tabpanel{padding-top:12px}
+ .acts{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .act{padding:10px;min-height:58px}
+ .act b{font-size:14px;padding-right:14px}
+ .act .tag{top:7px;right:7px}
+ .items{grid-template-columns:1fr}
+ .panel{padding:12px 14px;border-radius:12px}
+ .nextbar{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"p s n" "f f f";gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px))}
+ #flowBtn{grid-area:p;padding:6px 10px;font-size:12.5px}
+ #spd{grid-area:s;gap:4px;flex-wrap:nowrap;justify-self:start}
+ #spd button{padding:5px 8px;font-size:12.5px}
+ .flow{grid-area:f;max-width:none}
+ #nextBtn{grid-area:n;padding:8px 12px;font-size:14px;white-space:nowrap}
+ #game .wrap{padding-bottom:140px}
+ .mback{align-items:flex-end;padding:0}
+ .modal{border-radius:20px 20px 0 0;max-height:88vh;max-height:88dvh;border-bottom:0;padding-bottom:env(safe-area-inset-bottom,0px)}
+ .mt{font-size:24px}
+ .opt{min-height:52px;padding:12px}
+ #mBody .btn.pri{width:100%;padding:13px;font-size:16px}
+ .toast{bottom:calc(118px + env(safe-area-inset-bottom,0px))}
+ .box .row button,.asset .tr button{padding:8px 10px}
+ .orow{grid-template-columns:minmax(0,1fr) auto;gap:6px 10px}.orow button{grid-column:1/-1;justify-self:start}
+}
+@media (max-width:360px){.acts{grid-template-columns:1fr}#spd button{padding:5px 6px}}
+
 </style>
 <main id="app">
 <!-- ================= HOME ================= -->
@@ -242,6 +292,7 @@ footer.foot{margin-top:48px;border-top:1px solid var(--rule);padding-top:14px;fo
    <h1><span>데뷔각</span></h1>
    <p class="lede">열다섯 살 연습생으로 시작할 수도, 스물셋에 방송국 막내 작가로 시작할 수도 있습니다. 사채 사장이 알고 보니 기획사 대표일 수도 있고, 중고 시계가 100억짜리일 수도, 꿈에 그리던 건물이 사기일 수도 있습니다. 매 분기 내가 고르고, 돈을 쓰고, 빚을 지고, 투자합니다. 결과는 아무도 모릅니다.</p>
    <div class="facts"><div><b id="fEvents">0</b><span>손으로 쓴 사건</span></div><div><b>13만+</b><span>조합으로 생기는 사건</span></div><div><b>수십억</b><span>가지 시장 매물 조합</span></div><div><b>24</b><span>판마다 새로 생기는 상장사</span></div></div>
+   <button class="btn pri big herogo" type="button" id="heroGo">지금 태어나기</button>
   </div>
   <div class="pcard"><div class="inner"><canvas id="heroAv" width="32" height="40" aria-label="무작위로 만든 캐릭터 포토카드"></canvas><b id="heroName"></b><small id="heroSub"></small></div></div>
  </div>
@@ -284,7 +335,7 @@ footer.foot{margin-top:48px;border-top:1px solid var(--rule);padding-top:14px;fo
  <header class="gbar"><div class="wrap" style="padding-block:0">
   <div class="gb1">
    <span class="gname" id="gName"></span><span class="gmeta" id="gMeta"></span>
-   <span class="chipv">현금 <b id="gCash"></b></span><span class="chipv">팬 <b id="gFans"></b></span>
+   <span class="chipv">현금 <b id="gCash"></b></span><span class="chipv" id="fansChip">팬 <b id="gFans"></b></span>
    <span class="ap" id="gAP" aria-label="남은 행동력"></span>
    <span class="sp"></span>
    
@@ -1887,7 +1938,7 @@ function initHome(){
  setSeg('segDream',prefs.dream);setSeg('segSex',prefs.sex);
  $('segDream').onclick=e=>{const b=e.target.closest('button');if(!b)return;prefs.dream=b.dataset.v;setSeg('segDream',prefs.dream);LS.set('db.prefs',prefs)};
  $('segSex').onclick=e=>{const b=e.target.closest('button');if(!b)return;prefs.sex=b.dataset.v;setSeg('segSex',prefs.sex);LS.set('db.prefs',prefs)};
- $('goBtn').onclick=startLife;$('themeBtn').onclick=toggleTheme;renderAIBar();refreshHome()}
+ $('goBtn').onclick=startLife;$('heroGo').onclick=startLife;$('themeBtn').onclick=toggleTheme;renderAIBar();refreshHome()}
 function renderAIBar(){}
 function refreshHome(){
  const td=LS.get('db.titles',{});$('titleDex').innerHTML=LIFE.map(([id,,t])=>`<div class="dx ${td[id]?'on':'off'}"><b>${td[id]?esc(t):'？？？'}</b><small>${td[id]?`${td[id].n}번 · 최근 ${esc(td[id].last)}`:'아직 못 본 인생'}</small></div>`).join('');
@@ -1904,7 +1955,7 @@ function save(){if(!S)return;try{localStorage.setItem('db.cur',JSON.stringify(S)
 let TAB='act';
 function enterGame(){show('game');renderAll();startFlow()}
 function renderAll(){if(!S)return;renderTop();renderSide();renderTab()}
-function renderTop(){const s=S;$('gName').textContent=s.stageName||s.name;$('gMeta').textContent=`${Math.floor(s.age)}세 · ${s.year}년 ${QNAME[s.q]} · ${careerName(s)}`;
+function renderTop(){const s=S;$('gName').textContent=s.stageName||s.name;$('gMeta').textContent=`${Math.floor(s.age)}세 · ${s.year}년 ${QNAME[s.q]} · ${careerName(s)} · 팬 ${fansTxt(fansOf(s.fame))} · 체력 ${Math.round(s.hp)} · 멘탈 ${Math.round(s.mental)}`;
  $('gCash').textContent=won(s.cash);$('gCash').className=cls(s.cash)==='neg'?'neg':'';$('gFans').textContent=fansTxt(fansOf(s.fame));
  $('gAP').innerHTML='<span style="font-size:12px;color:var(--ink3);margin-right:4px">행동력</span>'+[0,1,2].map(i=>`<i class="${i<s.ap?'on':''}"></i>`).join('');
  renderAIBar();if(typeof syncFlow==='function')syncFlow()}
