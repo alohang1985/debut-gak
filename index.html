@@ -379,6 +379,101 @@ body{word-break:keep-all;overflow-wrap:break-word}
 .instSteps li::before{content:counter(st);width:28px;height:28px;border-radius:50%;background:var(--pink);color:var(--pink-ink);font-weight:700;display:grid;place-items:center;font-size:14px}
 @media (max-width:600px){.herobtns{flex-direction:column;align-items:stretch}.herobtns .btn{width:100%}#instSheet .btn.pri{flex:1}}
 
+/* ---------------- chart / result reveal ---------------- */
+.chart{position:relative;text-align:center;border-radius:16px;padding:18px 14px 16px;margin:0 0 14px;background:var(--card2);border:1px solid var(--rule);overflow:hidden}
+.chart small{display:block;font-size:12px;color:var(--ink3);letter-spacing:.04em}
+.chart>b{display:inline-block;font-family:var(--f-disp);font-weight:400;font-size:56px;line-height:1.05;margin-top:4px;animation:land .5s cubic-bezier(.2,1.7,.4,1)}
+.chart .csub{font-family:var(--f-num);font-size:15px;color:var(--ink3);margin-left:6px}
+.chart .clabel{display:table;margin:6px auto 0;padding:3px 12px;border-radius:999px;font-size:13px;font-weight:700;background:var(--ink);color:var(--bg)}
+.chart .ctitle{margin-top:10px;font-size:14px;color:var(--ink2)}
+.chart .cwins{margin-top:4px;font-size:13px;color:var(--pink);font-weight:700}
+.chart.t0>b{color:var(--ink3)}.chart.t1>b{color:var(--ink2)}.chart.t3>b{color:var(--cyan)}
+.chart.t4,.chart.t5{background:var(--holo);border-color:transparent}.chart.t4>b,.chart.t5>b{color:#1B1726}.chart.t4 small,.chart.t5 small,.chart.t4 .ctitle,.chart.t5 .ctitle{color:#4F495E}
+.chart.t4 .clabel,.chart.t5 .clabel{background:#D92B7F;color:#fff}
+.chart .burst{position:absolute;left:50%;top:46%;width:0;height:0;pointer-events:none}
+.chart .burst i{position:absolute;left:-4px;top:-4px;width:8px;height:8px;border-radius:2px;background:var(--c);opacity:0}
+.chart.boom .burst i{animation:burst 1s cubic-bezier(.1,.7,.3,1) .15s both}
+.pk{margin:14px 0 8px;font-size:13px;font-weight:700;color:var(--ink2)}.pk small{font-weight:400;color:var(--ink3)}
+h4.pk:first-child{margin-top:0}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:7px}
+.cbtn{text-align:left;border:1px solid var(--rule);background:var(--card);border-radius:11px;padding:9px 11px;line-height:1.3}
+.cbtn b{display:block;font-size:14.5px}.cbtn small{display:block;font-size:12px;color:var(--ink3);margin-top:2px}
+.cbtn b i{font-style:normal;font-size:11px;background:var(--pink);color:var(--pink-ink);border-radius:99px;padding:1px 7px;margin-left:4px;vertical-align:1px}
+.cbtn b em{font-style:normal;font-size:11px;border:1px solid var(--rule);color:var(--ink3);border-radius:99px;padding:0 6px;margin-left:4px;vertical-align:1px}
+.cbtn[aria-pressed="true"]{border-color:var(--pink);box-shadow:inset 0 0 0 1px var(--pink);background:var(--pink-soft)}
+.seg button small{font-size:11.5px;opacity:.75}
+
+/* ---------------- 내 회사 ---------------- */
+.cosub{margin-bottom:14px}
+.cofound{border:1px solid var(--rule);border-radius:16px;padding:18px;background:var(--card)}
+.cofound h3{font-family:var(--f-disp);font-weight:400;font-size:28px;margin:4px 0 8px}
+.cofound p{margin:0 0 8px;line-height:1.65}
+.cfk{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px;background:var(--holo);color:#1B1726}
+.nmrow{display:flex;gap:8px;margin:6px 0 14px}.nmrow input{flex:1;min-width:0;font:inherit;font-size:15px;padding:9px 12px;border:1px solid var(--rule);border-radius:10px;background:var(--bg);color:var(--ink)}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:10px}
+.plan{text-align:left;border:1.5px solid var(--rule);background:var(--card);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:3px}
+.plan b{font-size:17px}.plan .pc{font-family:var(--f-num);font-size:15px;color:var(--pink);font-weight:500}.plan small{font-size:12.5px;color:var(--ink3)}.plan em{font-style:normal;font-size:12px;color:var(--bad)}
+.plan:hover:not([aria-disabled="true"]){border-color:var(--pink)}.plan[aria-disabled="true"]{opacity:.6}
+.cohead{border:1px solid var(--rule);border-radius:16px;padding:14px 16px;background:var(--card);margin-bottom:12px}
+.cot{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.cot>b{font-family:var(--f-disp);font-weight:400;font-size:24px;margin-right:4px}
+.tierb{font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px;background:var(--holo);color:#1B1726}.tierb.alt{background:var(--card2);color:var(--ink2);border:1px solid var(--rule);font-weight:600}
+.conums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0 10px}.conums small{display:block;font-size:11.5px;color:var(--ink3)}.conums b{font-family:var(--f-num);font-size:15px;font-weight:500}
+.coprog{height:6px;border-radius:99px;background:var(--rule2);overflow:hidden}.coprog i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--pink));border-radius:99px}
+.cop{display:block;font-size:12px;color:var(--ink3);margin-top:5px}
+.coap{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:var(--ink2)}
+.coacts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:6px}.coacts.one{grid-template-columns:1fr}
+.cact{text-align:left;border:1px solid var(--rule);background:var(--card);border-radius:12px;padding:10px 12px;line-height:1.3}
+.cact b{display:block;font-size:14.5px}.cact small{display:block;font-size:12px;color:var(--ink3);margin-top:3px}
+.cact.pri{border-color:var(--pink);background:var(--pink-soft)}.cact:disabled{opacity:.5}
+.cact:hover:not(:disabled){border-color:var(--pink)}
+.coh{margin:20px 0 10px;font-size:15px}.coh small{font-weight:400;color:var(--ink3);font-size:12.5px;margin-left:4px}
+.mav{width:40px;height:50px;image-rendering:pixelated;border-radius:8px;flex:none;background:var(--card2)}
+.sbars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px 10px;margin-top:6px}
+.sbars span{display:grid;grid-template-columns:auto minmax(0,1fr) 22px;gap:5px;align-items:center;font-size:11.5px}
+.sbars em{font-style:normal;color:var(--ink3)}.sbars i{display:block;height:5px;border-radius:99px;background:var(--rule2);overflow:hidden}.sbars u{display:block;height:100%;background:var(--pink);border-radius:99px}.sbars b{font-family:var(--f-num);font-weight:500;text-align:right}
+.auds{border:1.5px dashed var(--pink);border-radius:16px;padding:4px 14px 14px;margin:12px 0}
+.cand{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--rule2)}.cand:first-of-type{border-top:0}
+.cand .mav{width:56px;height:70px}.cb{flex:1;min-width:0}.cb>b{font-size:16px}.cb>small{display:block;font-size:12px;color:var(--ink3);margin-top:2px}
+.chk{font-size:12.5px;margin-top:8px;padding:6px 10px;border-radius:8px;background:var(--card2)}
+.cbtns{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.lnk{background:none;border:0;padding:4px 6px;color:var(--ink3);font-size:12.5px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.builder{border:1.5px solid var(--pink);border-radius:16px;padding:4px 14px 14px;margin:12px 0;background:var(--card)}
+.pickm{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:7px}
+.pm{display:flex;flex-direction:column;align-items:center;gap:3px;border:1px solid var(--rule);background:var(--card);border-radius:12px;padding:8px 6px;text-align:center}
+.pm b{font-size:13.5px}.pm small{font-size:11px;color:var(--ink3)}.pm[aria-pressed="true"]{border-color:var(--pink);box-shadow:inset 0 0 0 1px var(--pink);background:var(--pink-soft)}
+.grp{border:1px solid var(--rule);border-radius:16px;padding:12px 14px;background:var(--card);margin-bottom:10px}
+.grph{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.grph b{font-family:var(--f-disp);font-weight:400;font-size:21px}.grph small{display:block;font-size:12px;color:var(--ink3)}
+.gfans{text-align:right;flex:none}.gfans b{font-family:var(--f-num);font-weight:500;font-size:17px;color:var(--pink)}
+.mems{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.mm{display:flex;flex-direction:column;align-items:center;gap:2px;width:48px}.mm small{font-size:11px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:48px}
+.gst{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--ink2)}.hbar{display:inline-block;width:60px;height:6px;border-radius:99px;background:var(--rule2);vertical-align:1px;overflow:hidden}.hbar u{display:block;height:100%;background:var(--cyan)}
+.gact{display:flex;flex-direction:column;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--rule2)}
+.cb2{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) auto;gap:6px}
+.cb2 select{font:inherit;font-size:13.5px;padding:7px 8px;border:1px solid var(--rule);border-radius:10px;background:var(--bg);color:var(--ink);min-width:0}
+.cb3{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.trl{display:grid;gap:8px}
+.trn{display:flex;gap:10px;align-items:center;border:1px solid var(--rule);border-radius:12px;padding:8px 10px;background:var(--card)}
+.trb{flex:1;min-width:0}.trb b{font-size:14.5px}.trb small{font-size:11.5px;color:var(--ink3)}
+.tre{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex:none}
+.rdy{font-size:11.5px;font-weight:700;color:var(--good)}.nrdy{font-size:11.5px;color:var(--ink3)}.sad{font-size:11.5px;color:var(--bad)}
+.facs{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.fac{border:1px solid var(--rule);border-radius:12px;padding:10px 12px;background:var(--card);display:flex;flex-direction:column;gap:6px}
+.fh{display:flex;justify-content:space-between;align-items:center}.fh b{font-size:14.5px}.fac small{font-size:12px;color:var(--ink3);line-height:1.45}
+.lv{display:inline-flex;gap:3px}.lv i{width:16px;height:6px;border-radius:99px;background:var(--rule)}.lv i.on{background:var(--pink)}
+.fac .btn{font-size:12.5px;padding:6px 10px;align-self:flex-start}.fac .max{font-size:12px;color:var(--good);font-weight:700}
+.cofoot{margin-top:10px;text-align:right}
+.invseg{margin-bottom:14px}
+@media (max-width:600px){
+ .coacts{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .plans{grid-template-columns:1fr}
+ .sbars{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .cgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .cb2{grid-template-columns:repeat(2,minmax(0,1fr))}.cb2 .btn{grid-column:1/-1}
+ .chart>b{font-size:48px}
+ .cofound h3{font-size:24px}
+}
+.cashchip em{font-style:normal}
+@media (max-width:600px){.cashchip em{display:none}#themeBtn2{display:none}.gb1{flex-wrap:wrap}.gname{max-width:7em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
 </style>
 <main id="app">
 <!-- ================= HOME ================= -->
@@ -388,8 +483,8 @@ body{word-break:keep-all;overflow-wrap:break-word}
  <div class="hero">
   <div>
    <h1 aria-label="데뷔각"><span style="--i:0" aria-hidden="true">데</span><span style="--i:1" aria-hidden="true">뷔</span><span style="--i:2" aria-hidden="true">각</span></h1>
-   <p class="lede">열다섯 살 연습생으로 시작할 수도, 스물셋에 방송국 막내 작가로 시작할 수도 있습니다. 사채 사장이 알고 보니 기획사 대표일 수도 있고, 중고 시계가 100억짜리일 수도, 꿈에 그리던 건물이 사기일 수도 있습니다. 매 분기 내가 고르고, 돈을 쓰고, 빚을 지고, 투자합니다. 결과는 아무도 모릅니다.</p>
-   <div class="facts"><div><b id="fEvents">0</b><span>손으로 쓴 사건</span></div><div><b id="fComb">13만+</b><span>조합으로 생기는 사건</span></div><div><b>수십억</b><span>가지 시장 매물 조합</span></div><div><b id="fStk">24</b><span>판마다 새로 생기는 상장사</span></div></div>
+   <p class="lede">연습생으로 들어가 월말 평가를 버티고, 데뷔조에 들고, 내 포지션을 정하고, 컴백 콘셉트를 직접 골라 차트 1위를 노립니다. 나중엔 내 기획사를 차려 아이돌을 키우거나, 방송국을 세워 프로그램을 만들 수도 있습니다. 사채 사장이 알고 보니 기획사 대표일 수도, 중고 시계가 100억짜리일 수도 있습니다. 결과는 아무도 모릅니다.</p>
+   <div class="facts"><div><b id="fEvents">0</b><span>손으로 쓴 사건</span></div><div><b id="fComb">13만+</b><span>조합으로 생기는 사건</span></div><div><b>2막</b><span>내 기획사 · 내 방송국</span></div><div><b id="fStk">6</b><span>가지 컴백 콘셉트</span></div></div>
    <div class="herobtns"><button class="btn pri big herogo" type="button" id="heroGo">지금 태어나기</button><button class="btn big instbig" type="button" id="installBtn2" hidden>홈 화면에 앱으로 추가</button></div>
   </div>
   <div class="pcard" id="heroCard" role="button" tabindex="0" aria-label="다른 인생 뽑아 보기" title="눌러서 다른 인생 뽑기"><div class="inner"><canvas id="heroAv" width="32" height="40" aria-label="무작위로 만든 캐릭터 포토카드"></canvas><b id="heroName"></b><small id="heroSub"></small></div></div>
@@ -433,7 +528,7 @@ body{word-break:keep-all;overflow-wrap:break-word}
  <header class="gbar"><div class="wrap" style="padding-block:0">
   <div class="gb1">
    <span class="gname" id="gName"></span><span class="gmeta" id="gMeta"></span>
-   <span class="chipv">현금 <b id="gCash"></b></span><span class="chipv" id="fansChip">팬 <b id="gFans"></b></span>
+   <span class="chipv cashchip"><em>현금 </em><b id="gCash"></b></span><span class="chipv" id="fansChip">팬 <b id="gFans"></b></span>
    <span class="ap" id="gAP" aria-label="남은 행동력"></span>
    <span class="sp"></span>
    
@@ -452,11 +547,11 @@ body{word-break:keep-all;overflow-wrap:break-word}
    <div>
     <div class="panel">
      <div class="tabs" role="tablist" id="tabs">
-      <button role="tab" type="button" data-t="act" aria-selected="true">행동</button><button role="tab" type="button" data-t="mkt" aria-selected="false">시장</button><button role="tab" type="button" data-t="shop" aria-selected="false">쇼핑</button><button role="tab" type="button" data-t="own" aria-selected="false">내 사업</button><button role="tab" type="button" data-t="money" aria-selected="false">돈 · 투자</button><button role="tab" type="button" data-t="log" aria-selected="false">기록</button><button role="tab" type="button" data-t="ach" aria-selected="false">업적</button>
+      <button role="tab" type="button" data-t="act" aria-selected="true">행동</button><button role="tab" type="button" data-t="co" aria-selected="false">내 회사</button><button role="tab" type="button" data-t="shop" aria-selected="false">쇼핑</button><button role="tab" type="button" data-t="inv" aria-selected="false">투자</button><button role="tab" type="button" data-t="log" aria-selected="false">기록</button><button role="tab" type="button" data-t="ach" aria-selected="false">업적</button>
      </div>
      <div class="tabpanel" id="tp-act"></div>
-     <div class="tabpanel" id="tp-mkt" hidden></div><div class="tabpanel" id="tp-shop" hidden></div><div class="tabpanel" id="tp-own" hidden></div>
-     <div class="tabpanel" id="tp-money" hidden></div>
+     <div class="tabpanel" id="tp-co" hidden></div><div class="tabpanel" id="tp-shop" hidden></div>
+     <div class="tabpanel" id="tp-inv" hidden><div class="seg invseg" id="invSeg"></div><div id="tp-money"></div><div id="tp-mkt" hidden></div><div id="tp-own" hidden></div></div>
      <div class="tabpanel" id="tp-log" hidden><div class="loglist" id="logList"></div></div>
      <div class="tabpanel" id="tp-ach" hidden><div class="achgrid" id="achGrid"></div></div>
     </div>
@@ -655,13 +750,15 @@ function applyEff(s,e,from){
  if(e.bizLose){const b=(s.biz||[]).find(x=>x.bid===e.bizLose);if(b){s.biz=s.biz.filter(x=>x!==b);add(`${b.name} 잃음`,false)}}
  if(e.colMult){const c=(s.col||[]).find(x=>x.cid===e.colMult[0]);if(c){c.mult*=e.colMult[1];add(`「${c.name}」 가치 ×${e.colMult[1]>=1?e.colMult[1]:e.colMult[1].toFixed(2)}`,e.colMult[1]>=1)}}
  if(e.colLose){const c=(s.col||[]).find(x=>x.cid===e.colLose);if(c){s.col=s.col.filter(x=>x!==c);add(`「${c.name}」 잃음`,false)}}
+ if(e.ag&&typeof agEff==='function')agEff(s,e.ag,add);
+ if(e.bc&&typeof bcEff==='function')bcEff(s,e.bc,add);
  if(e.ach)unlock(s,e.ach);
  if(e.later)for(const L of e.later)s.pending.push({due:s.t+L.t,txt:L.txt,e:L.e,g:L.g||0,from:from||''});
  if(e.event)s.flags['q_'+e.event]=1;
  if(e.end)s.endNow=e.end;
  return chips}
 function setCareer(s,id,rank,agency,group){const prev=s.career.id;s.career={id,rank:rank||0,agency:agency||null,group:group||null,since:s.t};s.careers[id]=Math.max(s.careers[id]||0,rank||0);if(prev!==id)addLog(s,`새 길 · ${careerName(s)}${agency?` (${agencyName(agency)})`:''}`,'mile')}
-const agencyName=id=>(AGENCIES.find(a=>a.id===id)||{name:id}).name;
+const agencyName=id=>id==='own'?(typeof S!=='undefined'&&S&&S.ag?S.ag.name:'내 회사'):(AGENCIES.find(a=>a.id===id)||{name:id}).name;
 
 /* ---------- ownership ---------- */
 function findOwned(s,id){for(const k in s.own)if(s.own[k]&&s.own[k].id===id)return s.own[k];return s.items.find(x=>x.id===id)||null}
@@ -669,7 +766,7 @@ function itemValue(s,it){const d=SHOP_BY[it.id];if(!d)return 0;if(d.refund)retur
  let v=it.paid*it.mult;if(d.asset)v*=s.mk[d.asset]/(it.mk||100);else if(d.slot==='car')v*=Math.pow(.96,s.t-it.at);else if(['yacht','studio','camera','cafe','label'].includes(d.slot))v*=Math.pow(.95,s.t-it.at);else if(!d.asset&&!d.slot)v=0;
  return Math.max(0,Math.round(v))}
 function loseItem(s,id){for(const k in s.own)if(s.own[k]&&s.own[k].id===id){if(k==='home')s.own.home={id:'goshiwon',paid:0,mult:1,at:s.t};else delete s.own[k]}s.items=s.items.filter(x=>x.id!==id)}
-function netWorth(s){let v=s.cash-s.bank-s.shark-s.friendDebt;for(const k in s.own)v+=itemValue(s,s.own[k]);for(const it of s.items)v+=itemValue(s,it);for(const a in s.inv)v+=s.inv[a]*s.mk[a]/100;for(const b of s.biz||[])v+=bizValueMine(b);if(s.mkt&&s.mkt.stocks)for(const k of s.mkt.stocks)v+=stockHolding(s,k);for(const c of s.col||[])v+=colValue(s,c);return Math.round(v)}
+function netWorth(s){let v=s.cash-s.bank-s.shark-s.friendDebt+(s.ag?Math.round(s.ag.val*s.ag.own):0)+(s.bc?Math.round(s.bc.val*s.bc.own):0);for(const k in s.own)v+=itemValue(s,s.own[k]);for(const it of s.items)v+=itemValue(s,it);for(const a in s.inv)v+=s.inv[a]*s.mk[a]/100;for(const b of s.biz||[])v+=bizValueMine(b);if(s.mkt&&s.mkt.stocks)for(const k of s.mkt.stocks)v+=stockHolding(s,k);for(const c of s.col||[])v+=colValue(s,c);return Math.round(v)}
 
 /* ---------- money: borrowing ---------- */
 function quarterIncomeGuess(s){const h=s.hist.slice(-4);return h.length?h.reduce((a,x)=>a+Math.max(0,x.inc),0)/h.length:0}
@@ -897,7 +994,7 @@ function bizStep(s,rep){if(!s.biz||!s.biz.length)return;const fameBoost=1+Math.m
 
 /* ---------- stocks ---------- */
 const SECTORS=[['엔터',.16],['반도체',.14],['바이오',.3],['게임',.22],['2차전지',.24],['조선',.14],['식품',.06],['화장품',.15],['항공',.13],['건설',.11],['은행',.07],['AI',.28]];
-function newStocks(){const out=[];const used=new Set();for(let i=0;i<24;i++){const[sec,vol]=SECTORS[i%SECTORS.length];let nm;do{nm=pick(NAME_A)+pick(['','전자','바이오','홀딩스','에너지','중공업','게임즈','엔터','식품','제약','건설','금융','AI','소재','항공'])}while(used.has(nm));used.add(nm);
+function newStocks(){const out=[];const used=new Set();for(let i=0;i<12;i++){const[sec,vol]=SECTORS[i%SECTORS.length];let nm;do{nm=pick(NAME_A)+pick(['','전자','바이오','홀딩스','에너지','중공업','게임즈','엔터','식품','제약','건설','금융','AI','소재','항공'])}while(used.has(nm));used.add(nm);
  out.push({id:'k'+i,name:nm,sec,vol,price:R(20,900)*100,cap:Math.round(Math.exp(Math.log(50000)+rnd()*Math.log(20000))),hist:[],dead:0})}for(const k of out)k.hist=[k.price];return out}
 function stocksStep(s,rep){if(!s.mkt||!s.mkt.stocks)return;const hold=s.stk||{};
  for(const k of s.mkt.stocks){if(k.dead)continue;let m=Math.exp(.002-k.vol*k.vol/2+k.vol*gauss());let news=null;
@@ -939,7 +1036,7 @@ function sellCol(s,cid){const it=(s.col||[]).find(x=>x.cid===cid);if(!it)return 
    ================================================================ */
 const ACH={firstbiz:'첫 사업체',owner:'경영권 확보',island:'무인도의 주인',club:'구단주',airline:'항공사 오너',tenbagger:'열 배 수익',chaebol:'그룹 회장',shareholder:'주요 주주',largest:'최대 주주',agm:'주주총회',ipo:'상장',exit:'회사 매각',bizbust:'회사 파산',champion:'우승',space:'우주에 간 사람',merger:'합병',
  debut:'데뷔',firstpay:'첫 정산',no1:'음원 1위',rookie:'신인상',daesang:'대상',million:'팬 100만',tenmil:'팬 1천만',billion:'팬 1억',
- firstcar:'첫 차',supercar:'슈퍼카 오너',hangang:'한강뷰',penthouse:'펜트하우스',parents:'효도의 끝',building:'건물주',label:'내 회사',
+ firstcar:'첫 차',supercar:'슈퍼카 오너',hangang:'한강뷰',penthouse:'펜트하우스',parents:'효도의 끝',building:'건물주',label:'내 회사',ag_debut:'첫 데뷔조',ag_no1:'우리 가수 1위',ag_syn:'신드롬 제조기',ag_big:'대형 기획사',ag_global:'글로벌 엔터',ag_daesang:'대상 기획사',bc_found:'개국',bc_hit:'히트 프로그램',bc_big:'지상파급 방송국',
  watch100:'100억짜리 시계',scammedbig:'건물 사기 피해',fraudvictim:'전세 사기 피해',petstar:'주인보다 유명한 반려동물',angel:'기부 천사',tenmillion:'천만 영화',
  shark:'사채의 문턱',sharkfree:'사채 완납',coin10:'코인 열 배',wipeout:'투자 폭망',flip:'다섯 배 되팔기',streetcast:'길거리 캐스팅',survival:'서바이벌 데뷔',
  viral:'떡상',dating:'열애설',married:'결혼',scandal:'논란의 중심',military:'군 복무',hiatus:'활동 중단',cf:'첫 광고',worldtour:'월드 투어',reverse:'역주행',
@@ -994,11 +1091,12 @@ const ACTIONS=[
  {id:'dance_team',g:'도전',ko:'댄스팀 입단 테스트',sub:'안무가의 길',ap:1,cost:()=>0,when:notC('choreo','idol'),run:s=>tryJoin(s,'choreo',null,.2+(s.st.dance-50)/80)},
  {id:'manager_app',g:'도전',ko:'매니저 지원',sub:'연예계 안쪽에서',ap:1,cost:()=>0,when:s=>s.age>=20&&notC('manager','ceo')(s),run:s=>tryJoin(s,'manager',pick(AGENCIES),.5+s.network/200)},
  {id:'job',g:'도전',ko:'회사 취업',sub:'월급이 꼬박꼬박',ap:1,cost:()=>0,when:s=>s.age>=20&&notC('civilian')(s),run:s=>tryJoin(s,'civilian',null,.45+s.st.plan/200,1)},
- {id:'found',g:'도전',ko:'기획사 세우기',sub:'5억 원 + 인맥',ap:2,cost:()=>50000,when:s=>s.network>=50&&notC('ceo')(s),run:s=>({t:'작은 사무실을 얻고 기획사를 세웠습니다. 이제 내가 대표입니다.',e:{career:{id:'ceo'},flag:'label',ach:'label'},g:1})},
+ {id:'found',g:'도전',ko:'기획사 · 방송국 세우기',sub:'2막: 내 회사 키우기',ap:0,cost:()=>0,nav:'co',when:s=>s.age>=18&&!(s.ag&&s.bc),run:()=>({t:''})},
+ {id:'cohq',g:'일',ko:'내 회사 일정',sub:s=>[s.ag?`${s.ag.name} 일정 ${s.ag.ap}개`:'',s.bc?`${s.bc.name} 일정 ${s.bc.ap}개`:''].filter(Boolean).join(' · '),ap:0,cost:()=>0,nav:'co',when:s=>!!(s.ag||s.bc),run:()=>({t:''})},
  // 직업별
  {id:'eval',g:'일',ko:'월말 평가 준비',sub:'데뷔 확률↑',ap:1,cost:()=>0,when:inC('trainee'),run:s=>{s.flags.evalBoost=(s.flags.evalBoost||0)+1;return{t:'평가 곡을 수백 번 연습했습니다.',e:{st:{vocal:R(1,3),dance:R(1,3)},hp:-5}}}},
  {id:'phone',g:'일',ko:'몰래 휴대폰 쓰기',sub:'멘탈↑ 걸리면 큰일',ap:1,cost:()=>0,when:inC('trainee'),run:s=>chance(.25)?{t:'숙소 사감에게 걸렸습니다. 벌점과 함께 데뷔조에서 밀려났습니다.',e:{mental:-10,rank:-1},g:-1}:{t:'몰래 엄마와 통화했습니다.',e:{mental:15}}},
- {id:'comeback',g:'일',ko:'컴백·발매',sub:'흥할 수도, 망할 수도',ap:2,cost:s=>s.career.agency&&!s.flags.label?0:3000,when:s=>inC('idol','solo')(s)&&!s.flags.army,run:s=>release(s)},
+ {id:'comeback',g:'일',ko:'컴백 · 발매',sub:'콘셉트를 골라 차트에 도전',ap:2,cost:s=>s.career.agency?0:3000,when:s=>inC('idol','solo')(s)&&!s.flags.army,run:(s,a)=>idolComeback(s,a&&a.conc,a&&a.ef)},
  {id:'musicshow',g:'일',ko:'음악 방송·행사',sub:'인지도↑ 돈↑',ap:1,cost:()=>0,when:s=>inC('idol','solo')(s)&&!s.flags.army,run:s=>({t:'음악 방송과 대학 축제 무대에 섰습니다.',e:{fame:R(1,3),cash:R(50,300)*(s.career.rank+1),hp:-6}})},
  {id:'fansign',g:'일',ko:'팬 사인회',sub:'멘탈↑ 팬↑',ap:1,cost:()=>0,when:s=>PERF.includes(s.career.id)&&s.fame>15,run:s=>{if(chance(.1))s.flags.q_sasaeng=1;return{t:'팬들의 편지를 한 아름 받았습니다.',e:{mental:R(8,14),fame:R(1,2)}}}},
  {id:'tour',g:'일',ko:'해외 투어',sub:'큰돈, 큰 피로',ap:2,cost:()=>0,when:s=>inC('idol','solo')(s)&&s.career.rank>=2,run:s=>{const big=s.career.rank>=4;if(big)unlock(s,'worldtour');return{t:big?'월드 투어 스타디움 공연이 매진됐습니다.':'아시아 투어를 돌았습니다.',e:{cash:R(2000,6000)*s.career.rank*(big?3:1),fame:R(2,5),hp:-20},g:big?2:1}}},
@@ -1019,20 +1117,18 @@ function tryJoin(s,career,agency,p,rank){p=clamp(p+s.luck*.04,.02,.92);
  if(chance(p)){const ag=agency?agency.id:null;if(career==='trainee')s.flags.traineeSince=s.t;
   return{t:career==='trainee'?`${agency.name} 연습생이 되었습니다. ${agency.vibe}.`:career==='actor'?'단역 배우로 캐스팅됐습니다. 대사는 한 줄입니다.':career==='pd'?'방송사 PD 공채에 합격했습니다. 조연출로 시작합니다.':career==='writer'?'예능 프로그램 막내 작가가 되었습니다. 첫 업무는 섭외 전화 300통입니다.':career==='choreo'?'댄스팀에 들어갔습니다.':career==='manager'?`${agency.name}의 로드 매니저가 되었습니다.`:'회사에 들어갔습니다.',e:{career:{id:career,rank:rank||0,agency:ag},mental:10},g:1}}
  return{t:`${({trainee:'오디션',actor:'배우 오디션',pd:'PD 공채',writer:'작가 지원',choreo:'입단 테스트',manager:'매니저 지원',civilian:'입사 지원'})[career]}에서 떨어졌습니다.`,e:{mental:-6},g:-1}}
-function doAction(s,id){const a=ACT_BY[id];if(!a)return{err:'없는 행동'};if(a.when&&!a.when(s))return{err:'지금은 할 수 없습니다.'};
+function doAction(s,id,arg){const a=ACT_BY[id];if(!a)return{err:'없는 행동'};if(a.when&&!a.when(s))return{err:'지금은 할 수 없습니다.'};
  if(s.ap<a.ap)return{err:'행동력이 모자랍니다.'};const c=a.cost(s);if(c>0&&c>s.cash)return{err:`${won(c)}이 필요합니다.`};
- s.ap-=a.ap;s.cash-=c;const r=a.run(s);const chips=applyEff(s,r.e,a.ko);if(c)chips.unshift({v:'-'+won(c),good:false});
+ s.ap-=a.ap;s.cash-=c;const r=a.run(s,arg);const chips=applyEff(s,r.e,a.ko);if(c)chips.unshift({v:'-'+won(c),good:false});
  addLog(s,`[${a.ko}] ${r.t}`,r.g>0?'good':r.g<0?'bad':'',c?-c:null);if(Math.abs(r.g||0)>=2)s.big.push({t:s.t,age:Math.floor(s.age),txt:r.t,g:r.g});
- return{ok:1,t:r.t,chips,g:r.g||0,title:a.ko}}
+ return{ok:1,t:r.t,chips,g:r.g||0,title:a.ko,chart:r.chart}}
 
 /* ---------- careers over time ---------- */
 const FAME_GATE={idol:[0,15,30,48,68,88],solo:[0,15,32,52,75],actor:[0,8,22,40,62,85],variety:[0,18,38,58,80],creator:[0,20,40,60,80],choreo:[0,10,25,45,70]};
 function careerStep(s,rep){
  const c=s.career.id,C=CAREERS[c];
  if(c==='student'&&s.age>=19.5){setCareer(s,'civilian',0);addLog(s,'학교를 졸업했습니다. 일단 아르바이트를 시작했습니다.','mile')}
- if(c==='trainee'){const ag=AGENCIES.find(a=>a.id===s.career.agency)||AGENCIES[4];const score=(statAvg(s,['vocal','dance','look'])+s.star*30+(s.flags.evalBoost||0)*4)/100;delete s.flags.evalBoost;
-  if(s.career.rank<1&&score>.55&&chance(.35)){s.career.rank=1;addLog(s,'월말 평가에서 데뷔조 후보에 들었습니다.','good')}
-  else if(chance(ag.debut*clamp((score-.35)*2.2,0,1.2)*(s.career.rank+.6)+.02*s.luck)){const grp=pick(GROUPS);s.stageName=pick(STAGE);setCareer(s,'idol',0,ag.id,grp);s.debutDebt=R(8000,30000)*(ag.tier);applyEff(s,{fame:R(8,15)});unlock(s,'debut');addLog(s,`${grp}의 멤버 ‘${s.stageName}’(으)로 데뷔했습니다. 데뷔 비용 중 내 몫 ${won(s.debutDebt)}을 정산에서 갚아 나가야 합니다.`,'mile');s.big.push({t:s.t,age:Math.floor(s.age),txt:`${grp}로 데뷔`,g:2})}
+ if(c==='trainee'){s.flags.evalT=(s.flags.evalT||0)+1;if(s.flags.evalT%2===1&&!s.flags.debutDue)s.flags.evalDue=1;
   const yrs=(s.t-(s.flags.traineeSince||s.career.since))/4;if(yrs>=5)unlock(s,'trainee5');if(s.career.id==='trainee'&&(yrs>=6||s.age>=26))s.flags.q_cut=1}
  if(FAME_GATE[c]){const G=FAME_GATE[c],r=s.career.rank;
   if(r<G.length-1&&s.fame>=G[r+1]&&statAvg(s,C.key)>25+r*10&&chance(.55)){s.career.rank++;s.careers[c]=Math.max(s.careers[c]||0,s.career.rank);addLog(s,`승급 · 이제 ${careerName(s)}입니다.`,'good');s.big.push({t:s.t,age:Math.floor(s.age),txt:`${careerName(s)} 등극`,g:2})}
@@ -1070,6 +1166,8 @@ function endTurn(s){
  if(s.own.coach)applyEff(s,{st:{vocal:R(2,4)}});if(s.own.pt)applyEff(s,{st:{look:R(1,2)},hp:6});if(s.own.therapy)s.mental=clamp(s.mental+10,0,100);if(s.own.pet)s.mental=clamp(s.mental+4,0,100);
  s.hp=clamp(s.hp+(75-s.hp)*.18-(s.age>55?(s.age-55)*.4:0),0,100);s.mental=clamp(s.mental+(65-s.mental)*.12-(s.shark>0?6:0),0,100);
  rep.news.push(...marketStep(s));refreshMarket(s);bizStep(s,rep);stocksStep(s,rep);
+ if(s.q===0&&s.t>0){s.trend=pick(Object.keys(CONCEPT).filter(k=>k!==s.trend));rep.news.push(`올해 가요계 유행은 ‘${CONCEPT[s.trend].ko}’ 콘셉트입니다.`)}
+ queue.push(...agStep(s,rep),...bcStep(s,rep));
  careerStep(s,rep);
  // delayed consequences
  const due=s.pending.filter(p=>p.due<=s.t);s.pending=s.pending.filter(p=>p.due>s.t);
@@ -1082,14 +1180,15 @@ function endTurn(s){
  if(s.cash<0){const need=Math.round((-s.cash+200)/100)*100;if(bankLimit(s)>=need){borrow(s,'bank',need);rep.news.push(`통장이 마이너스라 은행에서 ${won(need)}을 자동으로 빌렸습니다.`)}else queue.push({type:'choice',prep:prepEvent(s,EVENTS.broke)})}
  if(s.hp<=0)queue.push({type:'choice',prep:prepEvent(s,EVENTS.collapse)});else if(s.mental<=0)queue.push({type:'choice',prep:prepEvent(s,EVENTS.breakdown)});
  // flagged follow-ups from actions
- for(const k of Object.keys(s.flags))if(k.startsWith('q_')){const id=k.slice(2);delete s.flags[k];if(id==='gen')queue.push({type:'choice',prep:genEvent(s)});else if(EVENTS[id])queue.push({type:'choice',prep:prepEvent(s,EVENTS[id])})}
+ for(const k of Object.keys(s.flags))if(k.startsWith('q_')){const id=k.slice(2);delete s.flags[k];if(id==='gen')queue.push({type:'choice',prep:genEvent(s),must:1});else if(EVENTS[id])queue.push({type:'choice',prep:prepEvent(s,EVENTS[id]),must:1})}
  // the world happens
  if(s.shark>0&&chance(.45))queue.push({type:'choice',prep:prepEvent(s,pickFrom(s,EVENTS,'shark')||EVENTS.shark_visit)});
- if(chance(.75)){const d=pickFrom(s,EVENTS);if(d)queue.push({type:'choice',prep:prepEvent(s,d)})}
- if(chance(.55))queue.push({type:'choice',prep:genEvent(s)});
- if((s.biz||[]).length&&chance(.65)){const p=bizEvent(s);if(p)queue.push({type:'choice',prep:p})}
- if((s.biz||[]).length>=2&&chance(.35)){const p=bizEvent(s);if(p)queue.push({type:'choice',prep:p})}
- if(chance(.4)){const p=stockEvent(s);if(p)queue.push({type:'choice',prep:p})}
+ stageQueue(s,queue);const co=!!(s.ag||s.bc);
+ if(chance(co?.45:.65)){const d=pickFrom(s,EVENTS);if(d)queue.push({type:'choice',prep:prepEvent(s,d)})}
+ if(chance(co?.25:.4))queue.push({type:'choice',prep:genEvent(s)});
+ if(s.ag&&chance(.4)){const p=agEvent(s);if(p)queue.push({type:'choice',prep:p})}
+ if(s.bc&&chance(.35)){const p=bcEvent(s);if(p)queue.push({type:'choice',prep:p})}
+ if((s.biz||[]).length&&(s.bizEvT||0)<=s.t&&chance(.25)){const p=bizEvent(s);if(p){s.bizEvT=s.t+3;queue.push({type:'choice',prep:p})}}
  if(chance(.4)){const d=pickFrom(s,RANDOMS);if(d){const r=runRandom(s,d);if(r.big)queue.push({type:'news',kicker:'돌발',...r})}}
  // milestones
  const f=fansOf(s.fame);if(f>=1e6)unlock(s,'million');if(f>=1e7)unlock(s,'tenmil');if(f>=1e8)unlock(s,'billion');if(netWorth(s)>=1000000)unlock(s,'billionaire');
@@ -1098,7 +1197,14 @@ function endTurn(s){
  const die=s.age>62?.003*Math.exp((s.age-62)/7):0;if(!s.endNow&&chance(die+(s.hp<5?.02:0)))s.endNow='natural';if(s.age>=88)s.endNow='natural';
  s.ap=s.hp<25?2:3;
  s.hist.push({t:s.t,age:+s.age.toFixed(2),inc:inc,exp:exp,cash:Math.round(s.cash),net:netWorth(s),fame:Math.round(s.fame)});
- return{rep,queue}}
+ return{rep,queue:capQueue(s,rep,queue)}}
+// at most two choices and two big news items a quarter; the rest become report lines
+const MUST_IDS=['broke','collapse','breakdown','awards','cut','army'];
+function capQueue(s,rep,q){const pri=it=>it.must||it.prep.kind==='stage'||MUST_IDS.includes(it.prep.id)||(it.prep.kind==='ag'&&it.prep.eid==='renew')?9:/^shark/.test(it.prep.id||'')?7:it.prep.kind==='ag'?5:it.prep.kind==='bc'?4:it.prep.kind==='gen'?1:it.prep.kind==='biz'?2:3;
+ const ch=q.filter(x=>x.type==='choice').map((x,i)=>[x,pri(x),i]).sort((a,b)=>b[1]-a[1]||a[2]-b[2]);const keepC=new Set(ch.filter((x,i)=>x[1]>=9||i<2).map(x=>x[0]));
+ const nw=q.filter(x=>x.type!=='choice');const keepN=new Set(nw.filter(x=>x.kicker==='그때 그 일').concat(nw.filter(x=>x.kicker!=='그때 그 일').sort((a,b)=>Math.abs(b.g||0)-Math.abs(a.g||0)).slice(0,2)));
+ for(const x of nw)if(!keepN.has(x))rep.news.push(`${x.title} · ${x.txt}`);
+ return q.filter(x=>keepC.has(x)||keepN.has(x))}
 function accident(s,car){const sev=wpick([['minor',.6],['major',.32],['fatal',car.id==='bike'||car.id==='supercar'||car.id==='hypercar'?.08:.03]].map(([k,p])=>[k,p*(k==='fatal'?Math.exp(-.5*s.luck):1)]));
  unlock(s,'accident');
  if(sev==='minor')return{title:'교통사고',txt:`${car.ko}${P(car.ko,'을/를')} 몰고 가다 접촉 사고가 났습니다. 다친 데는 없지만 수리비가 나왔습니다.`,chips:applyEff(s,{cash:-R(200,1500),mental:-6}),g:-1};
@@ -1109,11 +1215,14 @@ function accident(s,car){const sev=wpick([['minor',.6],['major',.32],['fatal',ca
 const LIFE=[
  ['young',s=>s.endNow==='accident'&&s.age<45,'너무 일찍 진 별','bad','한창일 때 멈춘 이야기입니다. 사람들은 그 이름을 오래 기억했습니다.'],
  ['universe',s=>s.peakFame>=96,'우주대스타','good','지구 반대편 아이도 이름을 압니다. 이보다 더 높은 곳은 없습니다.'],
+ ['mogul',s=>(s.careers.ceo||0)>=4||(s.ag&&agTier(s.ag)>=5)||(s.agPast||0)>=5,'엔터 재벌','good','작은 사무실에서 시작한 회사가 업계를 움직입니다.'],
+ ['media',s=>(s.bc&&bcTier(s.bc)>=5)||(s.bcPast||0)>=5,'미디어 황제','good','개인 채널 하나로 시작해 나라의 채널을 거느리게 됐습니다.'],
+ ['starmaker',s=>s.ag&&s.ag.stats.no1>=5,'스타 제조기','good','내가 뽑고 키운 아이들이 차트 1위를 몇 번이나 찍었습니다.'],
+ ['bcboss',s=>s.bc&&s.bc.stats.hits>=3,'히트 메이커 사장님','good','만드는 프로그램마다 화제가 됐습니다.'],
  ['chaebol',s=>netWorth(s)>=100000000,'재벌 회장','good','연예계에서 시작한 사람이 그룹을 거느리게 되었습니다. 주주총회장에 들어서면 모두가 일어섭니다.'],
  ['tycoon',s=>netWorth(s)>=10000000,'재계의 큰손','good','무대 밖에서 더 큰 판을 벌였습니다. 손대는 회사마다 뉴스가 됐습니다.'],
  ['world',s=>(s.careers.idol||0)>=4||(s.careers.solo||0)>=4,'월드 스타','good','스타디움을 채우고 세계 차트에 이름을 올렸습니다.'],
  ['worldactor',s=>(s.careers.actor||0)>=5||s.ach.cannes,'세계적 배우','good','해외 영화제 레드카펫에서 이름이 불렸습니다.'],
- ['mogul',s=>(s.careers.ceo||0)>=4,'엔터 재벌','good','작은 사무실에서 시작한 회사가 업계를 움직입니다.'],
  ['mc',s=>(s.careers.variety||0)>=4,'국민 MC','good','연말 시상식 대상 단골이 되었습니다.'],
  ['chief',s=>(s.careers.pd||0)>=4,'방송사 국장','good','막내 조연출이던 사람이 방송사의 얼굴이 되었습니다.'],
  ['starwriter',s=>(s.careers.writer||0)>=4,'스타 작가','good','이름만으로 배우들이 대본을 기다리는 작가가 되었습니다.'],
@@ -1147,7 +1256,7 @@ function prepEvent(s,d){s.seen[d.id]=(s.seen[d.id]||0)+1;s.cd[d.id]=s.t+(d.cd??8
  return{kind:'evt',id:d.id,h,title:dv(s,d.title,h),desc:dv(s,d.desc,h),note:dv(s,d.note,h)||'',opts:d.opts.filter(o=>!o.when||o.when(s)).map(o=>({t:dv(s,o.t,h),sub:dv(s,o.sub,h)||'',cost:o.cost?dv(s,o.cost,h):0,ref:o}))}}
 function sampleOut(s,good,dist){return wpick(Object.entries(dist).map(([k,p])=>[k,p*Math.exp(.45*s.luck*((good||{})[k]||0))]))}
 function resolveChoice(s,prep,i){
- if(prep.kind==='gen')return resolveGen(s,prep,i);if(prep.kind==='ai')return resolveAI(s,prep,i);if(prep.kind==='biz')return resolveBiz(s,prep,i);if(prep.kind==='stk')return resolveStk(s,prep,i);
+ if(prep.kind==='gen')return resolveGen(s,prep,i);if(prep.kind==='ai')return resolveAI(s,prep,i);if(prep.kind==='biz')return resolveBiz(s,prep,i);if(prep.kind==='stk')return resolveStk(s,prep,i);if(prep.kind==='ag')return resolveAg(s,prep,i);if(prep.kind==='bc')return resolveBc(s,prep,i);if(prep.kind==='stage')return resolveStage(s,prep,i);
  const d=EVENTS[prep.id],o=prep.opts[i];if(o.cost){if(o.cost>s.cash)return{err:'돈이 모자랍니다.'};s.cash-=o.cost}
  let dist=typeof o.ref.go==='function'?{[o.ref.go(s)]:1}:(o.ref.go[prep.h]||o.ref.go['*']);if(!dist){const ks=Object.values(o.ref.go)[0];dist=ks||{[Object.keys(d.out)[0]]:1}}const key=sampleOut(s,d.good,dist);const r=d.out[key](s,prep.h);
  const chips=applyEff(s,r.e,prep.title);if(o.cost)chips.unshift({v:'-'+won(o.cost),good:false});
@@ -1164,12 +1273,16 @@ EVT('broke',{w:0,cd:0,title:'통장이 바닥났습니다',
   {t:s=>`${s.sharkBoss}에게 사채를 쓴다`,sub:'당장은 해결, 이자는 분기 15%',go:{'*':{shark:1}}},
   {t:'부모님께 손을 벌린다',sub:'',go:{'*':{famyes:.5,famno:.5}}},
   {t:'가진 걸 판다',sub:'가장 비싼 것부터',go:{'*':{sell:1}}},
+  {t:s=>`${s.ag.name}${P(s.ag.name,'을/를')} 급매로 판다`,sub:s=>`${won(Math.round(s.ag.val*s.ag.own*.6))} · 회사 가치의 60%`,when:s=>!!s.ag,go:{'*':{sellag:1}}},
+  {t:s=>`${s.bc.name}${P(s.bc.name,'을/를')} 급매로 판다`,sub:s=>`${won(Math.round(s.bc.val*s.bc.own*.6))} · 회사 가치의 60%`,when:s=>!!s.bc,go:{'*':{sellbc:1}}},
   {t:'개인회생을 신청한다',sub:'은행 빚은 정리, 신용은 바닥',go:{'*':{bankrupt:1}}}],
- good:{shark:-1,famyes:1,famno:-1,sell:0,bankrupt:-2},
+ good:{shark:-1,famyes:1,famno:-1,sell:0,bankrupt:-2,sellag:0,sellbc:0},
  out:{
   shark:s=>{const x=Math.round((-s.cash+1500)/100)*100;borrow(s,'shark',x);return{t:`${s.sharkBoss}의 사무실은 생각보다 깔끔했습니다. "${won(x)}이요? 그 정도야 뭐." 웃는 얼굴이 무서웠습니다.`,e:{mental:-8}}},
   famyes:s=>{const x=Math.round((-s.cash+(s.family==='rich'?5000:800))/100)*100;return{t:`부모님이 ${won(x)}을 보내 주셨습니다. "밥은 꼭 챙겨 먹어라."`,e:{cash:x,friendDebt:Math.round(x*.5),mental:-4}}},
   famno:s=>({t:'"우리도 여유가 없다." 전화를 끊고 한참을 앉아 있었습니다.',e:{mental:-15,cash:200}}),
+  sellag:s=>{const n=s.ag.name,v=agSell(s,Math.round(s.ag.val*s.ag.own*.6));return{t:`${n}${P(n,'을/를')} ${won(v)}에 급히 넘겼습니다. 마지막으로 불을 끄고 나오는데 연습실 거울에 내 얼굴이 비쳤습니다.`,e:{mental:-12}}},
+  sellbc:s=>{const n=s.bc.name,v=bcSell(s,Math.round(s.bc.val*s.bc.own*.6));return{t:`${n}${P(n,'을/를')} ${won(v)}에 급히 넘겼습니다. 방송이 꺼지는 순간까지 모니터를 봤습니다.`,e:{mental:-12}}},
   sell:s=>{let best=null;for(const k in s.own){const it=s.own[k];if(k==='home'&&['goshiwon','parents_home'].includes(it.id))continue;const v=itemValue(s,it);if(!best||v>best.v)best={k,v}}s.items.forEach((it,i)=>{const v=itemValue(s,it);if(!best||v>best.v)best={k:i,v}});
    if(!best||best.v<=0)return{t:'팔 만한 게 없었습니다.',e:{mental:-10,cash:100}};const r=sell(s,best.k);return{t:`가진 것 가운데 가장 비싼 것을 팔아 ${won(r.v)}을 마련했습니다.`,e:{mental:-6}}},
   bankrupt:s=>{const b=s.bank+s.friendDebt;s.bank=0;s.friendDebt=0;s.flags.bankrupt=s.t;s.cash=Math.max(s.cash,100);return{t:`법원에서 개인회생이 받아들여졌습니다. 은행 빚 ${won(b)}이 정리됐습니다. 대신 몇 년 동안 대출은 꿈도 못 꿉니다.${s.shark>0?' 사채는 그대로 남았습니다.':''}`,e:{credit:-60,rep:-6,mental:-10,ach:'bankrupt'}}}}});
@@ -1963,6 +2076,533 @@ function resolveStk(s,prep,i){const k=s.mkt.stocks.find(x=>x.id===prep.kid),ev=S
  k.price=Math.max(100,Math.round(k.price*r[2]));k.cap=Math.round(k.cap*r[2]);k.hist.push(k.price);
  addLog(s,`${prep.title} → ${prep.opts[i].t}`,'dec');addLog(s,r[1],r[3]>0?'good':r[3]<0?'bad':'');unlock(s,'agm');return{t:r[1],chips:[{v:`${k.name} 주가 ×${r[2].toFixed(2)}`,good:r[2]>=1}],g:r[3]}}
 
+/* ================================================================
+   데뷔각 — 내가 아이돌이 되는 길: 월말 평가, 데뷔, 컴백, 재계약
+   (차트 계산은 내 기획사 아티스트도 같이 씁니다)
+   ================================================================ */
+const CONCEPT={
+ fresh:{ko:'청량',w:{vo:.3,da:.3,lk:.3,va:.1}},
+ charisma:{ko:'카리스마',w:{vo:.25,da:.45,lk:.3,va:0}},
+ hiphop:{ko:'힙합',w:{vo:.4,da:.4,lk:0,va:.2}},
+ ballad:{ko:'감성 발라드',w:{vo:.7,da:0,lk:.2,va:.1}},
+ retro:{ko:'레트로',w:{vo:.35,da:.35,lk:0,va:.3}},
+ dreamy:{ko:'몽환',w:{vo:.3,da:.25,lk:.45,va:0}}};
+const PST={vo:'vocal',da:'dance',lk:'look',va:'variety'};
+const SONGS=['첫사랑 알고리즘','Midnight Soda','파란불','Gravity Kiss','여름 정전','Lemon Riot','Daydream Arcade','심장 소리','풍선껌 사이렌','유리 운동화','Glitch Love','불꽃놀이 금지구역','달빛 택시','네온 고래','소나기 예보','빙수 폭동','Starlight Delivery','종이비행기 선언','Neon Hiccup','우주 정거장 3번 출구','Cherry Static','고백 리허설','Velvet Thunder','새벽 4시의 편의점','Paper Moon Club','Satellite Heart'];
+const CHART_TIER=['차트 진입 실패','100위권','50위권','TOP 10','음원 1위','신드롬'];
+const chartTier=Q=>Q<36?0:Q<50?1:Q<62?2:Q<74?3:Q<86?4:5;
+const chartPeak=t=>[0,R(51,100),R(11,50),R(2,10),1,1][t];
+const chartWins=t=>[0,0,0,R(0,2),R(2,5),R(6,12)][t];
+function trendOf(s){if(!s.trend)s.trend=pick(Object.keys(CONCEPT));return s.trend}
+const POS={center:{ko:'센터',sub:'가장 눈에 띄는 자리. 사랑도 악플도 두 배',k:'lk',fm:1.35},vocal:{ko:'메인보컬',sub:'노래 실력이 곧 팀의 얼굴',k:'vo',fm:1},dance:{ko:'메인댄서',sub:'직캠 한 방이 있는 자리',k:'da',fm:1.1},visual:{ko:'비주얼',sub:'광고와 화보가 먼저 찾는 자리',k:'lk',fm:1.15},variety:{ko:'예능 담당',sub:'예능에서 터지면 팀 전체가 뜹니다',k:'va',fm:1.05}};
+const EFFORT=[{ko:'무리하지 않게',sub:'체력 −4',q:-3,hp:-4},{ko:'평소대로',sub:'체력 −10',q:2,hp:-10},{ko:'올인한다',sub:'체력 −25 · 멘탈 −8',q:8,hp:-25,mental:-8}];
+const TIER_TXT=[
+ c=>`「${c.title}」${P(c.title,'은/는')} 차트에 들어가지 못했습니다. 음악 방송 몇 번으로 활동이 끝났습니다.`,
+ c=>`「${c.title}」${P(c.title,'이/가')} 100위권 끝자락에 잠깐 걸렸다 내려왔습니다. 그래도 알아보는 사람이 생겼습니다.`,
+ c=>`「${c.title}」 최고 ${c.peak}위. 이름을 아는 사람이 꽤 늘었습니다.`,
+ c=>`「${c.title}」 최고 ${c.peak}위! TOP 10에 들었습니다.${c.wins?` 음악 방송 ${c.wins}관왕을 했습니다.`:' 음악 방송 1위 후보에 올랐습니다.'}`,
+ c=>`「${c.title}」 음원 차트 1위! 음악 방송 ${c.wins}관왕을 했습니다.`,
+ c=>`「${c.title}」 차트 올킬. 거리마다 이 노래가 나옵니다. 음악 방송 ${c.wins}관왕, 신드롬입니다.`];
+// pick a concept for auto play: half the time chase the trend
+const autoConc=s=>chance(.5)?trendOf(s):pick(Object.keys(CONCEPT));
+function agTierB(s){if(s.career.agency==='own'&&s.ag)return Math.min(14,s.ag.fac.studio*3+s.ag.fac.mkt*2+2);const a=AGENCIES.find(x=>x.id===s.career.agency);return a?a.tier*4:0}
+
+/* ---------- my own comeback (idol or solo singer) ---------- */
+function idolComeback(s,conc,ef,debut){conc=CONCEPT[conc]?conc:autoConc(s);const E=EFFORT[ef==null?1:ef];
+ const w=CONCEPT[conc].w,pos=POS[s.flags.pos];let me=0;for(const k in w)me+=w[k]*s.st[PST[k]];if(pos)me=me*.8+s.st[PST[pos.k]]*.2;
+ const tb=agTierB(s);const team=s.career.id==='idol'?38+tb*1.6:me;const skill=s.career.id==='idol'?me*.45+team*.55:me;
+ const Q=skill*.6+s.star*30+tb+E.q+(conc===trendOf(s)?10:0)+s.fame*.12+s.luck*3+gauss()*11-(conc===s.flags.lastConc?4:0)-(debut?2:0)-6;
+ const t=chartTier(Q),c={title:pick(SONGS),conc:CONCEPT[conc].ko,tier:t,peak:chartPeak(t),wins:chartWins(t),who:s.career.group||s.stageName||s.name};
+ s.flags.lastConc=conc;const fm=pos?pos.fm:1;const own=s.career.agency==='own';
+ const e={fame:Math.round([-2,1,3,6,10,15][t]*fm*10)/10,cash:Math.round([0,100,600,2500,8000,25000][t]*(1+s.career.rank*.6)*(own?1.6:1)),hp:E.hp,mental:(E.mental||0)+[-12,-4,2,8,14,20][t]};
+ if(!e.cash)delete e.cash;
+ const hit=t>=4?2:t===3?1:t===2?0:-1;
+ if(t>=4){unlock(s,'no1');s.flags.hitYear=s.year}else if(t===3)s.flags.hitYear=s.year;
+ if(t<=1&&chance(.05+.03*s.luck))e.later=[{t:R(2,6),txt:`잊혔던 「${c.title}」${P(c.title,'이/가')} 군부대 위문 공연 직캠 하나로 역주행을 시작했습니다. 차트 1위까지 올랐습니다.`,e:{fame:R(12,20),cash:R(1000,5000),ach:'reverse'},g:3}];
+ s.works.push({y:s.year,k:'새 앨범',hit});(s.disco=s.disco||[]).push({y:s.year,title:c.title,conc:c.conc,t,peak:c.peak});
+ return{t:TIER_TXT[t](c),e,g:[-1,0,1,2,3,3][t],hit,chart:c}}
+
+/* ---------- trainee: monthly evaluation, debut, renewal ---------- */
+function stageEval(s){const n=R(18,32);s.flags.evalN=n;
+ return{kind:'stage',sid:'eval',title:'월말 평가',desc:`이번 달 평가 곡이 나왔습니다. 연습생 ${n}명이 한 무대씩 섭니다. 순위가 쌓이면 데뷔조에 들어갑니다.`,note:`지금 ${careerName(s)} · 평가 점수 ${s.flags.evalPts||0} / ${s.career.rank<1?3:6}`,
+  opts:[{t:'잘하는 곡으로 안전하게',sub:'실수 없이 무난하게'},{t:'고난도 퍼포먼스로 승부',sub:'터지면 1등, 삐끗하면 꼴찌'},{t:'내가 만든 무대로 승부',sub:'작곡 · 기획력이 높으면 유리'},{t:'컨디션 핑계로 이번 달은 빠진다',sub:'멘탈은 쉬지만 점수가 깎입니다'}]}}
+function stageDebut(s){const a=AGENCIES.find(x=>x.id===s.career.agency)||AGENCIES[4];const grp=pick(GROUPS);s.flags.debutGroup=grp;
+ return{kind:'stage',sid:'debut',title:'데뷔 확정',desc:`${a.name}에서 데뷔조가 확정됐습니다. 팀 이름은 ‘${grp}’. 데뷔 앨범 녹음 전에 내 포지션을 정해야 합니다.`,note:'포지션에 따라 컴백 때 중요한 능력치와 인기 오르는 속도가 달라집니다.',
+  opts:Object.entries(POS).map(([k,p])=>({t:p.ko,sub:`${p.sub} · ${STAT_KO[PST[p.k]]} 중요`,k}))}}
+function stageRenew(s){const yrs=Math.round((s.t-(s.flags.debutT||s.career.since))/4);
+ return{kind:'stage',sid:'renew',title:'재계약 시즌',desc:`${s.career.group||'팀'} 데뷔 ${yrs}년, 전속 계약이 끝나 갑니다. 회사는 재계약서를, 다른 회사들은 명함을 내밉니다.`,note:`지금 ${careerName(s)} · 인지도 ${Math.round(s.fame)}`,
+  opts:[{t:'회사와 재계약한다',sub:'계약금을 받고 팀을 지킵니다'},{t:'솔로로 독립한다',sub:'팬들이 따라올지는 모릅니다'},{t:s.ag?`내 회사 ${s.ag.name}(으)로 옮긴다`:'내 기획사를 차려서 나간다',sub:s.ag?'내가 대표이자 소속 가수':'3,000만 원 · 이제 사장님 겸 가수',cost:s.ag?0:3000},{t:'배우로 전향한다',sub:'노래 대신 대본을 듭니다'}]}}
+function stageQueue(s,queue){const c=s.career.id;
+ if(s.flags.debutDue&&c==='trainee'){delete s.flags.debutDue;queue.push({type:'choice',prep:stageDebut(s)});return}
+ if(s.flags.evalDue&&c==='trainee'){delete s.flags.evalDue;queue.push({type:'choice',prep:stageEval(s)})}
+ if(c==='idol'&&!s.flags.renewAsked&&s.t-(s.flags.debutT||s.career.since)>=28){s.flags.renewAsked=1;queue.push({type:'choice',prep:stageRenew(s)})}}
+function resolveStage(s,prep,i){const o=prep.opts[i];
+ if(o.cost){if(o.cost>s.cash)return{err:'돈이 모자랍니다.'};s.cash-=o.cost}
+ let r;
+ if(prep.sid==='eval'){const n=s.flags.evalN||24;const boost=(s.flags.evalBoost||0)*5;delete s.flags.evalBoost;
+  const base=statAvg(s,['vocal','dance','look'])*.7+s.star*30+boost+s.luck*3;
+  if(i===3){s.flags.evalPts=Math.max(0,(s.flags.evalPts||0)-1);r={t:'이번 달 평가는 빠졌습니다. 숙소에서 하루 종일 잤습니다. 트레이너의 눈빛이 차가워졌습니다.',e:{mental:15},g:0}}
+  else{const sc=i===0?base+gauss()*6:i===1?base+6+gauss()*16:base*.6+(s.st.music+s.st.plan)/2*.55+4+gauss()*12;
+   const place=clamp(Math.round(n*(1-(sc-18)/62)+gauss()*1.5),1,n);const pts=place<=3?3:place<=n/3?2:place>=n*.8?-1:1;s.flags.evalPts=Math.max(0,(s.flags.evalPts||0)+pts);
+   const line=place===1?'1등! 대표님이 처음으로 내 이름을 불렀습니다.':place<=3?'상위권입니다. 트레이너가 고개를 끄덕였습니다.':place<=n/3?'중상위권. 나쁘지 않습니다.':place>=n*.8?'하위권입니다. 방출 명단 소문이 돕니다.':'중간쯤입니다. 눈에 띄지는 않았습니다.';
+   r={t:`${n}명 중 ${place}등. ${line}`,e:{mental:pts>=2?8:pts<0?-10:0,hp:i===1?-8:-4},g:pts>=3?2:pts>=2?1:pts<0?-1:0,chart:{kicker:'월말 평가',big:`${place}등`,sub:`/ ${n}명`,tier:place<=3?4:place<=n/3?3:place>=n*.8?0:2}};
+   if(i===1&&place<=2)r.e.st={dance:R(1,3)};if(i===2&&place<=3)r.e.st={music:R(1,3)}}
+  const P2=s.flags.evalPts;
+  if(s.career.rank<1&&P2>=3){s.career.rank=1;r.t+=' 데뷔조 후보에 들었습니다!';r.g=Math.max(r.g,2)}
+  else if(s.career.rank===1&&P2>=6){s.career.rank=2;s.flags.debutDue=1;r.t+=' 데뷔가 확정됐습니다! 다음 분기에 팀이 발표됩니다.';r.g=3}
+  addLog(s,`월말 평가 → ${o.t}`,'dec');addLog(s,r.t,r.g>0?'good':r.g<0?'bad':'');if(r.g>=3)s.big.push({t:s.t,age:Math.floor(s.age),txt:'데뷔 확정',g:2});
+  return{t:r.t,chips:applyEff(s,r.e,'월말 평가'),g:r.g,chart:r.chart}}
+ if(prep.sid==='debut'){const a=AGENCIES.find(x=>x.id===s.career.agency)||AGENCIES[4];const grp=s.flags.debutGroup||pick(GROUPS);
+  s.flags.pos=o.k;s.stageName=s.stageName||pick(STAGE);setCareer(s,'idol',0,a.id,grp);s.flags.debutT=s.t;delete s.flags.renewAsked;s.debutDebt=R(8000,30000)*a.tier;unlock(s,'debut');
+  const rr=idolComeback(s,null,1,true);rr.e.fame=(rr.e.fame||0)+R(6,10);const chips=applyEff(s,rr.e,'데뷔');
+  const t=`‘${grp}’의 ${POS[o.k].ko} ‘${s.stageName}’(으)로 데뷔했습니다. 데뷔곡 ${rr.t}`;addLog(s,t,'mile');s.big.push({t:s.t,age:Math.floor(s.age),txt:`${grp}로 데뷔`,g:2});
+  return{t,chips,g:Math.max(2,rr.g),chart:{...rr.chart,kicker:'데뷔'}}}
+ if(prep.sid==='renew'){s.flags.renewDone=1;
+  if(i===0){const bonus=R(3000,20000)*(s.career.rank+1);s.flags.debutT=s.t-8;delete s.flags.renewAsked;r={t:`재계약서에 사인했습니다. 계약금 ${won(bonus)}. 팬들이 “평생 가자”는 현수막을 걸었습니다.`,e:{cash:bonus,rep:6,mental:6},g:1}}
+  else if(i===1){const keep=chance(clamp(.35+s.fame/150+s.luck*.05,.1,.9));setCareer(s,'solo',clamp(s.career.rank-(keep?0:2),0,4),null);r=keep?{t:'솔로 첫 앨범에 팬들이 그대로 따라왔습니다. 오히려 팬덤이 커졌습니다.',e:{fame:R(3,8),mental:10},g:2}:{t:'혼자가 되자 팬덤이 반으로 쪼개졌습니다. 처음부터 다시 시작입니다.',e:{fame:-R(8,15),mental:-12},g:-2}}
+  else if(i===2){if(!s.ag)agFound(s,'small',(s.stageName||s.name)+' 컴퍼니',true);setCareer(s,'solo',clamp(s.career.rank,0,4),'own');r={t:`${s.ag.name}의 첫 소속 가수가 됐습니다. 이제 앨범 수익의 대부분이 내 몫입니다. 대신 망해도 내 탓입니다.`,e:{mental:8,ach:'label'},g:2}}
+  else{setCareer(s,'actor',1,'butterfly');r={t:'연기로 방향을 틀었습니다. 첫 작품은 아이돌 출신이라는 편견과의 싸움입니다.',e:{st:{act:R(2,5)}},g:0}}
+  const chips=applyEff(s,r.e,'재계약');if(o.cost)chips.unshift({v:'-'+won(o.cost),good:false});addLog(s,`재계약 시즌 → ${o.t}`,'dec',o.cost?-o.cost:null);addLog(s,r.t,r.g>0?'good':r.g<0?'bad':'');if(Math.abs(r.g)>=2)s.big.push({t:s.t,age:Math.floor(s.age),txt:r.t,g:r.g});
+  return{t:r.t,chips,g:r.g}}
+ return{t:'',chips:[],g:0}}
+
+/* ================================================================
+   데뷔각 — 2막 ①: 내 기획사 (캐스팅 · 트레이닝 · 데뷔 · 컴백 · 회사 키우기)
+   내 직업과 따로 굴러갑니다. 오디션에 붙어도, 직업이 바뀌어도 회사는 그대로입니다.
+   ================================================================ */
+const AG_TIERS=[[0,'1인 기획사'],[30000,'소형 기획사'],[300000,'중소 기획사'],[2000000,'중견 기획사'],[10000000,'대형 기획사'],[50000000,'4대 기획사'],[200000000,'글로벌 엔터']];
+const AG_ST=[['vo','보컬'],['da','댄스'],['lk','비주얼'],['va','예능']];
+const BUDGET=[{ko:'소박하게',cost:3000,q:0},{ko:'제대로',cost:10000,q:6},{ko:'대작',cost:50000,q:13}];
+const AG_FAC={
+ room:{ko:'연습실',d:'연습생 실력이 빨리 늘고, 더 많이 받을 수 있어요',cost:[5000,30000,200000],lv:['전용 연습실','트레이닝 센터','최첨단 아카데미']},
+ studio:{ko:'녹음실 · 프로듀서',d:'곡 완성도가 올라가요',cost:[10000,50000,300000],lv:['작은 녹음실','전속 프로듀서 팀','히트곡 공장']},
+ mkt:{ko:'마케팅팀',d:'발매 때 팬이 더 많이 늘어요',cost:[10000,50000,300000],lv:['SNS 담당자','마케팅팀','글로벌 캠페인']},
+ global:{ko:'해외 진출',d:'해외 팬과 해외 수익이 늘어요',cost:[50000,200000,1000000],lv:['일본 지사','아시아 투어망','미국 레이블 제휴']},
+ hq:{ko:'사옥',d:'회사 브랜드가 커지고 회사 일정이 1개 늘어요',cost:[100000,500000,3000000],lv:['작은 건물','신사옥','랜드마크 사옥']}};
+const AG_STEM=['별빛','달무리','파란새벽','무지개','블루밍','오로라','플래닛','루미','모멘트','스파크','하늘섬','은하수','새봄','파도','첫눈','라임'];
+const AG_SUF=[' 엔터',' 뮤직',' 레이블',' 엔터테인먼트',' 스튜디오'];
+const GR_A=['LUMEN','COSMIA','SOLARIS','NOCTURN','GALAXIA','CANDYBOMB','RUBYLINE','STARLIT','NEONPOP','MOONRISE','ECLIPSA','POPRIOT','VIVIDA','AURORE','SUNDAZE','HEXA','NOVELLA','PALETTE','LUCIDIA','FIZZY'];
+const GR_B=['','',' X',' 9',' ON','-Z',' CLUB',' UNIT'];
+const AGF=['다연','윤서','리나','세아','가을','하람','보미','라희','은채','설아','한별','서아'];
+const AGM=['태오','윤우','라온','시온','은결','도하','선우','이준','한결','우진','주원','하율'];
+const FORF=['미유','린','타나','에이미','소피아'],FORM=['카이토','제이든','레오','미카엘','타온'];
+const FOREIGN=['일본 출신','태국 출신','미국 교포','호주 교포','대만 출신'];
+const agName=()=>pick(AG_STEM)+pick(AG_SUF);
+const grName=()=>pick(GR_A)+pick(GR_B);
+function agTier(ag){let i=0;for(let k=0;k<AG_TIERS.length;k++)if(ag.val>=AG_TIERS[k][0])i=k;return i}
+const agTierKo=ag=>AG_TIERS[agTier(ag)][1];
+const agAPMax=ag=>Math.min(6,2+ag.fac.hq+(agTier(ag)>=3?1:0));
+// office + upkeep of what you built (0.5% of its price a quarter)
+function agUpkeep(ag){let v=200;for(const k in AG_FAC)for(let i=0;i<ag.fac[k];i++)v+=AG_FAC[k].cost[i]*.005;return Math.round(v)}
+const agCap=ag=>[6,10,16,24][ag.fac.room];
+const agReady=m=>m.q>=2;
+const agAvg=m=>(m.st.vo+m.st.da+m.st.lk+m.st.va)/4;
+function agSkill(m,c){const w=CONCEPT[c].w;let v=0;for(const k in w)v+=w[k]*m.st[k];return v}
+const agLive=ag=>ag.gr.filter(g=>!g.gone);
+const pctFans=(g,p,min)=>Math.round(Math.max(min||0,g.fans*p));
+
+function agValue(s){const ag=s.ag;let v=2000;for(const k in AG_FAC)for(let i=0;i<ag.fac[k];i++)v+=AG_FAC[k].cost[i]*.6;
+ for(const g of agLive(ag))v+=g.fans*.35+Math.max(0,g.qrev||0)*6;for(const m of ag.tr)v+=600+agAvg(m)*25*m.pot;return Math.round(v+ag.hype*300)}
+function agFound(s,plan,name,quiet){if(s.ag)return{err:'이미 기획사가 있습니다.'};const pl=plan==='big'?{cost:30000,room:1,studio:1,hype:12}:{cost:3000,room:0,studio:0,hype:5};
+ if(!quiet&&pl.cost>s.cash)return{err:`${won(pl.cost-s.cash)}이 모자랍니다. ‘투자’ 탭에서 빌릴 수 있어요.`};
+ if(!quiet)s.cash-=pl.cost;const nm=String(name||'').trim().slice(0,16)||agName();
+ s.ag={name:nm,since:s.t,val:0,hype:pl.hype,fac:{room:pl.room,studio:pl.studio,mkt:0,global:0,hq:0},tr:[],gr:[],auds:null,ap:2,own:1,nid:0,stats:{debut:0,hits:0,no1:0,award:0},hist:[],listed:false,boost:0,lastProfit:0,maxTier:0,cd:{}};
+ s.ag.val=agValue(s);s.ag.hist=[s.ag.val];s.ag.ap=agAPMax(s.ag);unlock(s,'label');
+ const t=plan==='big'?`${nm}${P(nm,'을/를')} 제대로 차렸습니다. 연습실과 녹음실까지 갖췄습니다. 이제 연습생을 뽑을 차례입니다.`:`${nm}${P(nm,'을/를')} 세웠습니다. 책상 하나, 의자 둘, 꿈은 크게. 이제 연습생을 뽑을 차례입니다.`;
+ addLog(s,t,'mile',quiet?null:-pl.cost);s.big.push({t:s.t,age:Math.floor(s.age),txt:`${nm} 설립`,g:2});return{t,g:2,chips:quiet?[]:[{v:'-'+won(pl.cost),good:false}]}}
+
+/* ---------- people ---------- */
+function newTrainee(s,src){const ag=s.ag;const sex=chance(.5)?'F':'M';const street=src==='street';
+ const tw=src==='gem'?'genius':chance(street?.16:.1)?pick(['chaebol','exdebut','foreign','composer','genius']):null;
+ const name=tw==='foreign'&&chance(.6)?pick(sex==='F'?FORF:FORM):pick(SURN)+pick(sex==='F'?AGF.concat(GIVEN_F):AGM.concat(GIVEN_M));
+ const lift=ag?ag.hype*.18+ag.fac.hq*4:0;const st={};
+ for(const[k]of AG_ST)st[k]=clamp(Math.round(8+rnd()*26+lift+(street?gauss()*8:0)),2,70);
+ const spike=pick(AG_ST)[0];st[spike]=clamp(st[spike]+R(12,30),0,85);if(tw==='exdebut')for(const k in st)st[k]=clamp(st[k]+R(12,22),0,88);
+ const pot=tw==='genius'?R(16,19)/10:clamp(.65+rnd()*.6+(street?gauss()*.22:0),.4,1.5);
+ const star=clamp((tw==='genius'?.72:.38)+gauss()*.18+(street?gauss()*.08:0),.05,1);
+ const flaw=wpick([[null,.72],['past',.09],['attitude',.08],['injury',.05],['lover',.06]]);
+ const tags=[{vo:'노래방 99점',da:'댄스 학원 에이스',lk:'얼굴 천재',va:'반 분위기 메이커'}[spike]];if(tw==='exdebut')tags.push('전 대형 기획사 데뷔조');if(tw==='foreign')tags.push(pick(FOREIGN));
+ const cost=Math.round((200+(st.vo+st.da+st.lk+st.va)/4*14+star*700+(tw==='exdebut'?1500:0))/50)*50;
+ return{id:'m'+(ag?++ag.nid:R(1,1e6))+'_'+Math.floor(rnd()*1e4),name,sex,age:R(14,21),st,pot,star,flaw,tw,twKnown:false,tags,mood:R(65,90),q:0,cost,checked:false,from:street?'길거리 캐스팅':src==='buy'?'인수한 회사':'오디션',pre:0}}
+const potKo=m=>m.pot>=1.5?'괴물급':m.pot>=1.15?'높음':m.pot>=.85?'보통':'낮음';
+const flawKo={past:'과거 SNS에 문제 될 글이 있음',attitude:'연습생들 사이 평판이 나쁨',injury:'오래된 부상이 있음',lover:'비밀 연애 중'};
+function agFindMember(ag,id){for(const g of ag.gr){const m=g.mem.find(x=>x.id===id);if(m)return[m,g]}const t=ag.tr.find(x=>x.id===id);return[t||null,null]}
+
+/* ---------- actions (회사 일정) ---------- */
+const audCost=ag=>500+agTier(ag)*300;
+function agNeedAP(ag){return ag.ap<1?{err:'이번 분기 회사 일정이 다 찼어요. 다음 분기에 다시 할 수 있어요.'}:null}
+function agAudition(s){const ag=s.ag,e=agNeedAP(ag);if(e)return e;const c=audCost(ag);if(c>s.cash)return{err:`${won(c)}이 필요합니다.`};
+ s.cash-=c;ag.ap--;ag.auds=Array.from({length:ag.fac.hq>=2?4:3},()=>newTrainee(s,'aud'));addLog(s,`[${ag.name}] 오디션을 열었습니다. 지원자 ${fmt(R(80,400)*(agTier(ag)+1))}명 중 ${ag.auds.length}명이 최종에 올랐습니다.`,'',-c);return{t:'최종 후보가 올라왔습니다.'}}
+function agStreet(s){const ag=s.ag,e=agNeedAP(ag);if(e)return e;if(100>s.cash)return{err:'100만 원이 필요합니다.'};s.cash-=100;ag.ap--;
+ if(chance(.3)){addLog(s,`[${ag.name}] 하루 종일 홍대와 명동을 돌았지만 허탕이었습니다.`,'',-100);return{t:'하루 종일 돌았지만 허탕이었습니다.'}}
+ ag.auds=[newTrainee(s,'street')];addLog(s,`[${ag.name}] 길에서 눈에 띄는 사람을 만났습니다.`,'',-100);return{t:'길에서 눈에 띄는 사람을 만났습니다!'}}
+function agSign(s,id){const ag=s.ag,m=(ag.auds||[]).find(x=>x.id===id);if(!m)return{err:'이미 떠난 후보예요.'};if(ag.tr.length>=agCap(ag))return{err:`연습실이 꽉 찼어요 (${agCap(ag)}명). 연습실을 넓히거나 데뷔시키세요.`};
+ if(m.cost>s.cash)return{err:`${won(m.cost)}이 필요합니다.`};s.cash-=m.cost;ag.auds=ag.auds.filter(x=>x!==m);ag.tr.push(m);if(!ag.auds.length)ag.auds=null;
+ addLog(s,`[${ag.name}] ${m.name}${P(m.name,'와/과')} 연습생 계약을 맺었습니다.`,'good',-m.cost);return{t:`${m.name}${P(m.name,'이/가')} 우리 연습생이 됐습니다.`}}
+function agCheck(s,id){const ag=s.ag,m=(ag.auds||[]).find(x=>x.id===id);if(!m||m.checked)return null;if(200>s.cash)return{err:'200만 원이 필요합니다.'};s.cash-=200;m.checked=true;return{t:'검증 결과가 나왔어요.'}}
+function agPass(s,id){const ag=s.ag;ag.auds=(ag.auds||[]).filter(x=>x.id!==id);if(!ag.auds.length)ag.auds=null}
+function agFire(s,id){const ag=s.ag,m=ag.tr.find(x=>x.id===id);if(!m)return;ag.tr=ag.tr.filter(x=>x!==m);addLog(s,`[${ag.name}] 연습생 ${m.name}${P(m.name,'을/를')} 내보냈습니다.`,'')}
+function agDrill(s){const ag=s.ag,e=agNeedAP(ag);if(e)return e;if(!ag.tr.length)return{err:'연습생이 없어요.'};const c=100*ag.tr.length;if(c>s.cash)return{err:`${won(c)}이 필요합니다.`};
+ s.cash-=c;ag.ap--;for(const m of ag.tr){for(let i=0;i<2;i++){const k=pick(AG_ST)[0];m.st[k]=clamp(m.st[k]+R(2,5)*m.pot,0,100)}m.mood=clamp(m.mood-R(4,10),0,100)}
+ addLog(s,`[${ag.name}] 연습생 전원 집중 트레이닝. 다들 실력이 늘었지만 지쳐 보입니다.`,'',-c);return{t:'연습생들 실력이 늘었어요. 대신 조금 지쳤어요.'}}
+function agBuild(s,k){const ag=s.ag,F=AG_FAC[k],lv=ag.fac[k];if(lv>=3)return{err:'이미 최고 단계예요.'};const c=F.cost[lv];if(c>s.cash)return{err:`${won(c-s.cash)}이 모자랍니다.`};
+ s.cash-=c;ag.fac[k]++;ag.hype=clamp(ag.hype+2+lv*2,0,100);if(k==='hq')unlock(s,'building');ag.val=agValue(s);if(k==='hq')ag.ap++;
+ addLog(s,`[${ag.name}] ${F.ko} → ${F.lv[lv]}`,'good',-c);return{t:`${F.lv[lv]}${P(F.lv[lv],'을/를')} 마련했습니다.`}}
+function agRelease(s,g,conc,bud,debut){const ag=s.ag,B=BUDGET[bud],mem=g.mem;
+ const skill=mem.reduce((a,m)=>a+agSkill(m,conc),0)/mem.length,star=mem.reduce((a,m)=>a+m.star,0)/mem.length;
+ const comp=mem.some(m=>m.tw==='composer'&&m.twKnown)?5:0,chem=mem.length>=3&&mem.length<=7?3:0;
+ const Q=55*(1-Math.exp(-skill/50))+star*26+ag.fac.studio*3+B.q*.7+(conc===trendOf(s)?8:0)+chem+g.buzz*.05+ag.hype*.06+(ag.boost||0)*.8+comp+gauss()*12+s.luck*3-(debut?3:0)-(conc===g.lastConc?4:0)-18;
+ ag.boost=0;const t=chartTier(Q);const c={title:pick(SONGS),conc:CONCEPT[conc].ko,tier:t,peak:chartPeak(t),wins:chartWins(t),who:g.name};
+ const glob=1+ag.fac.global*.25+(mem.some(m=>m.tw==='foreign')?.1:0);const cap=3e7*(1+ag.fac.global*.35);
+ let gain=Math.round([2000,10000,40000,150000,500000,1500000][t]*(1+ag.fac.mkt*.3)*glob*(.7+rnd()*.6)+g.fans*[-.06,-.01,.03,.08,.15,.25][t]);if(gain>0)gain=Math.round(gain*Math.max(.03,1-g.fans/cap));
+ g.fans=Math.max(0,g.fans+gain);const copies=Math.round(Math.min(g.fans*(.08+t*.04),5e6*(.5+t*.1))*(debut?.6:1));const rev=Math.round(copies*.6+[0,300,1500,6000,20000,60000][t]*glob);
+ g.buzz=clamp(Math.round(g.buzz*.5+[5,12,25,45,70,95][t]),0,100);g.albums.push({t:s.t,y:s.year,conc,tier:t,peak:c.peak,copies,title:c.title});g.best=Math.max(g.best||0,t);g.lastConc=conc;g.cd=s.t+2;
+ if(t>=3)ag.stats.hits++;if(t>=4){ag.stats.no1++;unlock(s,'ag_no1')}if(t>=5)unlock(s,'ag_syn');ag.hype=clamp(ag.hype+[-2,0,1,3,6,10][t],0,100);
+ const e={cash:rev};if(t<=1&&chance(.07))e.later=[{t:R(2,5),txt:`${g.name}의 「${c.title}」 직캠이 뒤늦게 터졌습니다. 역주행으로 차트 1위까지!`,e:{ag:{fans:[g.id,Math.max(300000,g.fans)],buzz:[g.id,70]},cash:R(5000,20000)},g:3}];
+ c.extra=[`앨범 ${fmt(copies)}장`,`팬 ${gain>=0?'+':''}${fansTxt(Math.abs(gain)).replace(' 명','명')}`];
+ return{t:`${g.name} ${TIER_TXT[t](c)}`,e,g:[-1,0,1,2,3,3][t],chart:c,cost:B.cost}}
+function agDebut(s,ids,name,conc,bud){const ag=s.ag,e=agNeedAP(ag);if(e)return e;const mem=ag.tr.filter(m=>ids.includes(m.id));
+ if(!mem.length)return{err:'멤버를 한 명 이상 골라 주세요.'};if(mem.some(m=>!agReady(m)))return{err:'아직 연습한 지 반년이 안 된 멤버가 있어요.'};const B=BUDGET[bud];if(B.cost>s.cash)return{err:`제작비 ${won(B.cost)}이 필요합니다.`};
+ s.cash-=B.cost;ag.ap--;ag.tr=ag.tr.filter(m=>!ids.includes(m.id));const nm=String(name||'').trim().slice(0,18)||grName();
+ const g={id:'g'+(++ag.nid),name:nm,mem,fans:mem.reduce((a,m)=>a+(m.pre||0),0),buzz:10,albums:[],debut:s.t,end:s.t+28,cd:0,best:0,gone:false,tourCd:0,qrev:0,lastConc:null};
+ ag.gr.push(g);ag.stats.debut++;unlock(s,'ag_debut');const r=agRelease(s,g,conc,bud,true);const chips=applyEff(s,r.e,nm);chips.unshift({v:'-'+won(B.cost),good:false});
+ const t=`${mem.length===1?'솔로':`${mem.length}인조`} ‘${nm}’ 데뷔! ${r.t.slice(nm.length+1)}`;addLog(s,`[${ag.name}] ${t}`,r.g>0?'good':r.g<0?'bad':'',r.e.cash-B.cost);s.big.push({t:s.t,age:Math.floor(s.age),txt:`${ag.name} ‘${nm}’ 데뷔 · ${CHART_TIER[r.chart.tier]}`,g:Math.max(1,r.g)});
+ return{t,chips,g:r.g,chart:{...r.chart,kicker:'데뷔'}}}
+function agComeback(s,gid,conc,bud){const ag=s.ag,e=agNeedAP(ag);if(e)return e;const g=ag.gr.find(x=>x.id===gid);if(!g||g.gone)return{err:'활동 중인 팀이 아니에요.'};
+ if(g.cd>s.t)return{err:'컴백 준비 중이에요. 다음 분기에 할 수 있어요.'};const B=BUDGET[bud];if(B.cost>s.cash)return{err:`제작비 ${won(B.cost)}이 필요합니다.`};
+ s.cash-=B.cost;ag.ap--;const r=agRelease(s,g,conc,bud,false);const chips=applyEff(s,r.e,g.name);chips.unshift({v:'-'+won(B.cost),good:false});
+ addLog(s,`[${ag.name}] ${r.t}`,r.g>0?'good':r.g<0?'bad':'',r.e.cash-B.cost);if(r.chart.tier>=4)s.big.push({t:s.t,age:Math.floor(s.age),txt:`${g.name} 「${r.chart.title}」 ${CHART_TIER[r.chart.tier]}`,g:3});
+ return{t:r.t,chips,g:r.g,chart:{...r.chart,kicker:'컴백'}}}
+function agPromo(s,gid){const ag=s.ag,e=agNeedAP(ag);if(e)return e;const g=ag.gr.find(x=>x.id===gid);if(!g||g.gone)return{err:'활동 중인 팀이 아니에요.'};ag.ap--;
+ const m=pick(g.mem);const k=wpick([['chara',.2],['ad',.3],['fest',.35],['flop',.15]].map(([k,p])=>[k,p*Math.exp(.4*s.luck*(k==='flop'?-1:1))]));let r;
+ if(k==='chara')r={t:`${m.name}${P(m.name,'이/가')} 예능에서 ‘${pick(['먹방 요정','허당 막내','사투리 장인','예능 천재','리액션 부자'])}’ 캐릭터로 떴습니다. 팀 검색량이 폭발했습니다.`,e:{cash:R(300,1500),ag:{fans:[g.id,pctFans(g,.12,20000)],buzz:[g.id,20],st:[m.id,'va',4]}},g:2};
+ else if(k==='ad')r={t:`${g.name}${P(g.name,'이/가')} ${pick(['음료','화장품','치킨','통신사','운동화'])} 광고를 찍었습니다.`,e:{cash:Math.round(1000+g.fans*.008),ag:{buzz:[g.id,6]}},g:1};
+ else if(k==='fest')r={t:`대학 축제와 행사를 돌았습니다. ${pick(['떼창이 나왔습니다.','비가 왔지만 끝까지 남은 관객이 있었습니다.','앙코르를 세 번 했습니다.'])}`,e:{cash:Math.round(R(800,3000)*(1+agTier(ag)*.5)+g.fans*.003),ag:{buzz:[g.id,4],fans:[g.id,pctFans(g,.02,2000)]}},g:1};
+ else r={t:`${m.name}${P(m.name,'이/가')} 예능에서 한 말이 잘려 퍼졌습니다. 해명하느라 한 주가 갔습니다.`,e:{cash:R(100,500),ag:{buzz:[g.id,-6],mood:[m.id,-12]}},g:-1};
+ for(const x of g.mem)x.mood=clamp(x.mood-4,0,100);const chips=applyEff(s,r.e,g.name);addLog(s,`[${ag.name}] ${r.t}`,r.g>0?'good':r.g<0?'bad':'',r.e.cash);return{t:r.t,chips,g:r.g}}
+function agTour(s,gid){const ag=s.ag,e=agNeedAP(ag);if(e)return e;const g=ag.gr.find(x=>x.id===gid);if(!g||g.gone)return{err:'활동 중인 팀이 아니에요.'};
+ if(g.fans<100000)return{err:'팬이 10만 명은 넘어야 투어를 돌 수 있어요.'};if((g.tourCd||0)>s.t)return{err:'투어를 다녀온 지 얼마 안 됐어요.'};const cost=Math.round(5000+g.fans*.004);if(cost>s.cash)return{err:`투어 준비금 ${won(cost)}이 필요합니다.`};
+ s.cash-=cost;ag.ap--;g.tourCd=s.t+4;const glob=1+ag.fac.global*.3;const big=g.fans>=3000000;const rev=Math.round(g.fans*.025*glob*(.6+rnd()*.8));
+ const hurt=chance(.12);const r={t:`${big?'월드 투어':g.fans>=800000?'아시아 투어':'국내 투어'} ${big?'스타디움 공연이 전석 매진됐습니다':'를 마쳤습니다'}.${hurt?` 마지막 공연에서 ${pick(g.mem).name}${P(g.mem[0].name,'이/가')} 발목을 다쳤습니다.`:''}`,e:{cash:rev,ag:{fans:[g.id,pctFans(g,.04,3000)],buzz:[g.id,10]}},g:big?3:2};
+ for(const x of g.mem)x.mood=clamp(x.mood-(hurt?15:8),0,100);if(big)unlock(s,'worldtour');const chips=applyEff(s,r.e,g.name);chips.unshift({v:'-'+won(cost),good:false});addLog(s,`[${ag.name}] ${g.name} ${r.t}`,'good',rev-cost);return{t:`${g.name} ${r.t}`,chips,g:r.g}}
+function agDisband(s,gid){const ag=s.ag,g=ag.gr.find(x=>x.id===gid);if(!g)return;g.gone=true;addLog(s,`[${ag.name}] ${g.name}${P(g.name,'이/가')} 활동을 마쳤습니다.`,'')}
+function agSell(s,price){const ag=s.ag;const v=price||Math.round(ag.val*ag.own*.8);s.cash+=v;addLog(s,`${ag.name}${P(ag.name,'을/를')} ${won(v)}에 팔았습니다.`,'mile',v);s.big.push({t:s.t,age:Math.floor(s.age),txt:`${ag.name} 매각`,g:1});unlock(s,'exit');s.agPast=Math.max(s.agPast||0,agTier(ag));if(s.career.agency==='own')s.career.agency=null;delete s.ag;return v}
+
+/* ---------- effects from events (applyEff hook) ---------- */
+function agEff(s,x,add){const ag=s.ag;if(!ag)return;const G=id=>ag.gr.find(g=>g.id===id);
+ if(x.fans){const g=G(x.fans[0]);if(g){const d=Math.round(x.fans[1]);g.fans=Math.max(0,g.fans+d);if(d)add(`${g.name} 팬 ${d>0?'+':'−'}${fansTxt(Math.abs(d))}`,d>0)}}
+ if(x.buzz){const g=G(x.buzz[0]);if(g){g.buzz=clamp(g.buzz+x.buzz[1],0,100);add(`${g.name} 화제성 ${x.buzz[1]>0?'↑':'↓'}`,x.buzz[1]>0)}}
+ if(x.hype){ag.hype=clamp(ag.hype+x.hype,0,100);add(`회사 평판 ${x.hype>0?'+':''}${x.hype}`,x.hype>0)}
+ if(x.mood){const[m]=agFindMember(ag,x.mood[0]);if(m)m.mood=clamp(m.mood+x.mood[1],0,100)}
+ if(x.st){const[m]=agFindMember(ag,x.st[0]);if(m){m.st[x.st[1]]=clamp(m.st[x.st[1]]+x.st[2],0,100);add(`${m.name} ${AG_ST.find(a=>a[0]===x.st[1])[1]} ${x.st[2]>0?'+':''}${x.st[2]}`,x.st[2]>0)}}
+ if(x.pre){const[m]=agFindMember(ag,x.pre[0]);if(m){m.pre=(m.pre||0)+x.pre[1];add(`${m.name} 데뷔 전 팬 +${fansTxt(x.pre[1])}`,true)}}
+ if(x.know){const[m]=agFindMember(ag,x.know);if(m)m.twKnown=true}
+ if(x.boost){ag.boost=(ag.boost||0)+x.boost;add(`다음 발매 완성도 ${x.boost>0?'↑':'↓'}`,x.boost>0)}
+ if(x.leave){const[m,g]=agFindMember(ag,x.leave);if(m){if(g){g.mem=g.mem.filter(y=>y!==m);if(!g.mem.length)g.gone=true}else ag.tr=ag.tr.filter(y=>y!==m);add(`${m.name} 떠남`,false)}}
+ if(x.gone){const g=G(x.gone);if(g){g.gone=true;add(`${g.name} 활동 종료`,false)}}
+ if(x.renew){const g=G(x.renew[0]);if(g){g.end=s.t+x.renew[1];g.renewed=1}}
+ if(x.pause){const g=G(x.pause[0]);if(g)g.cd=Math.max(g.cd,s.t+x.pause[1])}
+ if(x.own){ag.own=clamp(ag.own*x.own,.05,1);add(`내 지분 ${Math.round(ag.own*100)}%`,x.own>1)}
+ if(x.listed){ag.listed=true;unlock(s,'ipo');add('상장사',true)}
+ if(x.addTr){for(let i=0;i<x.addTr;i++){const m=newTrainee(s,i===0&&x.gem?'gem':'buy');m.q=2;ag.tr.push(m)}add(`연습생 +${x.addTr}명`,true)}
+ if(x.addGroup){const g={id:'g'+(++ag.nid),name:x.addGroup.name,mem:Array.from({length:x.addGroup.n},()=>{const m=newTrainee(s,'buy');m.q=8;return m}),fans:x.addGroup.fans,buzz:30,albums:[],debut:s.t,end:s.t+20,cd:s.t+1,best:0,gone:false,tourCd:0,qrev:0};ag.gr.push(g);add(`${g.name} 합류`,true)}
+ if(x.mil){const g=G(x.mil);if(g)for(const m of g.mem)if(m.sex==='M')m.mil=1}
+ if(x.sell){const v=agSell(s,x.sell>1?x.sell:0);add(`회사 매각 +${won(v)}`,true);return}
+ ag.val=agValue(s)}
+
+/* ---------- the quarter ---------- */
+function agStep(s,rep){const ag=s.ag;if(!ag)return[];const out=[];
+ const rate=1.5+ag.fac.room*.8;
+ for(const m of ag.tr){for(const[k]of AG_ST){m.st[k]=clamp(m.st[k]+rate*m.pot*(.6+rnd()*.8)*Math.max(.1,1-m.st[k]/105),0,100)}m.q++;m.mood=clamp(m.mood+R(-6,3),0,100);if(s.q===0)m.age++}
+ let inc=0,exp=agUpkeep(ag)+ag.tr.length*150;const glob=1+ag.fac.global*.25;
+ for(const g of agLive(ag)){if(s.q===0)g.mem.forEach(m=>m.age++);
+  const r=Math.round(g.fans*.008*(.4+g.buzz/100)*glob),c=Math.round(g.mem.length*(100+Math.min(400,g.fans/2000)));g.qrev=r-c;inc+=r;exp+=c;
+  if(s.t-g.debut>=8&&g.best<=1&&g.fans<20000&&!g.gone){g.gone=true;rep.news.push(`${g.name}${P(g.name,'이/가')} 2년 넘게 반응이 없어 조용히 활동을 마쳤습니다.`)}
+  g.buzz=Math.round(g.buzz*.75);const last=g.albums.length?g.albums[g.albums.length-1].t:g.debut;if(s.t-last>=4)g.fans=Math.round(g.fans*.97);g.mem.forEach(m=>m.mood=clamp(m.mood+3,0,100))}
+ s.cash+=inc-exp;if(inc)rep.inc.push([`${ag.name} 아티스트 수익`,inc]);rep.exp.push([`${ag.name} 운영비`,-exp]);ag.lastProfit=inc-exp;
+ ag.loss=inc-exp<0?(ag.loss||0)+1:0;if(ag.loss===4||ag.loss===8)rep.news.push(`${ag.name}${P(ag.name,'이/가')} ${ag.loss/4}년째 적자입니다. 안 되는 팀은 활동을 정리하거나, 연습생 수를 줄여 보세요.`);
+ const best=Math.max(0,...agLive(ag).map(g=>g.buzz));ag.hype=clamp(Math.round(ag.hype+(best*.5+agTier(ag)*6+s.fame*.1-ag.hype)*.1),0,100);
+ ag.val=agValue(s);ag.hist.push(ag.val);if(ag.hist.length>80)ag.hist.shift();
+ const tier=agTier(ag);if(tier>ag.maxTier){ag.maxTier=tier;out.push({type:'news',kicker:'회사',title:`${ag.name}, ${AG_TIERS[tier][1]}로`,txt:`회사 가치가 ${won(ag.val)}이 됐습니다. 업계에서 ${ag.name}${P(ag.name,'을/를')} ‘${AG_TIERS[tier][1]}’로 부르기 시작했습니다.`,chips:[],g:2});if(tier>=4)unlock(s,'ag_big');if(tier>=6)unlock(s,'ag_global')}
+ if(s.q===3){const won1=[];for(const g of agLive(ag)){const yr=g.albums.filter(a=>a.y===s.year);if(!yr.length)continue;const b=Math.max(...yr.map(a=>a.tier));const rookie=Math.floor(g.debut/4)===Math.floor(s.t/4);
+  let aw=null;if(b>=4&&chance(.15+(b-4)*.35+Math.min(.3,g.fans/3e7)))aw='대상';else if(rookie&&b>=2&&chance(.25+b*.12))aw='신인상';else if(b>=3&&chance(.5))aw='본상';
+  if(aw){ag.stats.award++;ag.hype=clamp(ag.hype+(aw==='대상'?12:4),0,100);g.fans+=pctFans(g,aw==='대상'?.15:.05,5000);if(aw==='대상')unlock(s,'ag_daesang');won1.push([g,aw])}}
+  if(won1.length){const top=won1.find(x=>x[1]==='대상');out.push({type:'news',kicker:'연말 시상식',title:top?`${top[0].name} 대상`:`${ag.name} 수상`,txt:won1.map(([g,aw])=>aw==='대상'?`${g.name}${P(g.name,'이/가')} 대상을 받았습니다. 무대 위에서 멤버들이 울었고, 객석의 내가 더 울었습니다.`:`${g.name}${P(g.name,'이/가')} ${aw}${P(aw,'을/를')} 받았습니다.`).join(' '),chips:[],g:top?3:2})}}
+ ag.auds=null;ag.ap=agAPMax(ag);return out}
+
+/* ---------- events: every one is about your actual artists ---------- */
+const AGEV=[];const AGEV_BY={};function AE(o){AGEV.push(o);AGEV_BY[o.id]=o}
+const anyMem=(ag,pref)=>{const all=agLive(ag).flatMap(g=>g.mem.map(m=>[m,g]));if(!all.length)return null;const p=pref?all.filter(([m])=>pref(m)):[];return pick(p.length&&chance(.7)?p:all)};
+const ctxM=(ag,pref)=>{const x=anyMem(ag,pref);return x?{m:x[0],g:x[1]}:null};
+const ctxG=(ag,f)=>{const gs=agLive(ag).filter(f||(()=>true));return gs.length?{g:pick(gs)}:null};
+const ctxT=(ag,f)=>{const ts=ag.tr.filter(f||(()=>true));return ts.length?{m:pick(ts)}:null};
+AE({id:'dating',w:1.3,ctx:ag=>ctxM(ag,m=>m.flaw==='lover'),title:c=>`${c.m.name} 열애설`,desc:c=>`${c.g.name} ${c.m.name}의 데이트 사진이 커뮤니티에 올라왔습니다. 팬덤이 밤새 술렁입니다.`,
+ hide:(s,c)=>c.m.flaw==='lover'?{real:1}:{real:.3,rumor:.55,promo:.15},
+ opts:[{t:'쿨하게 인정한다',go:{real:{respect:.55,backlash:.45},rumor:{confused:1},promo:{respect:.5,confused:.5}}},{t:'사실무근, 법적 대응',go:{real:{exposed:.6,quiet:.4},rumor:{clean:.8,quiet:.2},promo:{clean:.6,quiet:.4}}},{t:'사생활이라며 침묵',go:{'*':{quiet:.7,backlash:.3}}}],
+ good:{respect:1,clean:1,quiet:0,backlash:-1,exposed:-2,confused:-1},
+ out:{respect:(s,c)=>({t:'팬들이 축하해 줬습니다. 솔직하다는 평에 호감이 올랐습니다.',e:{ag:{fans:[c.g.id,-pctFans(c.g,.02)],buzz:[c.g.id,12]}}}),backlash:(s,c)=>({t:'팬덤 일부가 등을 돌렸습니다. 앨범 반품 인증이 올라옵니다.',e:{ag:{fans:[c.g.id,-pctFans(c.g,.08)],mood:[c.m.id,-15]}}}),
+  exposed:(s,c)=>({t:'두 번째 사진이 나왔습니다. 거짓말까지 들통났습니다.',e:{ag:{fans:[c.g.id,-pctFans(c.g,.15)],hype:-5,mood:[c.m.id,-20]}}}),clean:(s,c)=>({t:'합성 사진으로 밝혀졌습니다. 팬덤이 더 단단해졌습니다.',e:{ag:{fans:[c.g.id,pctFans(c.g,.03,1000)]}}}),
+  quiet:()=>({t:'며칠 시끄럽다가 잠잠해졌습니다.',e:{}}),confused:(s,c)=>({t:'하지도 않은 연애를 인정해 버렸습니다. 해명하느라 진땀을 뺐습니다.',e:{ag:{fans:[c.g.id,-pctFans(c.g,.03)],hype:-2}}})}});
+AE({id:'fancam',w:1.2,ctx:ag=>ctxM(ag,m=>m.st.da>55),title:c=>`${c.m.name} 직캠 역주행`,desc:c=>`대학 축제에서 찍힌 ${c.g.name} ${c.m.name}의 직캠이 조회수 500만을 넘었습니다. 댓글이 전부 “이 팀 누구예요?”입니다.`,hide:{real:.7,bot:.3},
+ opts:[{t:'컴백을 급하게 앞당긴다',sub:'추가 제작비',cost:()=>5000,go:{real:{boom:.7,ok:.3},bot:{fizzle:1}}},{t:'직캠 주인공 개인 콘텐츠를 푼다',go:{real:{ok:.7,boom:.3},bot:{fizzle:.6,ok:.4}}},{t:'조용히 지켜본다',go:{real:{ok:.5,fizzle:.5},bot:{fizzle:1}}}],
+ good:{boom:3,ok:1,fizzle:0},
+ out:{boom:(s,c)=>({t:'역주행 열차에 제대로 올라탔습니다. 음원 차트를 거꾸로 거슬러 올라갑니다!',e:{ag:{fans:[c.g.id,pctFans(c.g,.8,100000)],buzz:[c.g.id,60]},cash:R(2000,8000)}}),ok:(s,c)=>({t:'팬이 꽤 늘었습니다.',e:{ag:{fans:[c.g.id,pctFans(c.g,.25,30000)],buzz:[c.g.id,25]}}}),fizzle:()=>({t:'알고 보니 조회수 대부분이 해외 봇이었습니다. 반짝하고 끝났습니다.',e:{}})}});
+AE({id:'poach',w:1,ctx:ag=>{const c=ctxT(ag,m=>agAvg(m)>=35);if(!c)return null;c.x={fee:Math.round((c.m.cost*R(3,6)+agAvg(c.m)*60)/100)*100};return c},title:c=>`연습생 ${c.m.name} 스카우트 제의`,desc:c=>`대형 기획사가 연습생 ${c.m.name}${P(c.m.name,'을/를')} 데려가고 싶다며 이적료 ${won(c.x.fee)}을 제시했습니다.`,
+ hide:(s,c)=>c.m.pot>=1.25?{gem:1}:{gem:.25,normal:.75},
+ opts:[{t:'판다',go:{'*':{sold:1}}},{t:'절대 못 보낸다',go:{'*':{kept:1}}},{t:'몸값을 두 배로 부른다',go:{gem:{doubled:.5,walk:.5},normal:{doubled:.35,walk:.65}}}],good:{sold:1,kept:0,doubled:2,walk:-1},
+ out:{sold:(s,c,h)=>({t:`${won(c.x.fee)}을 받고 보냈습니다.`,e:{cash:c.x.fee,ag:{leave:c.m.id},later:h==='gem'?[{t:R(6,10),txt:`예전에 보낸 연습생 ${c.m.name}${P(c.m.name,'이/가')} 그 회사에서 데뷔해 1위를 했습니다. 축하 화환을 보내며 속이 쓰렸습니다.`,e:{mental:-8},g:-1}]:undefined}}),
+  kept:(s,c)=>({t:`${c.m.name}${P(c.m.name,'이/가')} “대표님 믿을게요”라고 했습니다.`,e:{ag:{mood:[c.m.id,15]}}}),doubled:(s,c)=>({t:`정말로 두 배를 받았습니다. ${won(c.x.fee*2)}.`,e:{cash:c.x.fee*2,ag:{leave:c.m.id}}}),walk:(s,c)=>({t:'협상이 결렬됐습니다. 연습생은 남았지만 분위기가 어색해졌습니다.',e:{ag:{mood:[c.m.id,-10]}}})}});
+AE({id:'school',w:1,ctx:ag=>ctxM(ag,m=>m.flaw==='past'),title:c=>`${c.m.name} 학창 시절 논란`,desc:c=>`한 커뮤니티에 “${c.g.name} ${c.m.name}에게 학창 시절 괴롭힘을 당했다”는 글이 올라왔습니다. 기사가 쏟아집니다.`,
+ hide:(s,c)=>c.m.flaw==='past'?{yes:.75,mixed:.25}:{no:.65,mixed:.25,yes:.1},
+ opts:[{t:'강경 대응, 고소한다',go:{no:{cleared:.85,drag:.15},mixed:{drag:.6,exposed:.4},yes:{exposed:.8,drag:.2}}},{t:'활동 중단하고 사실을 확인한다',go:{no:{cleared:.7,drag:.3},mixed:{apology:.7,drag:.3},yes:{apology:.6,exposed:.4}}},{t:'멤버를 바로 내보낸다',go:{no:{cutwrong:1},mixed:{cutok:1},yes:{cutok:1}}}],
+ good:{cleared:2,drag:-1,exposed:-3,apology:-1,cutwrong:-2,cutok:0},
+ out:{cleared:(s,c)=>({t:'허위로 밝혀졌습니다. 글쓴이가 사과문을 올렸고, 팬덤이 더 뭉쳤습니다.',e:{ag:{fans:[c.g.id,pctFans(c.g,.05,2000)],hype:2}}}),drag:(s,c)=>({t:'진실 공방이 몇 달째 이어졌습니다. 팀 활동이 멈췄습니다.',e:{ag:{fans:[c.g.id,-pctFans(c.g,.05)],buzz:[c.g.id,-15],pause:[c.g.id,2]}}}),
+  exposed:(s,c)=>({t:'증거가 나왔습니다. 결국 멤버가 팀을 떠났고, 회사도 욕을 먹었습니다.',e:{ag:{fans:[c.g.id,-pctFans(c.g,.2)],hype:-8,leave:c.m.id}}}),apology:(s,c)=>({t:'사과하고 한동안 자숙했습니다.',e:{ag:{fans:[c.g.id,-pctFans(c.g,.08)],pause:[c.g.id,2]}}}),
+  cutwrong:(s,c)=>({t:'나중에 의혹이 거짓으로 밝혀졌습니다. 성급하게 내보낸 회사에 팬들이 등을 돌렸습니다.',e:{ag:{fans:[c.g.id,-pctFans(c.g,.15)],hype:-6,leave:c.m.id}}}),cutok:(s,c)=>({t:'빠른 결단이라는 평을 받았습니다. 팀은 한 명이 줄었습니다.',e:{ag:{fans:[c.g.id,-pctFans(c.g,.04)],leave:c.m.id}}})}});
+AE({id:'variety',w:1.2,ctx:ag=>ctxM(ag),title:c=>`${c.m.name} 예능 섭외`,desc:c=>`인기 예능 PD가 ${c.g.name} ${c.m.name}${P(c.m.name,'을/를')} 콕 집어 섭외하고 싶다고 합니다.`,hide:null,
+ opts:[{t:'고정 멤버로 보낸다',go:{'*':{chara:.35,ok:.45,flop:.2}}},{t:'한 번만 나간다',go:{'*':{ok:.6,chara:.15,flop:.25}}},{t:'거절한다',go:{'*':{none:1}}}],good:{chara:2,ok:1,flop:-1,none:0},
+ out:{chara:(s,c)=>({t:`${c.m.name}${P(c.m.name,'이/가')} ‘${pick(['국민 막내','허당 요정','사투리 장인','먹방 천재'])}’로 떴습니다. 팀 이름까지 실검에 올랐습니다.`,e:{cash:R(500,2000),ag:{fans:[c.g.id,pctFans(c.g,.3,50000)],buzz:[c.g.id,20],st:[c.m.id,'va',5]}}}),
+  ok:(s,c)=>({t:'무난하게 출연료를 받았습니다.',e:{cash:R(300,1500),ag:{buzz:[c.g.id,5]}}}),flop:(s,c)=>({t:'편집이 이상하게 됐습니다. 악플이 달렸습니다.',e:{ag:{fans:[c.g.id,-pctFans(c.g,.02)],mood:[c.m.id,-12]}}}),none:()=>({t:'팀 활동에 집중하기로 했습니다.',e:{}})}});
+AE({id:'luxury',w:.9,ctx:ag=>{const c=ctxM(ag);if(!c||c.g.fans<500000)return null;c.x={fee:Math.round(3000+c.g.fans*.02)};return c},title:c=>`명품 앰배서더 제안`,desc:c=>`해외 명품 브랜드가 ${c.g.name} ${c.m.name}${P(c.m.name,'을/를')} 글로벌 앰배서더로 원합니다. 제시액 ${won(c.x.fee)}.`,hide:{real:.75,lowball:.25},
+ opts:[{t:'바로 수락',go:{real:{deal:1},lowball:{cheap:1}}},{t:'몸값을 올린다',go:{real:{bigdeal:.55,lost:.45},lowball:{deal:.5,lost:.5}}},{t:'팀 전체 계약을 요구한다',go:{'*':{teamdeal:.45,lost:.55}}}],good:{deal:1,bigdeal:2,teamdeal:2,cheap:0,lost:-1},
+ out:{deal:(s,c)=>({t:'계약했습니다. 공항 사진이 화보가 됩니다.',e:{cash:c.x.fee,ag:{buzz:[c.g.id,8]}}}),bigdeal:(s,c)=>({t:'브랜드가 두 배를 불렀습니다.',e:{cash:c.x.fee*2,ag:{buzz:[c.g.id,10]}}}),teamdeal:(s,c)=>({t:'팀 전체가 앰배서더가 됐습니다. 해외 팬이 몰려옵니다.',e:{cash:Math.round(c.x.fee*2.5),ag:{fans:[c.g.id,pctFans(c.g,.1)],buzz:[c.g.id,15]}}}),
+  cheap:(s,c)=>({t:'알고 보니 “앰배서더”가 아니라 “프렌즈” 계약이었습니다. 돈이 훨씬 적습니다.',e:{cash:Math.round(c.x.fee*.3)}}),lost:()=>({t:'브랜드가 다른 아이돌과 계약했습니다.',e:{}})}});
+AE({id:'japan',w:.9,ctx:ag=>{const c=ctxG(ag,g=>g.fans>=150000&&!g.jp);return c},title:c=>`${c.g.name} 일본 진출 제안`,desc:c=>`일본 레이블이 ${c.g.name}의 현지 데뷔를 제안했습니다. 조건이 좋아 보입니다. 너무 좋아 보입니다.`,hide:{real:.55,scam:.2,slow:.25},
+ opts:[{t:'현지 레이블과 손잡는다',cost:()=>10000,go:{real:{hit:.6,slow:.4},scam:{scam:1},slow:{slow:1}}},{t:'우리가 직접 투어부터 돈다',cost:()=>30000,go:{'*':{hit:.45,slow:.55}}},{t:'아직 이르다',go:{'*':{none:1}}}],good:{hit:2,slow:0,scam:-2,none:0},
+ out:{hit:(s,c)=>({t:'오리콘 차트에 이름이 올랐습니다. 도쿄돔이 꿈이 아니게 됐습니다.',e:{cash:R(10000,40000),ag:{fans:[c.g.id,pctFans(c.g,.5,100000)],buzz:[c.g.id,15]}}}),slow:(s,c)=>({t:'반응이 느립니다. 작은 공연장부터 다시 채워야 합니다.',e:{ag:{fans:[c.g.id,pctFans(c.g,.08,10000)]}}}),scam:()=>({t:'현지 파트너가 계약금을 들고 사라졌습니다.',e:{ag:{hype:-3}}}),none:()=>({t:'국내 활동에 집중하기로 했습니다.',e:{}})}});
+AE({id:'sajaegi',w:.7,ctx:ag=>ctxG(ag),title:()=>'음원 사재기 브로커',desc:c=>`정체불명의 브로커가 “5천만 원이면 ${c.g.name} 다음 곡을 차트 상위권에 올려 주겠다”고 합니다.`,hide:null,
+ opts:[{t:'거절한다',go:{'*':{clean:1}}},{t:'이번 한 번만',cost:()=>5000,go:{'*':{boost:.65,caught:.35}}},{t:'녹취해서 신고한다',go:{'*':{hero:.6,ignored:.4}}}],good:{clean:0,boost:1,caught:-3,hero:2,ignored:0},
+ out:{clean:()=>({t:'정직하게 가기로 했습니다.',e:{ag:{hype:1}}}),boost:()=>({t:'다음 발매 때 수상한 숫자가 붙을 겁니다.',e:{ag:{boost:12}}}),caught:(s,c)=>({t:'사재기 정황이 기사로 터졌습니다. 회사 이름이 포털 메인에 걸렸습니다.',e:{ag:{hype:-15,fans:[c.g.id,-pctFans(c.g,.15)]},rep:-10}}),
+  hero:(s,c)=>({t:'사재기 업계를 고발한 회사로 이름이 났습니다. 팬들이 자랑스러워합니다.',e:{ag:{hype:6,fans:[c.g.id,pctFans(c.g,.03,2000)]},rep:6}}),ignored:()=>({t:'신고는 흐지부지됐습니다.',e:{}})}});
+AE({id:'composer',w:1,ctx:(ag,s)=>{const c=ctxG(ag);if(!c)return null;c.x={fee:3000+agTier(ag)*5000};return c},title:()=>'유명 작곡가의 곡',desc:c=>`히트곡 제조기로 불리는 작곡가가 ${c.g.name}에게 곡을 주겠다고 합니다. 값은 ${won(c.x.fee)}.`,hide:{gem:.5,bside:.3,recycled:.2},
+ opts:[{t:'산다',cost:(s,c)=>c.x.fee,go:{gem:{gem:1},bside:{bside:1},recycled:{recycled:1}}},{t:'반값에 공동 작업을 제안한다',cost:(s,c)=>Math.round(c.x.fee/2),go:{gem:{bside:.6,gem:.4},bside:{bside:1},recycled:{recycled:1}}},{t:'우리 프로듀서를 믿는다',go:{'*':{inhouse:.4,none:.6}}}],good:{gem:2,bside:1,recycled:-1,inhouse:1,none:0},
+ out:{gem:()=>({t:'곡이 기가 막힙니다. 다음 컴백곡으로 아껴 둡니다.',e:{ag:{boost:14}}}),bside:()=>({t:'나쁘지 않은 곡입니다.',e:{ag:{boost:5}}}),recycled:()=>({t:'다른 가수에게 줬다가 돌려받은 곡이었습니다.',e:{ag:{hype:-1}}}),inhouse:()=>({t:'우리 프로듀서가 밤새 더 좋은 곡을 뽑아 왔습니다.',e:{ag:{boost:6}}}),none:()=>({t:'평소처럼 준비합니다.',e:{}})}});
+AE({id:'leave',w:1,ctx:ag=>ctxM(ag,m=>m.mood<35||m.flaw==='attitude'),title:c=>`${c.m.name}의 탈퇴 요구`,desc:c=>`${c.g.name} ${c.m.name}${P(c.m.name,'이/가')} 대표실 문을 두드렸습니다. “저 팀 나가고 싶어요.”`,hide:(s,c)=>c.m.flaw==='attitude'?{stubborn:.7,tired:.3}:{tired:.7,stubborn:.3},
+ opts:[{t:'보너스로 붙잡는다',cost:(s,c)=>Math.round(3000+c.g.fans*.002),go:{tired:{stay:.85,go:.15},stubborn:{stay:.4,go:.6}}},{t:'솔로 앨범을 약속한다',go:{tired:{stay:.7,go:.3},stubborn:{stay:.6,go:.4}}},{t:'보내 준다',go:{'*':{bye:1}}}],good:{stay:1,go:-1,bye:-1},
+ out:{stay:(s,c)=>({t:`${c.m.name}${P(c.m.name,'이/가')} 마음을 돌렸습니다.`,e:{ag:{mood:[c.m.id,30]}}}),go:(s,c)=>({t:`${c.m.name}${P(c.m.name,'이/가')} 결국 짐을 쌌습니다.`,e:{ag:{leave:c.m.id,fans:[c.g.id,-pctFans(c.g,.08)]}}}),bye:(s,c)=>({t:'웃으며 보내 줬습니다. 팬들은 아쉬워했지만 회사를 욕하진 않았습니다.',e:{ag:{leave:c.m.id,fans:[c.g.id,-pctFans(c.g,.05)],hype:1}}})}});
+AE({id:'sasaeng',w:.7,ctx:ag=>ctxG(ag,g=>g.fans>=100000),title:()=>'사생팬',desc:c=>`${c.g.name} 숙소 앞에 매일 밤 같은 차가 서 있습니다. 멤버들이 잠을 못 잡니다.`,hide:null,
+ opts:[{t:'경호팀을 보강한다',cost:()=>2000,go:{'*':{safe:1}}},{t:'숙소를 옮긴다',cost:()=>5000,go:{'*':{moved:1}}},{t:'경찰에 신고만 한다',go:{'*':{safe:.5,scare:.5}}}],good:{safe:1,moved:1,scare:-1},
+ out:{safe:()=>({t:'경호팀이 붙자 차가 사라졌습니다.',e:{}}),moved:()=>({t:'새 숙소에서 멤버들이 처음으로 푹 잤습니다.',e:{}}),scare:(s,c)=>({t:'신고 뒤에도 차는 또 왔습니다. 멤버 하나가 공황 증세를 보입니다.',e:{ag:{mood:[pick(c.g.mem).id,-20]}}})}});
+AE({id:'viral',w:1.1,ctx:ag=>ctxT(ag),title:c=>`연습생 ${c.m.name}, SNS 화제`,desc:c=>`연습생 ${c.m.name}의 연습 영상이 SNS에서 퍼지고 있습니다. “이 사람 언제 데뷔해요?”라는 댓글이 수천 개입니다.`,hide:(s,c)=>c.m.flaw==='past'?{past:1}:{real:.8,past:.2},
+ opts:[{t:'데뷔 전 팬덤을 키운다',sub:'콘텐츠 제작비',cost:()=>1000,go:{real:{fandom:1},past:{dug:1}}},{t:'연습에만 집중시킨다',go:{real:{focus:1},past:{quiet:1}}}],good:{fandom:2,focus:1,dug:-2,quiet:0},
+ out:{fandom:(s,c)=>({t:'데뷔도 안 했는데 팬카페가 생겼습니다.',e:{ag:{pre:[c.m.id,R(20000,90000)]}}}),focus:(s,c)=>({t:'연습에 집중했습니다. 실력이 쑥 늘었습니다.',e:{ag:{st:[c.m.id,pick(AG_ST)[0],R(3,6)]}}}),dug:(s,c)=>({t:'관심이 몰리자 오래된 SNS 글이 발굴됐습니다. 데뷔 전부터 논란입니다.',e:{ag:{mood:[c.m.id,-20],hype:-3}}}),quiet:()=>({t:'조용히 지나갔습니다.',e:{}})}});
+AE({id:'buyout',w:.6,ctx:(ag,s)=>{if(agTier(ag)<2)return null;return{x:{price:Math.round(ag.val*ag.own*(1.3+rnd()*.9))}}},title:()=>'회사 인수 제안',desc:(c,s)=>`대형 엔터 그룹이 ${s.ag.name}${P(s.ag.name,'을/를')} 통째로 사겠다고 합니다. 제시액 ${won(c.x.price)}.`,hide:{real:.7,lowball:.3},
+ opts:[{t:'판다',go:{real:{sold:1},lowball:{soldlow:1}}},{t:'거절한다',go:{'*':{pride:1}}},{t:'지분 30%만 넘긴다',go:{'*':{part:1}}}],good:{sold:2,soldlow:0,pride:1,part:1},
+ out:{sold:(s,c)=>({t:`도장을 찍었습니다. ${won(c.x.price)}. 연습생들의 배웅을 받으며 회사를 나왔습니다.`,e:{ag:{sell:c.x.price}}}),soldlow:(s,c)=>({t:'실사 과정에서 값이 계속 깎였습니다. 결국 처음 말보다 훨씬 싸게 팔았습니다.',e:{ag:{sell:Math.round(c.x.price*.55)}}}),
+  pride:()=>({t:'“우리는 안 팝니다.” 이 말이 기사 제목이 됐습니다.',e:{ag:{hype:3}}}),part:(s,c)=>({t:'지분 일부를 넘기고 든든한 우군을 얻었습니다.',e:{cash:Math.round(c.x.price*.3),ag:{own:.7,hype:2}}})}});
+AE({id:'buyag',w:.7,ctx:(ag,s)=>agTier(ag)>=1?{x:{price:Math.round(R(1,4)*10000*(1+agTier(ag)))}}:null,title:()=>'매물로 나온 기획사',desc:c=>`연습생과 데뷔 팀 하나를 가진 작은 기획사가 ${won(c.x.price)}에 매물로 나왔습니다. 대표가 급하게 팔고 싶어 합니다.`,hide:{gem:.3,debt:.3,normal:.4},
+ opts:[{t:'인수한다',cost:(s,c)=>c.x.price,go:{gem:{gem:1},debt:{debt:1},normal:{normal:1}}},{t:'실사부터 하고 인수한다',sub:'실사비 2천만 원 더',cost:(s,c)=>c.x.price+2000,go:{gem:{gem:1},debt:{walk:1},normal:{normal:1}}},{t:'관심 없다',go:{'*':{none:1}}}],good:{gem:3,normal:1,debt:-2,walk:0,none:0},
+ out:{gem:(s,c)=>({t:'숨은 원석이 있었습니다. 연습생 하나가 범상치 않습니다. 딸려 온 팀도 팬이 꽤 됩니다.',e:{ag:{addTr:3,gem:1,addGroup:{name:grName(),n:R(3,5),fans:R(30000,150000)}}}}),normal:(s,c)=>({t:'연습생 몇 명과 작은 팀 하나를 품었습니다.',e:{ag:{addTr:2,addGroup:{name:grName(),n:R(3,5),fans:R(5000,40000)}}}}),
+  debt:(s,c)=>({t:`인수하고 보니 숨겨진 빚 ${won(Math.round(c.x.price*.6))}이 있었습니다.`,e:{cash:-Math.round(c.x.price*.6),ag:{addTr:2}}}),walk:(s,c)=>({t:'실사에서 숨은 빚이 나왔습니다. 인수를 접고 계약금을 돌려받았습니다.',e:{cash:c.x.price}}),none:()=>({t:'지나쳤습니다.',e:{}})}});
+AE({id:'investor',w:.6,ctx:(ag,s)=>agTier(ag)>=1&&ag.own>.5?{x:{amt:Math.round(ag.val*R(3,6)/10)}}:null,title:()=>'투자 유치 제안',desc:c=>`벤처캐피털이 ${won(c.x.amt)}을 넣겠다고 합니다. 대신 지분 20%를 원합니다.`,hide:{good:.6,meddle:.4},
+ opts:[{t:'받는다',go:{good:{good:1},meddle:{meddle:1}}},{t:'거절한다',go:{'*':{none:1}}}],good:{good:2,meddle:0,none:0},
+ out:{good:(s,c)=>({t:'투자금이 들어왔습니다. 투자사가 해외 인맥까지 소개해 줍니다.',e:{cash:c.x.amt,ag:{own:.8,hype:5}}}),meddle:(s,c)=>({t:'돈은 들어왔지만 투자사가 데뷔 콘셉트까지 간섭합니다.',e:{cash:c.x.amt,ag:{own:.8,hype:-4}}}),none:()=>({t:'우리 힘으로 가기로 했습니다.',e:{}})}});
+AE({id:'ipo',w:2,ctx:(ag,s)=>agTier(ag)>=4&&!ag.listed?{x:{v:Math.round(ag.val*ag.own*.25)}}:null,title:()=>'상장 제안',desc:(c,s)=>`증권사들이 ${s.ag.name} 상장을 서로 맡겠다고 합니다. 지분 25%를 팔면 약 ${won(c.x.v)}이 들어옵니다.`,hide:null,
+ opts:[{t:'상장한다',go:{'*':{hot:.5,ok:.35,cold:.15}}},{t:'아직 이르다',go:{'*':{none:1}}}],good:{hot:3,ok:2,cold:0,none:0},
+ out:{hot:(s,c)=>({t:'상장 첫날 상한가. 공모가보다 훨씬 비싸게 팔렸습니다.',e:{cash:Math.round(c.x.v*1.5),ag:{own:.75,listed:1,hype:8}}}),ok:(s,c)=>({t:'무난하게 상장했습니다.',e:{cash:c.x.v,ag:{own:.75,listed:1,hype:4}}}),cold:(s,c)=>({t:'시장이 얼어붙은 날 상장했습니다. 공모가가 깎였습니다.',e:{cash:Math.round(c.x.v*.7),ag:{own:.75,listed:1}}}),none:()=>({t:'때를 기다리기로 했습니다.',e:{}})}});
+AE({id:'plag',w:.6,ctx:ag=>ctxG(ag,g=>g.albums.length>0),title:c=>`${c.g.name} 표절 시비`,desc:c=>`${c.g.name}의 최근 곡이 해외 인디 밴드 노래와 비슷하다는 영상이 퍼졌습니다.`,hide:{no:.6,yes:.4},
+ opts:[{t:'원곡자와 조용히 합의한다',cost:()=>3000,go:{'*':{settled:1}}},{t:'정면 반박한다',go:{no:{cleared:1},yes:{scandal:1}}},{t:'곡 활동을 접는다',go:{'*':{pause:1}}}],good:{settled:0,cleared:1,scandal:-2,pause:-1},
+ out:{settled:()=>({t:'합의로 마무리했습니다.',e:{}}),cleared:(s,c)=>({t:'음악 전문가들이 코드 진행이 흔한 패턴이라고 정리했습니다.',e:{ag:{buzz:[c.g.id,5]}}}),scandal:(s,c)=>({t:'원곡자 측이 소송을 걸었습니다. 반박했던 게 더 욕을 먹었습니다.',e:{cash:-R(3000,10000),ag:{hype:-8,fans:[c.g.id,-pctFans(c.g,.1)]}}}),pause:(s,c)=>({t:'활동을 일찍 접었습니다.',e:{ag:{buzz:[c.g.id,-20]}}})}});
+AE({id:'injury',w:.8,ctx:ag=>ctxM(ag,m=>m.flaw==='injury'),title:c=>`${c.m.name} 부상`,desc:c=>`${c.g.name} ${c.m.name}${P(c.m.name,'이/가')} 리허설 중 무릎을 다쳤습니다. 이번 주 음악 방송이 걸려 있습니다.`,hide:null,
+ opts:[{t:'쉬게 한다',go:{'*':{rest:1}}},{t:'의자에 앉아서라도 무대에 선다',go:{'*':{moved:.6,worse:.4}}}],good:{rest:0,moved:2,worse:-2},
+ out:{rest:(s,c)=>({t:'완전체 무대는 미뤘지만 멤버는 금방 나았습니다.',e:{ag:{buzz:[c.g.id,-8],mood:[c.m.id,10]}}}),moved:(s,c)=>({t:'앉아서 부른 라이브가 화제가 됐습니다. “프로 정신” 영상이 퍼졌습니다.',e:{ag:{fans:[c.g.id,pctFans(c.g,.06,5000)],buzz:[c.g.id,10]}}}),worse:(s,c)=>({t:'부상이 심해졌습니다. 한동안 춤을 출 수 없습니다.',e:{ag:{st:[c.m.id,'da',-10],mood:[c.m.id,-20]}}})}});
+AE({id:'military',w:1.5,ctx:ag=>{const x=anyMem(ag,m=>m.sex==='M'&&m.age>=26&&!m.mil);if(!x||!(x[0].sex==='M'&&x[0].age>=26&&!x[0].mil))return null;return{m:x[0],g:x[1]}},title:c=>`${c.g.name} 입대 문제`,desc:c=>`${c.g.name} ${c.m.name}${P(c.m.name,'이/가')} 입영 통지서를 받았습니다. 다른 멤버들도 곧입니다.`,hide:null,
+ opts:[{t:'순서대로 입대, 팀은 유지',go:{'*':{serial:1}}},{t:'다 같이 입대하고 완전체로 돌아온다',go:{'*':{together:1}}}],good:{serial:0,together:1},
+ out:{serial:(s,c)=>({t:`${c.m.name}${P(c.m.name,'이/가')} 먼저 입대했습니다. 남은 멤버들이 빈자리를 채웁니다.`,e:{ag:{fans:[c.g.id,-pctFans(c.g,.04)],mil:c.g.id}}}),together:(s,c)=>({t:'멤버 전원이 함께 입대했습니다. 팬들이 “기다릴게”를 외쳤습니다.',e:{ag:{pause:[c.g.id,7],mil:c.g.id},later:[{t:7,txt:`${c.g.name}${P(c.g.name,'이/가')} 전역 후 완전체로 돌아왔습니다. 기다린 팬들이 공연장을 꽉 채웠습니다.`,e:{ag:{fans:[c.g.id,pctFans(c.g,.25,20000)],buzz:[c.g.id,50]}},g:2}]}})}});
+AE({id:'challenge',w:1,ctx:(ag,s)=>ctxG(ag,g=>g.albums.length&&s.t-g.albums[g.albums.length-1].t<=1),title:c=>`${c.g.name} 챌린지`,desc:c=>`${c.g.name} 신곡 안무 한 소절이 챌린지로 번질 조짐이 보입니다.`,hide:{viral:.5,meh:.5},
+ opts:[{t:'유명인 100명에게 챌린지를 부탁한다',cost:()=>3000,go:{viral:{boom:.8,small:.2},meh:{small:1}}},{t:'멤버들이 매일 직접 올린다',go:{viral:{small:.6,boom:.4},meh:{tired:1}}},{t:'그냥 둔다',go:{viral:{small:.7,boom:.3},meh:{none:1}}}],good:{boom:2,small:1,tired:-1,none:0},
+ out:{boom:(s,c)=>({t:'전 세계 챌린지가 됐습니다. 해외 스타들까지 따라 춥니다.',e:{ag:{fans:[c.g.id,pctFans(c.g,.4,50000)],buzz:[c.g.id,30]}}}),small:(s,c)=>({t:'꽤 퍼졌습니다.',e:{ag:{fans:[c.g.id,pctFans(c.g,.08,5000)],buzz:[c.g.id,8]}}}),tired:(s,c)=>({t:'반응은 없고 멤버들만 지쳤습니다.',e:{ag:{mood:[pick(c.g.mem).id,-10]}}}),none:()=>({t:'조용히 지나갔습니다.',e:{}})}});
+AE({id:'talent',w:2,ctx:ag=>{const x=ag.tr.concat(agLive(ag).flatMap(g=>g.mem)).find(m=>m.tw==='composer'&&!m.twKnown);return x?{m:x}:null},title:c=>`${c.m.name}의 숨은 재능`,desc:c=>`새벽 연습실에서 ${c.m.name}${P(c.m.name,'이/가')} 혼자 만든 곡을 흥얼거리는 걸 들었습니다. 이거, 좋은데?`,hide:null,
+ opts:[{t:'타이틀곡으로 쓴다',go:{'*':{title:.7,risky:.3}}},{t:'수록곡으로 넣는다',go:{'*':{bside:1}}},{t:'연습에나 집중하라고 한다',go:{'*':{nope:1}}}],good:{title:2,risky:0,bside:1,nope:-1},
+ out:{title:(s,c)=>({t:`${c.m.name}의 자작곡이 다음 타이틀곡이 됩니다. 작곡돌의 탄생입니다.`,e:{ag:{boost:12,know:c.m.id}}}),risky:(s,c)=>({t:'곡은 좋은데 아직 다듬을 게 많습니다.',e:{ag:{boost:4,know:c.m.id}}}),bside:(s,c)=>({t:'수록곡으로 넣었습니다. 팬들 사이에서 숨은 명곡이 됐습니다.',e:{ag:{boost:4,know:c.m.id}}}),nope:(s,c)=>({t:`${c.m.name}${P(c.m.name,'이/가')} 노트를 조용히 덮었습니다.`,e:{ag:{mood:[c.m.id,-15]}}})}});
+AE({id:'chaebol',w:2,ctx:ag=>{const x=ag.tr.concat(agLive(ag).flatMap(g=>g.mem)).find(m=>m.tw==='chaebol'&&!m.twKnown);return x?{m:x}:null},title:c=>`${c.m.name}의 정체`,desc:c=>`${c.m.name}${P(c.m.name,'을/를')} 데리러 온 차가 마이바흐입니다. 알고 보니 대기업 회장님 막내였습니다. 부모님이 회사를 찾아왔습니다.`,hide:{kind:.6,control:.4},
+ opts:[{t:'투자를 받는다',go:{kind:{fund:1},control:{meddle:1}}},{t:'정중히 거절한다',go:{'*':{proud:1}}}],good:{fund:2,meddle:0,proud:1},
+ out:{fund:(s,c)=>({t:'“우리 애 잘 부탁합니다.” 투자금이 들어왔습니다.',e:{cash:R(20000,100000),ag:{know:c.m.id,hype:3}}}),meddle:(s,c)=>({t:'돈은 들어왔지만 “우리 애를 센터로”라는 전화가 매일 옵니다.',e:{cash:R(20000,60000),ag:{know:c.m.id,hype:-3}}}),proud:(s,c)=>({t:`${c.m.name}${P(c.m.name,'이/가')} “실력으로만 봐 줘서 고마워요”라고 했습니다.`,e:{ag:{know:c.m.id,mood:[c.m.id,20]}}})}});
+AE({id:'reality',w:.8,ctx:ag=>ag.tr.length>=3?{}:null,title:()=>'데뷔 리얼리티 제안',desc:()=>'방송사가 우리 연습생들의 데뷔 과정을 리얼리티로 찍고 싶어 합니다.',hide:{star:.35,edit:.3,ok:.35},
+ opts:[{t:'찍는다',go:{star:{star:1},edit:{edit:1},ok:{ok:1}}},{t:'거절한다',go:{'*':{none:1}}}],good:{star:2,edit:-1,ok:1,none:0},
+ out:{star:(s)=>{const m=pick(s.ag.tr);return{t:`${m.name}${P(m.name,'이/가')} 방송 한 번에 스타가 됐습니다. 데뷔 전부터 팬카페 회원이 수만 명입니다.`,e:{ag:{pre:[m.id,R(60000,200000)],hype:3}}}},edit:(s)=>{const m=pick(s.ag.tr);return{t:`악마의 편집이 ${m.name}${P(m.name,'을/를')} 악역으로 만들었습니다.`,e:{ag:{mood:[m.id,-25]}}}},ok:(s)=>({t:'잔잔하게 화제가 됐습니다.',e:{ag:{hype:2,pre:[pick(s.ag.tr).id,R(5000,20000)]}}}),none:()=>({t:'연습에 집중하기로 했습니다.',e:{}})}});
+AE({id:'renew',w:0,ctx:()=>null,title:c=>`${c.g.name} 재계약`,desc:c=>`${c.g.name}${P(c.g.name,'이/가')} 데뷔 7년 차입니다. 전속 계약이 끝나 갑니다. 멤버들이 각자 다른 회사의 명함을 받았다는 소문이 돕니다.`,hide:(s,c)=>c.g.fans>2000000?{split:.5,loyal:.5}:{loyal:.6,split:.4},
+ opts:[{t:'전원 재계약한다',cost:(s,c)=>Math.round(c.g.mem.length*5000+c.g.fans*.01),go:{loyal:{all:1},split:{all:.5,one:.5}}},{t:'원하는 멤버만 잡는다',go:{'*':{one:1}}},{t:'아름답게 해체한다',go:{'*':{bye:1}}}],good:{all:2,one:0,bye:0},
+ out:{all:(s,c)=>({t:'전원 재계약! 팬들이 “7년 더”를 외쳤습니다.',e:{ag:{renew:[c.g.id,20],fans:[c.g.id,pctFans(c.g,.05)]}}}),one:(s,c)=>{const m=pick(c.g.mem);return{t:`${m.name}${P(m.name,'이/가')} 다른 회사로 떠났습니다. 나머지는 남았습니다.`,e:{ag:{renew:[c.g.id,20],leave:m.id,fans:[c.g.id,-pctFans(c.g,.1)]}}}},
+  bye:(s,c)=>({t:'마지막 콘서트를 열고 해체했습니다. 객석이 울음바다였습니다.',e:{cash:Math.round(c.g.fans*.02),ag:{gone:c.g.id}}})}});
+function agEvent(s){const ag=s.ag;if(!ag)return null;ag.cd=ag.cd||{};
+ const ren=agLive(ag).find(g=>s.t>=g.end&&!g.renewed);if(ren){ren.renewed=1;return prepAg(s,AGEV_BY.renew,{g:ren})}
+ const cand=[];for(const e of AGEV){if(!e.w||(ag.cd[e.id]||0)>s.t)continue;const c=e.ctx(ag,s);if(c)cand.push([[e,c],e.w*Math.pow(.6,s.seen['a_'+e.id]||0)])}
+ if(!cand.length)return null;const[e,c]=wpick(cand);ag.cd[e.id]=s.t+6;s.seen['a_'+e.id]=(s.seen['a_'+e.id]||0)+1;return prepAg(s,e,c)}
+function prepAg(s,e,c){const hd=typeof e.hide==='function'?e.hide(s,c):e.hide;const h=hd?wpick(Object.entries(hd)):'*';
+ return{kind:'ag',eid:e.id,gid:c.g?c.g.id:null,mid:c.m?c.m.id:null,x:c.x||null,h,title:e.title(c,s),desc:e.desc(c,s),note:`${s.ag.name} · ${agTierKo(s.ag)}${c.g?` · ${c.g.name} 팬 ${fansTxt(c.g.fans)}`:''}`,
+  opts:e.opts.map(o=>({t:o.t,sub:o.sub||'',cost:o.cost?Math.round(o.cost(s,c)/10)*10:0,ref:o}))}}
+function resolveAg(s,prep,i){const ag=s.ag;if(!ag)return{t:'회사는 이미 당신 손을 떠났습니다.',chips:[],g:0};const e=AGEV_BY[prep.eid],o=prep.opts[i];
+ const g=prep.gid?ag.gr.find(x=>x.id===prep.gid):null;const[m]=prep.mid?agFindMember(ag,prep.mid):[null];if((prep.gid&&!g)||(prep.mid&&!m))return{t:'그 사이 상황이 바뀌었습니다.',chips:[],g:0};
+ if(o.cost){if(o.cost>s.cash)return{err:'돈이 모자랍니다.'};s.cash-=o.cost}
+ const dist=o.ref.go[prep.h]||o.ref.go['*']||Object.values(o.ref.go)[0];const key=sampleOut(s,e.good,dist);const r=e.out[key](s,{g,m,x:prep.x},prep.h);
+ const chips=applyEff(s,r.e,prep.title);if(o.cost)chips.unshift({v:'-'+won(o.cost),good:false});const gg=(e.good||{})[key]||0;
+ addLog(s,`[${ag.name}] ${prep.title} → ${o.t}`,'dec',o.cost?-o.cost:null);addLog(s,r.t,gg>0?'good':gg<0?'bad':'',r.e&&r.e.cash||null);if(Math.abs(gg)>=2)s.big.push({t:s.t,age:Math.floor(s.age),txt:r.t,g:gg});return{t:r.t,chips,g:gg}}
+
+/* ================================================================
+   데뷔각 — 2막 ②: 내 방송국 (프로그램 기획 · 섭외 · 시청률 · 채널 키우기)
+   개인 채널에서 시작해 지상파급 방송국, 글로벌 OTT까지.
+   ================================================================ */
+const BC_TIERS=[[0,'개인 채널'],[20000,'웹예능 스튜디오'],[200000,'케이블 채널'],[1500000,'종합편성 채널'],[8000000,'지상파급 방송국'],[40000000,'미디어 그룹'],[150000000,'글로벌 OTT']];
+const GENRE={
+ web:{ko:'웹예능',base:31,cost:1,ad:.8,life:4,d:'싸고 빠르게. 터지면 밈이 됩니다'},
+ variety:{ko:'예능',base:33,cost:2,ad:1,life:6,d:'MC와 케미가 전부'},
+ drama:{ko:'드라마',base:32,cost:5,ad:1.6,life:2,d:'비싸지만 터지면 해외 판권까지'},
+ music:{ko:'음악 방송',base:25,cost:1.5,ad:.6,life:12,d:'시청률은 낮아도 내 기획사 가수들 화제성이 오릅니다'},
+ audition:{ko:'오디션 서바이벌',base:33,cost:3,ad:1.3,life:3,d:'끝나면 프로젝트 그룹이 탄생합니다'},
+ dating:{ko:'연애 리얼리티',base:31,cost:1.5,ad:1.1,life:3,d:'화제성 폭발 아니면 논란 폭발'},
+ docu:{ko:'시사 · 다큐',base:27,cost:1,ad:.7,life:4,d:'시청률은 낮아도 채널 신뢰도가 오릅니다'}};
+const BC_BUD=[{ko:'소박하게',m:1,q:0},{ko:'제대로',m:3,q:6},{ko:'대작',m:10,q:13}];
+const BC_FAC={
+ studio:{ko:'스튜디오',d:'프로그램 완성도가 올라가요',cost:[5000,50000,300000],lv:['임대 스튜디오','자체 스튜디오','오픈 세트장']},
+ writer:{ko:'PD · 작가진',d:'기획이 좋아져요',cost:[10000,60000,300000],lv:['프리랜서 팀','전속 작가진','스타 PD 군단']},
+ ch:{ko:'채널 등급',d:'시청자가 많아지고 광고 단가가 크게 올라요',cost:[100000,1000000,5000000],lv:['케이블 채널 개국','종합편성 채널 승인','지상파급 네트워크']},
+ ott:{ko:'자체 OTT',d:'모든 프로그램 수익이 늘고 해외 시청자가 생겨요',cost:[200000,1000000,4000000],lv:['OTT 앱 출시','구독자 천만','글로벌 서비스']},
+ global:{ko:'해외 판권팀',d:'히트작이 끝나면 해외에 포맷을 팔아요',cost:[30000,150000,800000],lv:['판권 담당자','해외 세일즈팀','글로벌 배급망']}};
+const BC_STEM=['한빛','새벽','파랑','온누리','별바다','모모','큐브','레인보우','노을','바람','두근','띵동'];
+const BC_SUF=[' 채널',' TV',' 미디어',' 스튜디오',' 방송'];
+const SHOW_A=['어쩌다','오늘부터','우리끼리','미친','한밤의','슬기로운','대환장','불타는','수상한','기막힌','어서 와','진짜'];
+const SHOW_B=['캠핑','편의점','요리왕','동창회','합숙','이웃집','하숙집','밥상','여행','오디션','시골살이','연애 실험실','퀴즈쇼','라디오'];
+const bcName=()=>pick(BC_STEM)+pick(BC_SUF);
+const showName=g=>g==='audition'?pick(['프로젝트','스타','드림','넥스트','라스트'])+' '+pick(['101','데뷔전','유니버스','스테이지','챌린지']):g==='drama'?pick(['그해 여름','시그널 블루','나의 아저씨들','검은 사제단','달의 연인']).replace(/^(.*)$/,'$1')+pick([' 2',' 리턴즈','',' : 새로운 시작','']):g==='music'?pick(['쇼! 음악광장','뮤직 스테이션','더 스테이지','인기가요제']):pick(SHOW_A)+' '+pick(SHOW_B);
+function bcTier(bc){let i=0;for(let k=0;k<BC_TIERS.length;k++)if(bc.val>=BC_TIERS[k][0])i=k;return i}
+const bcTierKo=bc=>BC_TIERS[bcTier(bc)][1];
+const bcAPMax=bc=>Math.min(6,2+(bc.fac.ch>=2?1:0)+(bc.fac.studio>=2?1:0)+(bcTier(bc)>=4?1:0));
+const bcCh=bc=>[.5,1.5,4,9][bc.fac.ch];
+function bcUpkeep(bc){let v=100;for(const k in BC_FAC)for(let i=0;i<bc.fac[k];i++)v+=BC_FAC[k].cost[i]*.005;return Math.round(v)}
+const bcLive=bc=>bc.shows.filter(x=>!x.done);
+const SHOW_TIER=['폭망','저조','무난','화제작','히트작','신드롬'];
+const showTier=Q=>Q<34?0:Q<42?1:Q<50?2:Q<58?3:Q<66?4:5;
+const ratingTxt=(bc,r)=>bc.fac.ch===0?`평균 조회수 ${fmt(Math.max(1,Math.round(r*14)))}만 회`:`시청률 ${r.toFixed(1)}%`;
+const showRev=(bc,x)=>Math.round(x.rating*bcCh(bc)*600*GENRE[x.genre].ad*(1+bc.fac.ott*.2));
+const showCost=(g,b,bc)=>Math.round(GENRE[g].cost*1500*BC_BUD[b].m*(bc?[.3,.7,1.4,2.2][bc.fac.ch]:1));
+function castList(s){const L=[{k:'rookie',ko:'무명 신인',sub:'공짜. 가끔 숨은 예능캐가 나옵니다',cost:0},{k:'hot',ko:'요즘 뜨는 유튜버',sub:'화제성 좋음. 논란도 가끔',cost:1000},{k:'star',ko:'톱스타',sub:'시청률 보증수표. 몸값이 비쌉니다',cost:5000+(s.bc?bcTier(s.bc)*3000:0)}];
+ if(s.fame>=20)L.push({k:'me',ko:'내가 직접 출연',sub:`내 인지도 ${Math.round(s.fame)} · 예능감 ${Math.round(s.st.variety)}`,cost:0});
+ if(s.ag&&agLive(s.ag).length)L.push({k:'myidol',ko:'우리 회사 아이돌',sub:'내 기획사 가수가 출연해 팬이 늘어요',cost:0});return L}
+
+function bcValue(s){const bc=s.bc;let v=1000;for(const k in BC_FAC)for(let i=0;i<bc.fac[k];i++)v+=BC_FAC[k].cost[i]*.6;for(const x of bcLive(bc))v+=showRev(bc,x)*3;return Math.round(v+bc.lib+bc.hype*300)}
+function bcFound(s,plan,name){if(s.bc)return{err:'이미 방송국이 있습니다.'};const pl=plan==='big'?{cost:20000,studio:1,writer:1,hype:10}:{cost:1000,studio:0,writer:0,hype:4};
+ if(pl.cost>s.cash)return{err:`${won(pl.cost-s.cash)}이 모자랍니다. ‘투자’ 탭에서 빌릴 수 있어요.`};s.cash-=pl.cost;const nm=String(name||'').trim().slice(0,16)||bcName();
+ s.bc={name:nm,since:s.t,val:0,hype:pl.hype,fac:{studio:pl.studio,writer:pl.writer,ch:0,ott:0,global:0},shows:[],ap:2,own:1,nid:0,lib:0,boost:0,stats:{shows:0,hits:0,best:0},hist:[],listed:false,maxTier:0,lastProfit:0,trend:pick(Object.keys(GENRE)),cd:{}};
+ s.bc.val=bcValue(s);s.bc.hist=[s.bc.val];s.bc.ap=bcAPMax(s.bc);unlock(s,'bc_found');
+ const t=plan==='big'?`${nm}${P(nm,'을/를')} 세웠습니다. 스튜디오와 작가진까지 갖춘 제작사로 출발합니다.`:`${nm}${P(nm,'을/를')} 열었습니다. 카메라 한 대와 조명 두 개. 개인 채널로 출발합니다.`;
+ addLog(s,t,'mile',-pl.cost);s.big.push({t:s.t,age:Math.floor(s.age),txt:`${nm} 개국`,g:2});return{t,g:2,chips:[{v:'-'+won(pl.cost),good:false}]}}
+const bcNeedAP=bc=>bc.ap<1?{err:'이번 분기 방송국 일정이 다 찼어요.'}:null;
+function bcLaunch(s,genre,bud,cast,title,season){const bc=s.bc,e=bcNeedAP(bc);if(e)return e;const G=GENRE[genre];if(!G)return{err:'장르를 골라 주세요.'};
+ const C=castList(s).find(c=>c.k===cast)||castList(s)[0];const cost=showCost(genre,bud,bc)+C.cost;if(cost>s.cash)return{err:`제작비 ${won(cost)}이 필요합니다.`};
+ s.cash-=cost;bc.ap--;
+ let cq=0,extra=null;if(C.k==='rookie'){if(chance(.1)){cq=12;extra='무명 신인이 숨은 예능캐였습니다!'}else cq=gauss()*3}
+ else if(C.k==='hot')cq=5;else if(C.k==='star')cq=11;else if(C.k==='me')cq=s.st.variety*.15+s.fame*.12-4;else if(C.k==='myidol'){const g=pick(agLive(s.ag));cq=4+g.buzz*.08;extra=g.name}
+ const Q=G.base+bc.fac.studio*2+bc.fac.writer*2.5+BC_BUD[bud].q*.7+cq+(genre===bc.trend?6:0)+bc.hype*.05+bc.fac.ch*2+(bc.boost||0)*.8+(season?2:0)+gauss()*10+s.luck*3-6;bc.boost=0;
+ const t=showTier(Q);const rating=clamp((Q-22)*.32*(.6+bc.fac.ch*.2)*(.85+rnd()*.3),.1,45);
+ const x={id:'p'+(++bc.nid),name:String(title||'').trim().slice(0,20)||showName(genre)+(season?` 시즌${season}`:''),genre,cast:C.k,castKo:C.ko,castG:C.k==='myidol'?extra:null,tier:t,rating,peak:rating,life:G.life,start:s.t,season:season||1,done:false,cost};
+ bc.shows.push(x);bc.stats.shows++;if(t>=3)bc.stats.hits++;bc.stats.best=Math.max(bc.stats.best,t);bc.hype=clamp(bc.hype+[-3,-1,1,3,6,10][t],0,100);
+ const ef={};if(C.k==='me'){ef.fame=[0,1,2,4,7,11][t];ef.st={variety:R(1,3)}}
+ if(C.k==='myidol'){const g=s.ag.gr.find(y=>y.name===extra);if(g)ef.ag={fans:[g.id,Math.round([2000,8000,30000,100000,300000,800000][t]*(.7+rnd()*.6))],buzz:[g.id,[2,5,10,18,28,40][t]]}}
+ if(t>=4)unlock(s,'bc_hit');
+ const chips=applyEff(s,ef,x.name);chips.unshift({v:'-'+won(cost),good:false});chips.push({v:`분기 수익 약 ${won(showRev(bc,x))}`,good:true});
+ const lines=[`첫 방송부터 외면받았습니다. 동시간대 꼴찌입니다.`,`반응이 미지근합니다.`,`무난하게 출발했습니다. 고정 시청자가 생겼습니다.`,`첫 방송부터 화제입니다. 다음 날 클립 조회수가 터졌습니다.`,`히트작 탄생! 동시간대 1위, 광고가 완판됐습니다.`,`신드롬입니다. 다음 날 모든 회사 점심시간 화제가 이 프로그램입니다.`];
+ const txt=`「${x.name}」 ${lines[t]}${extra&&C.k==='rookie'?' '+extra:''}`;addLog(s,`[${bc.name}] ${txt}`,t>=3?'good':t<=1?'bad':'',-cost);if(t>=4)s.big.push({t:s.t,age:Math.floor(s.age),txt:`${bc.name} 「${x.name}」 ${SHOW_TIER[t]}`,g:3});
+ bc.val=bcValue(s);return{t:txt,chips,g:[-2,-1,0,1,2,3][t],chart:{kicker:season?'새 시즌':'첫 방송',big:bc.fac.ch===0?`${fmt(Math.max(1,Math.round(rating*14)))}만`:`${rating.toFixed(1)}%`,sub:bc.fac.ch===0?'평균 조회수':'시청률',title:x.name,label:SHOW_TIER[t],tier:t,conc:`${GENRE[genre].ko} · ${C.ko}`}}}
+function bcPromo(s,id){const bc=s.bc,e=bcNeedAP(bc);if(e)return e;const x=bc.shows.find(y=>y.id===id&&!y.done);if(!x)return{err:'방송 중인 프로그램이 아니에요.'};const cost=Math.round(showCost(x.genre,0,bc)*.6);if(cost>s.cash)return{err:`${won(cost)}이 필요합니다.`};
+ s.cash-=cost;bc.ap--;const up=chance(.7+s.luck*.05);x.rating=clamp(x.rating*(up?1.15+rnd()*.25:1.02),.1,45);x.peak=Math.max(x.peak,x.rating);
+ const t=up?`「${x.name}」 홍보가 먹혔습니다. ${ratingTxt(bc,x.rating)}까지 올랐습니다.`:`「${x.name}」 홍보에 돈을 썼지만 반응은 그대로입니다.`;addLog(s,`[${bc.name}] ${t}`,up?'good':'',-cost);return{t,chips:[{v:'-'+won(cost),good:false}],g:up?1:0}}
+function bcEnd(s,id){const bc=s.bc,x=bc.shows.find(y=>y.id===id&&!y.done);if(!x)return;x.life=0;x.done=true;addLog(s,`[${bc.name}] 「${x.name}」${P(x.name,'을/를')} 조기 종영했습니다.`,'')}
+function bcBuild(s,k){const bc=s.bc,F=BC_FAC[k],lv=bc.fac[k];if(lv>=3)return{err:'이미 최고 단계예요.'};const c=F.cost[lv];if(c>s.cash)return{err:`${won(c-s.cash)}이 모자랍니다.`};
+ s.cash-=c;bc.fac[k]++;bc.hype=clamp(bc.hype+2+lv*2,0,100);bc.val=bcValue(s);bc.ap=Math.min(bc.ap+(k==='ch'?1:0),bcAPMax(bc));
+ addLog(s,`[${bc.name}] ${F.ko} → ${F.lv[lv]}`,'good',-c);return{t:`${F.lv[lv]}! ${k==='ch'?'이제 더 많은 집 TV에 우리 채널이 나옵니다.':''}`}}
+function bcSell(s,price){const bc=s.bc;const v=price||Math.round(bc.val*bc.own*.8);s.cash+=v;addLog(s,`${bc.name}${P(bc.name,'을/를')} ${won(v)}에 팔았습니다.`,'mile',v);s.big.push({t:s.t,age:Math.floor(s.age),txt:`${bc.name} 매각`,g:1});unlock(s,'exit');s.bcPast=Math.max(s.bcPast||0,bcTier(bc));delete s.bc;return v}
+function bcEff(s,x,add){const bc=s.bc;if(!bc)return;const X=id=>bc.shows.find(y=>y.id===id);
+ if(x.rating){const p=X(x.rating[0]);if(p&&!p.done){p.rating=clamp(p.rating*x.rating[1],.1,45);p.peak=Math.max(p.peak,p.rating);add(`「${p.name}」 ${ratingTxt(bc,p.rating)}`,x.rating[1]>=1)}}
+ if(x.hype){bc.hype=clamp(bc.hype+x.hype,0,100);add(`채널 신뢰도 ${x.hype>0?'+':''}${x.hype}`,x.hype>0)}
+ if(x.end){const p=X(x.end);if(p&&!p.done){p.done=true;p.life=0;add(`「${p.name}」 종영`,false)}}
+ if(x.boost){bc.boost=(bc.boost||0)+x.boost;add(`다음 프로그램 완성도 ${x.boost>0?'↑':'↓'}`,x.boost>0)}
+ if(x.lib){bc.lib+=x.lib}
+ if(x.own){bc.own=clamp(bc.own*x.own,.05,1);add(`내 지분 ${Math.round(bc.own*100)}%`,x.own>1)}
+ if(x.listed){bc.listed=true;unlock(s,'ipo');add('상장사',true)}
+ if(x.sell){const v=bcSell(s,x.sell>1?x.sell:0);add(`방송국 매각 +${won(v)}`,true);return}
+ bc.val=bcValue(s)}
+
+function bcStep(s,rep){const bc=s.bc;if(!bc)return[];const out=[];
+ if(s.q===0){bc.trend=pick(Object.keys(GENRE).filter(k=>k!==bc.trend));rep.news.push(`올해 시청자들이 꽂힌 장르는 ‘${GENRE[bc.trend].ko}’입니다.`)}
+ let inc=0;const exp=bcUpkeep(bc);const ends=[];
+ for(const x of bcLive(bc)){inc+=showRev(bc,x);x.rating=clamp(x.rating*(.88+(x.tier-2)*.04+gauss()*.06),.1,45);x.peak=Math.max(x.peak,x.rating);x.life--;
+  if(x.genre==='music'&&s.ag)for(const g of agLive(s.ag))g.buzz=clamp(g.buzz+4,0,100);if(x.genre==='docu')bc.hype=clamp(bc.hype+1,0,100);
+  if(x.life<=0){x.done=true;const hit=x.tier>=3;bc.lib+=Math.round(x.peak*bcCh(bc)*200*(hit?2:1));
+   let txt=`「${x.name}」${P(x.name,'이/가')} 종영했습니다. 최고 ${ratingTxt(bc,x.peak)}.`;let g=hit?1:0;const ef={};
+   if(hit&&bc.fac.global){const v=Math.round(x.peak*bcCh(bc)*400*bc.fac.global);ef.cash=v;txt+=` 해외에 포맷 판권을 ${won(v)}에 팔았습니다.`;g=2}
+   if(x.genre==='audition'&&x.tier>=2){const fans=Math.round(x.peak*bcCh(bc)*25000);if(s.ag){const nm=grName();ef.ag={addGroup:{name:nm,n:R(5,9),fans}};txt+=` 최종 데뷔조 ‘${nm}’${P(nm,'이/가')} 내 기획사 ${s.ag.name}에서 데뷔합니다. 시작부터 팬 ${fansTxt(fans)}.`;g=3}else{ef.cash=(ef.cash||0)+Math.round(fans*.05);txt+=' 프로젝트 그룹이 탄생했습니다. 음원 수익 일부가 들어왔습니다.'}}
+   const chips=applyEff(s,ef,x.name);addLog(s,`[${bc.name}] ${txt}`,g>0?'good':'',ef.cash||null);if(g>=2)ends.push({txt,chips,g,name:x.name})}}
+ if(ends.length)out.push({type:'news',kicker:'종영',title:ends.length===1?`「${ends[0].name}」 마지막 회`:`종영 ${ends.length}편`,txt:ends.map(x=>x.txt).join(' '),chips:ends.flatMap(x=>x.chips),g:Math.max(...ends.map(x=>x.g))});
+ s.cash+=inc-exp;if(inc)rep.inc.push([`${bc.name} 광고 · 판권 수익`,inc]);rep.exp.push([`${bc.name} 운영비`,-exp]);bc.lastProfit=inc-exp;
+ bc.loss=inc-exp<0?(bc.loss||0)+1:0;if(bc.loss===4||bc.loss===8)rep.news.push(`${bc.name}${P(bc.name,'이/가')} ${bc.loss/4}년째 적자입니다. 채널 규모에 맞는 제작비로 가 보세요.`);
+ bc.hype=clamp(Math.round(bc.hype+(Math.max(0,...bcLive(bc).map(x=>x.tier*10))*.6+bcTier(bc)*6-bc.hype)*.08),0,100);
+ bc.val=bcValue(s);bc.hist.push(bc.val);if(bc.hist.length>80)bc.hist.shift();
+ const tier=bcTier(bc);if(tier>bc.maxTier){bc.maxTier=tier;out.push({type:'news',kicker:'방송국',title:`${bc.name}, ${BC_TIERS[tier][1]}로`,txt:`회사 가치가 ${won(bc.val)}이 됐습니다. 이제 사람들은 ${bc.name}${P(bc.name,'을/를')} ‘${BC_TIERS[tier][1]}’로 부릅니다.`,chips:[],g:2});if(tier>=4)unlock(s,'bc_big')}
+ bc.ap=bcAPMax(bc);return out}
+
+/* ---------- events ---------- */
+const BCEV=[];const BCEV_BY={};function BCE(o){BCEV.push(o);BCEV_BY[o.id]=o}
+const ctxShow=(bc,f)=>{const L=bcLive(bc).filter(f||(()=>true));return L.length?{p:pick(L)}:null};
+BCE({id:'castscandal',w:1.2,ctx:bc=>ctxShow(bc,p=>p.cast==='hot'||p.cast==='star'),title:c=>`「${c.p.name}」 출연자 논란`,desc:c=>`「${c.p.name}」 고정 출연자의 과거 발언이 캡처돼 돌고 있습니다. 하차 요구 청원이 올라왔습니다.`,hide:{yes:.5,twisted:.5},
+ opts:[{t:'즉시 하차시킨다',go:{yes:{clean:1},twisted:{unfair:1}}},{t:'편집으로 분량을 줄인다',go:{yes:{drag:.6,clean:.4},twisted:{ok:1}}},{t:'끝까지 함께 간다',go:{yes:{boycott:1},twisted:{loyal:1}}}],good:{clean:1,unfair:-1,drag:-1,ok:0,boycott:-2,loyal:2},
+ out:{clean:(s,c)=>({t:'빠른 결단에 시청자들이 돌아왔습니다.',e:{bc:{hype:2}}}),unfair:(s,c)=>({t:'알고 보니 앞뒤가 잘린 캡처였습니다. 성급한 하차에 역풍이 불었습니다.',e:{bc:{rating:[c.p.id,.85],hype:-3}}}),drag:(s,c)=>({t:'어정쩡한 대응에 논란이 길어졌습니다.',e:{bc:{rating:[c.p.id,.8]}}}),ok:()=>({t:'조용히 지나갔습니다.',e:{}}),
+  boycott:(s,c)=>({t:'광고주들이 줄줄이 빠졌습니다.',e:{bc:{rating:[c.p.id,.6],hype:-6}}}),loyal:(s,c)=>({t:'오해가 풀리자 “의리 있는 방송국”이라는 평이 붙었습니다.',e:{bc:{rating:[c.p.id,1.25],hype:4}}})}});
+BCE({id:'rig',w:1.4,ctx:bc=>ctxShow(bc,p=>p.genre==='audition'),title:c=>`「${c.p.name}」 투표 조작 유혹`,desc:c=>`담당 PD가 몰래 찾아왔습니다. “투자사 연습생을 데뷔조에 넣으면 협찬이 두 배가 됩니다. 투표수는 제가 알아서….”`,hide:null,
+ opts:[{t:'단칼에 거절한다',go:{'*':{clean:1}}},{t:'이번 한 번만 눈감는다',go:{'*':{rich:.55,caught:.45}}},{t:'PD를 교체하고 공개한다',go:{'*':{hero:.7,mess:.3}}}],good:{clean:1,rich:1,caught:-3,hero:2,mess:-1},
+ out:{clean:()=>({t:'정직한 오디션으로 남았습니다.',e:{bc:{hype:2}}}),rich:(s,c)=>({t:'협찬금이 두 배로 들어왔습니다. 마음 한쪽이 찜찜합니다.',e:{cash:R(5000,20000)}}),caught:(s,c)=>({t:'투표 조작이 들통났습니다. 경찰이 방송국을 압수수색했습니다.',e:{cash:-R(10000,40000),bc:{end:c.p.id,hype:-20},rep:-12}}),
+  hero:(s,c)=>({t:'조작 시도를 먼저 밝힌 방송국으로 신뢰를 얻었습니다.',e:{bc:{hype:8,rating:[c.p.id,1.15]}}}),mess:(s,c)=>({t:'PD 교체 과정이 시끄러웠습니다.',e:{bc:{rating:[c.p.id,.85]}}})}});
+BCE({id:'pdpoach',w:.8,ctx:bc=>bc.fac.writer>=1?{}:null,title:()=>'스타 PD 이적설',desc:(c,s)=>`${s.bc.name}의 간판 PD에게 경쟁 방송국이 연봉 세 배를 제시했습니다.`,hide:{loyal:.5,gone:.5},
+ opts:[{t:'더 큰 돈으로 붙잡는다',cost:(s)=>3000+bcTier(s.bc)*4000,go:{'*':{stay:1}}},{t:'자기 회사를 차려 주겠다고 한다',go:{loyal:{label:1},gone:{label:.5,leave:.5}}},{t:'보내 준다',go:{'*':{leave:1}}}],good:{stay:1,label:2,leave:-1},
+ out:{stay:()=>({t:'PD가 남았습니다.',e:{bc:{boost:3}}}),label:()=>({t:'PD 이름을 건 제작 라벨을 만들어 줬습니다. 다음 기획이 기대됩니다.',e:{bc:{boost:8,hype:2}}}),leave:()=>({t:'PD가 떠났습니다. 기획 회의가 조용해졌습니다.',e:{bc:{boost:-6,hype:-2}}})}});
+BCE({id:'ppl',w:1,ctx:bc=>ctxShow(bc,p=>p.genre==='drama'||p.genre==='variety'),title:c=>`「${c.p.name}」 PPL 제안`,desc:c=>`대형 광고주가 「${c.p.name}」에 제품을 넣고 싶어 합니다. 액수가 큽니다.`,hide:{fine:.6,much:.4},
+ opts:[{t:'받는다',go:{fine:{money:1},much:{backlash:1}}},{t:'자연스럽게 녹일 때만 받는다',go:{'*':{some:1}}},{t:'거절한다',go:{'*':{none:1}}}],good:{money:1,backlash:-1,some:1,none:0},
+ out:{money:(s,c)=>({t:'PPL 수익이 들어왔습니다.',e:{cash:Math.round(showRev(s.bc,c.p)*.8+2000)}}),backlash:(s,c)=>({t:'주인공이 회의 중에 홍삼을 마십니다. 시청자들이 질렸습니다.',e:{cash:Math.round(showRev(s.bc,c.p)*.8),bc:{rating:[c.p.id,.85]}}}),some:(s,c)=>({t:'적당히 받았습니다.',e:{cash:Math.round(showRev(s.bc,c.p)*.3+800)}}),none:()=>({t:'작품에만 집중합니다.',e:{}})}});
+BCE({id:'regulator',w:.8,ctx:bc=>ctxShow(bc,p=>p.genre==='dating'||p.genre==='variety'||p.genre==='web'),title:c=>`「${c.p.name}」 심의 경고`,desc:c=>`방송 심의 기관이 「${c.p.name}」의 장면을 문제 삼았습니다. 징계가 예고됐습니다.`,hide:{light:.6,heavy:.4},
+ opts:[{t:'바로 사과하고 수정한다',go:{light:{ok:1},heavy:{fine:1}}},{t:'표현의 자유라며 맞선다',go:{light:{win:.6,fine:.4},heavy:{fine:.4,ban:.6}}}],good:{ok:0,fine:-1,win:1,ban:-2},
+ out:{ok:()=>({t:'주의 조치로 끝났습니다.',e:{}}),fine:()=>({t:'과징금을 냈습니다.',e:{cash:-R(1000,5000),bc:{hype:-2}}}),win:(s,c)=>({t:'논쟁이 화제가 되며 오히려 시청자가 늘었습니다.',e:{bc:{rating:[c.p.id,1.2]}}}),ban:(s,c)=>({t:'중징계. 프로그램이 조기 종영됐습니다.',e:{bc:{end:c.p.id,hype:-6}}})}});
+BCE({id:'remake',w:1,ctx:bc=>{const L=bc.shows.filter(p=>p.done&&p.tier>=3&&!p.sold);return L.length?{p:pick(L)}:null},title:c=>`「${c.p.name}」 해외 리메이크 문의`,desc:c=>`해외 방송사가 끝난 히트작 「${c.p.name}」의 리메이크 판권을 사고 싶어 합니다.`,hide:{real:.7,low:.3},
+ opts:[{t:'판다',go:{real:{sold:1},low:{cheap:1}}},{t:'몸값을 올린다',go:{real:{big:.5,lost:.5},low:{sold:.4,lost:.6}}}],good:{sold:1,cheap:0,big:2,lost:-1},
+ out:{sold:(s,c)=>{c.p.sold=1;return{t:'판권을 팔았습니다.',e:{cash:Math.round(c.p.peak*bcCh(s.bc)*500+3000)}}},cheap:(s,c)=>{c.p.sold=1;return{t:'생각보다 헐값이었습니다.',e:{cash:Math.round(c.p.peak*bcCh(s.bc)*150+1000)}}},big:(s,c)=>{c.p.sold=1;return{t:'여러 나라가 경쟁하며 판권 값이 치솟았습니다.',e:{cash:Math.round(c.p.peak*bcCh(s.bc)*1200+8000),bc:{hype:4}}}},lost:()=>({t:'다른 프로그램을 사 갔습니다.',e:{}})}});
+BCE({id:'meme',w:1.1,ctx:bc=>ctxShow(bc),title:c=>`「${c.p.name}」 밈 대박`,desc:c=>`「${c.p.name}」의 한 장면이 밈이 되어 여기저기 패러디되고 있습니다.`,hide:{real:.7,short:.3},
+ opts:[{t:'클립을 쏟아 낸다',go:{real:{boom:.7,ok:.3},short:{ok:1}}},{t:'굿즈를 만든다',cost:()=>1000,go:{real:{goods:.7,ok:.3},short:{flop:1}}},{t:'그냥 즐긴다',go:{'*':{ok:1}}}],good:{boom:2,goods:2,ok:1,flop:-1},
+ out:{boom:(s,c)=>({t:'클립 조회수가 본방송을 넘었습니다.',e:{bc:{rating:[c.p.id,1.35],hype:3}}}),goods:(s,c)=>({t:'굿즈가 완판됐습니다.',e:{cash:R(2000,8000),bc:{rating:[c.p.id,1.1]}}}),ok:(s,c)=>({t:'잠깐 화제가 됐습니다.',e:{bc:{rating:[c.p.id,1.08]}}}),flop:()=>({t:'굿즈가 나왔을 땐 이미 밈이 식은 뒤였습니다.',e:{}})}});
+BCE({id:'strike',w:.6,ctx:bc=>bc.fac.writer>=1&&bcLive(bc).length?{p:pick(bcLive(bc))}:null,title:()=>'작가진 파업',desc:(c,s)=>`${s.bc.name} 작가들이 처우 개선을 요구하며 펜을 놓았습니다.`,hide:null,
+ opts:[{t:'요구를 들어준다',cost:(s)=>2000+bcTier(s.bc)*2000,go:{'*':{deal:1}}},{t:'버틴다',go:{'*':{ok:.4,hurt:.6}}}],good:{deal:1,ok:0,hurt:-2},
+ out:{deal:()=>({t:'작가들이 돌아왔고 회의실에 활기가 돌았습니다.',e:{bc:{boost:4,hype:2}}}),ok:()=>({t:'며칠 만에 협상이 타결됐습니다.',e:{}}),hurt:(s,c)=>({t:'방송이 몇 주 결방됐습니다.',e:{bc:{rating:[c.p.id,.7],hype:-4}}})}});
+BCE({id:'staroffer',w:.9,ctx:bc=>({}),title:()=>'톱스타의 출연 의사',desc:(c,s)=>`요즘 가장 핫한 배우가 매니저를 통해 “${s.bc.name} 다음 작품이라면 하고 싶다”고 전해 왔습니다.`,hide:{real:.7,diva:.3},
+ opts:[{t:'잡는다 (선계약금)',cost:(s)=>3000+bcTier(s.bc)*3000,go:{real:{boost:1},diva:{diva:1}}},{t:'아직 기획이 없다며 미룬다',go:{'*':{none:1}}}],good:{boost:2,diva:-1,none:0},
+ out:{boost:()=>({t:'다음 프로그램에 톱스타가 합류합니다.',e:{bc:{boost:10}}}),diva:()=>({t:'계약하고 보니 요구 사항이 서른 장입니다.',e:{bc:{boost:3,hype:-2}}}),none:()=>({t:'기회는 다른 방송국으로 갔습니다.',e:{}})}});
+BCE({id:'sports',w:.6,ctx:(bc,s)=>bcTier(bc)>=2?{x:{bid:Math.round(30000*(1+bcTier(bc)))}}:null,title:()=>'스포츠 중계권 입찰',desc:c=>`국제 대회 중계권 입찰이 열렸습니다. 최소 ${won(c.x.bid)}. 한국 대표팀 성적에 따라 대박 아니면 쪽박입니다.`,hide:{run:.45,out:.55},
+ opts:[{t:'입찰한다',cost:(s,c)=>c.x.bid,go:{run:{jackpot:1},out:{loss:1}}},{t:'지나간다',go:{'*':{none:1}}}],good:{jackpot:3,loss:-2,none:0},
+ out:{jackpot:(s,c)=>({t:'대표팀이 4강까지 갔습니다! 시청률이 40%를 넘었습니다.',e:{cash:Math.round(c.x.bid*2.6),bc:{hype:8}}}),loss:(s,c)=>({t:'대표팀이 조별 리그에서 탈락했습니다. 광고가 다 취소됐습니다.',e:{cash:Math.round(c.x.bid*.35)}}),none:()=>({t:'다른 방송국이 가져갔습니다.',e:{}})}});
+BCE({id:'live',w:.8,ctx:bc=>ctxShow(bc,p=>p.genre==='music'||p.genre==='audition'),title:c=>`「${c.p.name}」 생방송 사고`,desc:c=>`「${c.p.name}」 생방송 중 무대 장치가 멈췄습니다. 카메라는 돌아가고 있습니다.`,hide:null,
+ opts:[{t:'MC에게 애드리브를 맡긴다',go:{'*':{legend:.5,awk:.5}}},{t:'광고로 끊는다',go:{'*':{safe:1}}}],good:{legend:2,awk:-1,safe:0},
+ out:{legend:(s,c)=>({t:'MC의 애드리브가 전설의 짤이 됐습니다.',e:{bc:{rating:[c.p.id,1.2]}}}),awk:(s,c)=>({t:'방송 사고 영상이 하루 종일 돌았습니다.',e:{bc:{hype:-3}}}),safe:()=>({t:'무사히 넘겼습니다.',e:{}})}});
+BCE({id:'slot',w:1,ctx:bc=>ctxShow(bc),title:c=>`「${c.p.name}」 편성 전쟁`,desc:c=>`경쟁 방송국이 「${c.p.name}」 동시간대에 초대형 신작을 붙였습니다.`,hide:{strong:.5,weak:.5},
+ opts:[{t:'맞불 홍보를 한다',cost:()=>2000,go:{strong:{hold:.6,lose:.4},weak:{win:1}}},{t:'편성 시간을 옮긴다',go:{'*':{moved:1}}},{t:'그대로 간다',go:{strong:{lose:1},weak:{win:.6,hold:.4}}}],good:{win:2,hold:0,lose:-1,moved:0},
+ out:{win:(s,c)=>({t:'경쟁작을 눌렀습니다.',e:{bc:{rating:[c.p.id,1.2]}}}),hold:()=>({t:'시청률을 지켰습니다.',e:{}}),lose:(s,c)=>({t:'시청자를 꽤 뺏겼습니다.',e:{bc:{rating:[c.p.id,.75]}}}),moved:(s,c)=>({t:'시간대를 옮겼습니다. 시청자 일부가 따라왔습니다.',e:{bc:{rating:[c.p.id,.9]}}})}});
+BCE({id:'favor',w:1.2,ctx:(bc,s)=>s.ag?ctxShow(bc,p=>p.cast==='myidol'||p.genre==='music'):null,title:()=>'자사 아이돌 특혜 의혹',desc:(c,s)=>`“${s.bc.name}이(가) 사장 회사 ${s.ag.name} 가수들만 밀어준다”는 기사가 났습니다.`,hide:{fair:.5,bias:.5},
+ opts:[{t:'공정성 위원회를 만든다',cost:()=>1000,go:{'*':{trust:1}}},{t:'무시한다',go:{fair:{pass:1},bias:{scandal:1}}}],good:{trust:1,pass:0,scandal:-2},
+ out:{trust:()=>({t:'공정성 위원회가 생기자 논란이 가라앉았습니다.',e:{bc:{hype:2},ag:{hype:1}}}),pass:()=>({t:'금방 잊혔습니다.',e:{}}),scandal:()=>({t:'다른 기획사들이 우리 방송 출연을 보이콧했습니다.',e:{bc:{hype:-8},ag:{hype:-4}}})}});
+BCE({id:'bcbuyout',w:.5,ctx:(bc,s)=>bcTier(bc)>=2?{x:{price:Math.round(bc.val*bc.own*(1.3+rnd()*.9))}}:null,title:()=>'방송국 인수 제안',desc:(c,s)=>`통신 대기업이 ${s.bc.name}${P(s.bc.name,'을/를')} 사겠다고 합니다. 제시액 ${won(c.x.price)}.`,hide:{real:.7,low:.3},
+ opts:[{t:'판다',go:{real:{sold:1},low:{soldlow:1}}},{t:'거절한다',go:{'*':{pride:1}}},{t:'지분 30%만 넘긴다',go:{'*':{part:1}}}],good:{sold:2,soldlow:0,pride:1,part:1},
+ out:{sold:(s,c)=>({t:`${won(c.x.price)}에 도장을 찍었습니다.`,e:{bc:{sell:c.x.price}}}),soldlow:(s,c)=>({t:'협상 끝에 값이 크게 깎였습니다.',e:{bc:{sell:Math.round(c.x.price*.55)}}}),pride:()=>({t:'거절했습니다. 직원들이 박수를 쳤습니다.',e:{bc:{hype:3}}}),part:(s,c)=>({t:'든든한 주주가 생겼습니다.',e:{cash:Math.round(c.x.price*.3),bc:{own:.7}}})}});
+BCE({id:'bcipo',w:2,ctx:(bc,s)=>bcTier(bc)>=4&&!bc.listed?{x:{v:Math.round(bc.val*bc.own*.25)}}:null,title:()=>'방송국 상장 제안',desc:(c,s)=>`${s.bc.name} 상장을 서로 맡겠다고 증권사들이 줄을 섰습니다. 지분 25%를 팔면 약 ${won(c.x.v)}.`,hide:null,
+ opts:[{t:'상장한다',go:{'*':{hot:.5,ok:.35,cold:.15}}},{t:'아직 이르다',go:{'*':{none:1}}}],good:{hot:3,ok:2,cold:0,none:0},
+ out:{hot:(s,c)=>({t:'상장 첫날 상한가!',e:{cash:Math.round(c.x.v*1.5),bc:{own:.75,listed:1,hype:6}}}),ok:(s,c)=>({t:'무난하게 상장했습니다.',e:{cash:c.x.v,bc:{own:.75,listed:1}}}),cold:(s,c)=>({t:'얼어붙은 시장에 상장했습니다.',e:{cash:Math.round(c.x.v*.7),bc:{own:.75,listed:1}}}),none:()=>({t:'때를 기다립니다.',e:{}})}});
+function bcEvent(s){const bc=s.bc;if(!bc)return null;bc.cd=bc.cd||{};const cand=[];
+ for(const e of BCEV){if((bc.cd[e.id]||0)>s.t)continue;const c=e.ctx(bc,s);if(c)cand.push([[e,c],e.w*Math.pow(.6,s.seen['c_'+e.id]||0)])}
+ if(!cand.length)return null;const[e,c]=wpick(cand);bc.cd[e.id]=s.t+6;s.seen['c_'+e.id]=(s.seen['c_'+e.id]||0)+1;
+ const hd=typeof e.hide==='function'?e.hide(s,c):e.hide;const h=hd?wpick(Object.entries(hd)):'*';
+ return{kind:'bc',eid:e.id,pid:c.p?c.p.id:null,x:c.x||null,h,title:e.title(c,s),desc:e.desc(c,s),note:`${bc.name} · ${bcTierKo(bc)}${c.p?` · 「${c.p.name}」 ${ratingTxt(bc,c.p.rating)}`:''}`,opts:e.opts.map(o=>({t:o.t,sub:o.sub||'',cost:o.cost?Math.round(o.cost(s,c)/10)*10:0,ref:o}))}}
+function resolveBc(s,prep,i){const bc=s.bc;if(!bc)return{t:'방송국은 이미 당신 손을 떠났습니다.',chips:[],g:0};const e=BCEV_BY[prep.eid],o=prep.opts[i];
+ const p=prep.pid?bc.shows.find(x=>x.id===prep.pid):null;if(prep.pid&&!p)return{t:'그 사이 상황이 바뀌었습니다.',chips:[],g:0};
+ if(o.cost){if(o.cost>s.cash)return{err:'돈이 모자랍니다.'};s.cash-=o.cost}
+ const dist=o.ref.go[prep.h]||o.ref.go['*']||Object.values(o.ref.go)[0];const key=sampleOut(s,e.good,dist);const r=e.out[key](s,{p,x:prep.x});
+ const chips=applyEff(s,r.e,prep.title);if(o.cost)chips.unshift({v:'-'+won(o.cost),good:false});const gg=(e.good||{})[key]||0;
+ addLog(s,`[${bc.name}] ${prep.title} → ${o.t}`,'dec',o.cost?-o.cost:null);addLog(s,r.t,gg>0?'good':gg<0?'bad':'',r.e&&r.e.cash||null);if(Math.abs(gg)>=2)s.big.push({t:s.t,age:Math.floor(s.age),txt:r.t,g:gg});return{t:r.t,chips,g:gg}}
+
 function track(path,title){try{const g=window.goatcounter;if(g&&g.count)g.count({path,title:title||path,event:true})}catch(e){}}
 /* ================================================================
    데뷔각 — interface 1: helpers, avatar, home, panels
@@ -2032,7 +2672,7 @@ function drawHome(cv,s){const c=cv.getContext('2d');const h=SHOP_BY[s.own.home.i
 
 /* ---------------- home ---------------- */
 function initHome(){
- $('fEvents').textContent=fmt(Object.keys(EVENTS).length+Object.keys(RANDOMS).length+BEV.length+SEV.length);
+ $('fEvents').textContent=fmt(Object.keys(EVENTS).length+Object.keys(RANDOMS).length+BEV.length+SEV.length+AGEV.length+BCEV.length);
  const demo=newLife({});drawAvatar($('heroAv'),demo);$('heroName').textContent=demo.name;$('heroSub').textContent=`${Math.floor(demo.age)}세 · ${demo.city} · 재능: ${demo.gifts.map(k=>STAT_KO[k]).join(', ')}`;
  setSeg('segDream',prefs.dream);setSeg('segSex',prefs.sex);
  $('segDream').onclick=e=>{const b=e.target.closest('button');if(!b)return;prefs.dream=b.dataset.v;setSeg('segDream',prefs.dream);LS.set('db.prefs',prefs)};
@@ -2054,7 +2694,7 @@ function save(){if(!S)return;try{localStorage.setItem('db.cur',JSON.stringify(S)
 let TAB='act';
 function enterGame(){show('game');renderAll();startFlow()}
 function renderAll(){if(!S)return;renderTop();renderSide();renderTab()}
-function renderTop(){const s=S;$('gName').textContent=s.stageName||s.name;$('gMeta').textContent=`${Math.floor(s.age)}세 · ${s.year}년 ${QNAME[s.q]} · ${careerName(s)} · 팬 ${fansTxt(fansOf(s.fame))} · 체력 ${Math.round(s.hp)} · 멘탈 ${Math.round(s.mental)}`;
+function renderTop(){const s=S;$('gName').textContent=s.stageName||s.name;$('gMeta').textContent=`${Math.floor(s.age)}세 · ${s.year}년 ${QNAME[s.q]} · ${careerName(s)}${s.ag||s.bc?` · ${[s.ag&&s.ag.name,s.bc&&s.bc.name].filter(Boolean).join(' · ')} 대표`:''} · 팬 ${fansTxt(fansOf(s.fame))} · 체력 ${Math.round(s.hp)} · 멘탈 ${Math.round(s.mental)}`;
  $('gCash').textContent=won(s.cash);$('gCash').className=cls(s.cash)==='neg'?'neg':'';$('gFans').textContent=fansTxt(fansOf(s.fame));
  $('gAP').innerHTML='<span style="font-size:12px;color:var(--ink3);margin-right:4px">행동력</span>'+[0,1,2].map(i=>`<i class="${i<s.ap?'on':''}"></i>`).join('');
  renderAIBar();if(typeof syncFlow==='function')syncFlow()}
@@ -2068,13 +2708,13 @@ function renderSide(){const s=S;drawAvatar($('meAv'),s);$('meName').textContent=
  const rows=[['집',SHOP_BY[s.own.home.id].ko],['차',s.own.car?SHOP_BY[s.own.car.id].ko:'없음']];for(const k of['pet','building','yacht','cafe','label','studio','camera'])if(s.own[k])rows.push([SHOP_BY[s.own[k].id].cat||'',SHOP_BY[s.own[k].id].ko]);for(const it of s.items)rows.push(['소장',SHOP_BY[it.id].ko]);
  if((s.biz||[]).length)rows.push(['회사',`${s.biz.length}곳 · ${won(s.biz.reduce((a,b)=>a+bizValueMine(b),0))}`]);if((s.col||[]).length)rows.push(['수집품',`${s.col.length}점`]);if(s.bank)rows.push(['은행 빚',`<span class="neg">${won(s.bank)}</span>`]);if(s.shark)rows.push(['사채',`<span class="neg">${won(s.shark)}</span>`]);if(s.friendDebt)rows.push(['빌린 돈',`<span class="neg">${won(s.friendDebt)}</span>`]);if(s.royalty>1)rows.push(['저작권료',`${won(s.royalty)}/분기`]);
  $('mine').innerHTML=rows.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${b.includes('<span')?b:esc(b)}</dd>`).join('')}
-function renderTab(){for(const b of $('tabs').children)b.setAttribute('aria-selected',String(b.dataset.t===TAB));for(const t of['act','mkt','shop','own','money','log','ach'])$('tp-'+t).hidden=t!==TAB;
- ({act:renderActs,mkt:renderMarket,shop:renderShop,own:renderOwn,money:renderMoney,log:renderLog,ach:renderAch})[TAB]()}
+function renderTab(){for(const b of $('tabs').children)b.setAttribute('aria-selected',String(b.dataset.t===TAB));for(const t of['act','co','shop','inv','log','ach'])$('tp-'+t).hidden=t!==TAB;
+ ({act:renderActs,co:renderCo,shop:renderShop,inv:renderInv,log:renderLog,ach:renderAch})[TAB]()}
 function renderActs(){const s=S;const groups={};for(const a of ACTIONS){if(a.when&&!a.when(s))continue;(groups[a.g]=groups[a.g]||[]).push(a)}
  let h='';if(AI.fn){h+=`<div class="free"><h4>직접 해 보기 · 행동력 1</h4><div class="row"><input id="freeIn" maxlength="200" placeholder="예: 유명 PD 단골 술집에 몰래 데모 CD를 두고 온다" aria-label="직접 할 행동"><button class="btn pri" type="button" id="freeGo"${s.ap<1?' disabled':''}>해 보기</button></div><small>무엇이든 써 보세요. Claude가 가능한 결과들을 쓰고, 주사위가 하나를 고릅니다.</small></div>`}
- for(const g of['일','훈련','도전','생활','인생'])if(groups[g])h+=`<div class="agroup"><h4>${g}</h4><div class="acts">${groups[g].map(a=>{const c=a.cost(s);const dis=a.ap>s.ap||(c>0&&c>s.cash);return`<button type="button" class="act" data-a="${a.id}"${dis?' disabled':''}><span class="tag">${a.ap?'●'.repeat(a.ap):''}</span><b>${esc(a.ko)}</b><small>${esc(a.sub)}${c?` · ${won(c)}`:''}</small></button>`}).join('')}</div></div>`;
+ for(const g of['일','훈련','도전','생활','인생'])if(groups[g])h+=`<div class="agroup"><h4>${g}</h4><div class="acts">${groups[g].map(a=>{const c=a.cost(s);const dis=a.ap>s.ap||(c>0&&c>s.cash);return`<button type="button" class="act" data-a="${a.id}"${dis?' disabled':''}><span class="tag">${a.ap?'●'.repeat(a.ap):''}</span><b>${esc(a.ko)}</b><small>${esc(typeof a.sub==='function'?a.sub(s):a.sub)}${c?` · ${won(c)}`:''}</small></button>`}).join('')}</div></div>`;
  $('tp-act').innerHTML=h;
- $('tp-act').onclick=e=>{const b=e.target.closest('.act');if(b&&!b.disabled){const a=ACT_BY[b.dataset.a];if(a.id==='retire'){confirmRetire();return}const r=doAction(S,b.dataset.a);if(r.err){toast(r.err);return}afterAct(r,a.ko)}};
+ $('tp-act').onclick=e=>{const b=e.target.closest('.act');if(b&&!b.disabled){const a=ACT_BY[b.dataset.a];if(a.id==='retire'){confirmRetire();return}if(a.nav){TAB=a.nav;renderTab();return}if(a.id==='comeback'){openComebackPicker();return}const r=doAction(S,b.dataset.a);if(r.err){toast(r.err);return}afterAct(r,a.ko)}};
  const fg=$('freeGo');if(fg)fg.onclick=freeAction;const fi=$('freeIn');if(fi)fi.onkeydown=e=>{if(e.key==='Enter')freeAction()}}
 function renderShop(){const s=S;const cats={};for(const it of SHOP)(cats[it.cat]=cats[it.cat]||[]).push(it);
  let h='<p class="d" style="margin:0 0 12px">물건마다 숨은 사연이 있을 수 있습니다. 집과 차는 바꾸면 이전 것을 팔고 돌려받은 돈이 반영됩니다.</p>';
@@ -2120,8 +2760,8 @@ const later=(ms,fn)=>INTRO.tm.push(setTimeout(fn,RM()?0:ms));
 
 /* ---------------- home ---------------- */
 function homeIntro(){
- const f=$('fEvents'),n=Object.keys(EVENTS).length+Object.keys(RANDOMS).length+BEV.length+SEV.length;
- countUp(f,n,fmt,1100);countUp($('fComb'),13,v=>v+'만+',1300);countUp($('fStk'),24,String,1000);
+ const f=$('fEvents'),n=Object.keys(EVENTS).length+Object.keys(RANDOMS).length+BEV.length+SEV.length+AGEV.length+BCEV.length;
+ countUp(f,n,fmt,1100);countUp($('fComb'),13,v=>v+'만+',1300);countUp($('fStk'),6,String,900);
  shuffleHero(14)}
 function shuffleHero(steps){const cv=$('heroAv');let i=0,gap=55;const card=$('heroCard');card.classList.remove('settle');
  const paint=()=>{const d=newLife({});drawAvatar(cv,d);$('heroName').textContent=d.name;$('heroSub').textContent=`${Math.floor(d.age)}세 · ${d.city} · 재능: ${d.gifts.map(k=>STAT_KO[k]).join(', ')}`};
@@ -2219,12 +2859,12 @@ let MSUB='biz';
 const condKo=k=>(CONDS.find(c=>c.k===k)||{ko:k}).ko;
 const stakeKo=v=>(STAKES.find(x=>x.v===v)||{ko:Math.round(v*100)+'%'}).ko;
 function renderMarket(){const s=S;if(!s.mkt)refreshMarket(s);
- let h=`<div class="seg" id="msub" style="margin-bottom:12px"><button type="button" data-m="biz" aria-pressed="${MSUB==='biz'}">회사 · 부동산</button><button type="button" data-m="stk" aria-pressed="${MSUB==='stk'}">주식 24종목</button><button type="button" data-m="col" aria-pressed="${MSUB==='col'}">수집품</button></div>`;
- if(MSUB==='biz'){h+=`<p class="d" style="margin:0 0 12px">매물은 분기마다 바뀝니다. 판매자 말이 다 맞지는 않습니다. 돈을 내고 실사를 하면 숨은 사정을 엿볼 수 있습니다. 모자란 돈은 ‘돈 · 투자’ 탭에서 빌릴 수 있습니다.</p><div class="items">`+s.mkt.list.map(l=>{const T=BTYPE[l.type];const ddFee=Math.max(100,Math.round(l.price*.008/10)*10);const can=l.price<=s.cash;
+ let h=`<div class="seg" id="msub" style="margin-bottom:12px"><button type="button" data-m="biz" aria-pressed="${MSUB==='biz'}">회사 · 부동산</button><button type="button" data-m="stk" aria-pressed="${MSUB==='stk'}">주식</button><button type="button" data-m="col" aria-pressed="${MSUB==='col'}">수집품</button></div>`;
+ if(MSUB==='biz'){h+=`<p class="d" style="margin:0 0 12px">매물은 분기마다 바뀝니다. 판매자 말이 다 맞지는 않습니다. 돈을 내고 실사를 하면 숨은 사정을 엿볼 수 있습니다. 모자란 돈은 ‘돈 · 대출’에서 빌릴 수 있습니다.</p><div class="items">`+s.mkt.list.map(l=>{const T=BTYPE[l.type];const ddFee=Math.max(100,Math.round(l.price*.008/10)*10);const can=l.price<=s.cash;
   return`<div class="item" style="gap:3px"><small style="color:var(--pink);font-weight:700">${esc(T.cat)} · ${esc(condKo(l.cond))}</small><b>${esc(l.name)}</b><small>${esc(SIZES[l.sz].ko)} ${esc(T.ko)} · ${esc(l.place)}</small><span class="pr">${esc(stakeKo(l.stake))} · ${won(l.price)}</span><small>판매자 말로는 회사 분기 이익 약 ${won(l.claim)}</small>${l.dd?`<small style="color:var(--cyan)">실사: ${esc(l.dd)}</small>`:''}
    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px"><button class="btn${can?' pri':''}" type="button" data-bb="${l.lid}"${can?'':' disabled'}>${can?'사기':`${won(l.price-s.cash)} 모자람`}</button>${l.dd?'':`<button class="btn" type="button" data-dd="${l.lid}"${ddFee>s.cash?' disabled':''}>실사 ${won(ddFee)}</button>`}${l.neg?'':`<button class="btn" type="button" data-ng="${l.lid}">깎아 보기</button>`}</div></div>`}).join('')+'</div>'}
- if(MSUB==='stk'){h+=`<p class="d" style="margin:0 0 6px">가상의 상장사들입니다. 한 종목 지분 5%를 넘기면 주요 주주가 되어 주주총회 같은 사건이 생깁니다.</p>`+s.mkt.stocks.map(k=>{const hv=stockHolding(s,k),st=stockStake(s,k),hist=k.hist,chg=hist.length>1?(hist[hist.length-1]/hist[hist.length-2]-1)*100:0;const h0=(s.stk||{})[k.id];const pl=h0?hv-h0.paid:0;
-  return`<div class="asset"><div><b>${esc(k.name)} <small style="color:var(--ink3);font-weight:400">${esc(k.sec)}</small></b><small class="num">${k.dead?'상장 폐지':fmt(k.price)+'원'} <span class="${cls(chg)}">${chg>=0?'+':''}${chg.toFixed(1)}%</span> · 시가총액 ${won(k.cap)}</small><div class="hold">${hv>0?`보유 ${won(hv)} · 지분 ${(st*100).toFixed(st<.01?3:1)}% · <span class="${cls(pl)}">${signed(pl)}</span>`:''}</div></div>${spark(hist.slice(-24),chg>=0?'var(--good)':'var(--bad)')}<div class="tr">${k.dead?'':[.1,.25,.5].map(p=>`<button class="btn" type="button" data-sb="${k.id}" data-p="${p}"${s.cash<10?' disabled':''}>현금 ${p*100}%</button>`).join('')}${hv>0?`<button class="btn" type="button" data-ss="${k.id}" data-p=".5">절반 팔기</button><button class="btn" type="button" data-ss="${k.id}" data-p="1">전부 팔기</button>`:''}</div></div>`}).join('')}
+ if(MSUB==='stk'){h+=`<p class="d" style="margin:0 0 6px">가상의 회사들입니다. 쌀 때 사서 비쌀 때 파세요. 가끔 망해서 상장 폐지되는 회사도 있습니다.</p>`+s.mkt.stocks.map(k=>{const hv=stockHolding(s,k),st=stockStake(s,k),hist=k.hist,chg=hist.length>1?(hist[hist.length-1]/hist[hist.length-2]-1)*100:0;const h0=(s.stk||{})[k.id];const pl=h0?hv-h0.paid:0;
+  return`<div class="asset"><div><b>${esc(k.name)} <small style="color:var(--ink3);font-weight:400">${esc(k.sec)}</small></b><small class="num">${k.dead?'상장 폐지':fmt(k.price)+'원'} <span class="${cls(chg)}">${chg>=0?'+':''}${chg.toFixed(1)}%</span></small><div class="hold">${hv>0?`보유 ${won(hv)} · <span class="${cls(pl)}">${signed(pl)}</span>`:''}</div></div>${spark(hist.slice(-24),chg>=0?'var(--good)':'var(--bad)')}<div class="tr">${k.dead?'':[.1,.25,.5].map(p=>`<button class="btn" type="button" data-sb="${k.id}" data-p="${p}"${s.cash<10?' disabled':''}>현금 ${p*100}%</button>`).join('')}${hv>0?`<button class="btn" type="button" data-ss="${k.id}" data-p=".5">절반 팔기</button><button class="btn" type="button" data-ss="${k.id}" data-p="1">전부 팔기</button>`:''}</div></div>`}).join('')}
  if(MSUB==='col'){h+=`<p class="d" style="margin:0 0 12px">진품일 수도, 가품일 수도, 장물일 수도 있습니다. 가끔은 세상에 몇 점 없는 물건이 섞여 있습니다.</p><div class="items">`+s.mkt.col.map(c=>{const C=COL.find(x=>x.k===c.cat);const can=c.price<=s.cash;return`<div class="item"><small style="color:var(--pink);font-weight:700">${esc(C.ko)} · ${esc(c.cond)}</small><b>${esc(c.name)}</b><span class="pr">${won(c.price)}</span><button class="btn${can?' pri':''}" type="button" data-cb="${c.cid}"${can?'':' disabled'}>${can?'사기':`${won(c.price-s.cash)} 모자람`}</button></div>`}).join('')+'</div>'}
  $('tp-mkt').innerHTML=h;
  $('tp-mkt').onclick=e=>{const t=e.target.closest('button');if(!t||t.disabled)return;let r=null;
@@ -2238,7 +2878,7 @@ function renderMarket(){const s=S;if(!s.mkt)refreshMarket(s);
   flushAch();save();renderAll()}}
 function renderOwn(){const s=S;const B=s.biz||[];const mine=B.reduce((a,b)=>a+bizValueMine(b),0);
  let h=`<div class="money2" style="margin-bottom:14px"><div class="box"><h4>내 회사</h4><div class="big">${B.length}곳</div><small>내 몫 가치 합계 ${won(mine)}</small></div><div class="box"><h4>주식 · 수집품</h4><div class="big">${won((s.mkt?s.mkt.stocks.reduce((a,k)=>a+stockHolding(s,k),0):0)+(s.col||[]).reduce((a,c)=>a+colValue(s,c),0))}</div><small>순자산 ${won(netWorth(s))}</small></div></div>`;
- if(!B.length)h+=`<p class="d">아직 가진 회사가 없습니다. ‘시장’ 탭에서 노점부터 항공사까지 살 수 있습니다.</p>`;
+ if(!B.length)h+=`<p class="d">아직 가진 회사가 없습니다. ‘사고팔기’에서 노점부터 항공사까지 살 수 있습니다.</p>`;
  h+=B.map(b=>{const T=BTYPE[b.type],v=bizValueMine(b),boss=b.stake>=.51;return`<div class="box" style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><div><b>${esc(b.name)}</b> <small style="color:var(--ink3)">${esc(SIZES[b.sz].ko)} ${esc(T.ko)} · ${esc(b.place)}${b.listed?' · 상장사':''}</small><div class="num" style="font-size:13px;margin-top:4px">지분 ${Math.round(b.stake*100)}% · 내 몫 <span class="${v>=b.paid?'pos':'neg'}">${won(v)}</span> <small style="color:var(--ink3)">(산 값 ${won(b.paid)})</small></div><div class="num" style="font-size:12.5px;color:var(--ink2)">지난 분기 회사 이익 <span class="${cls(b.profit)}">${signed(b.profit||0)}</span></div></div>${spark(b.hist.slice(-24),v>=b.paid?'var(--good)':'var(--bad)')}</div>
   <div class="row" style="align-items:center">${boss?Object.entries(POLICY).map(([k,p])=>`<button class="btn" type="button" data-pol="${b.bid}" data-p="${k}" aria-pressed="${b.policy===k}" style="${b.policy===k?'background:var(--ink);color:var(--bg);border-color:var(--ink)':''}">${p.ko}</button>`).join(''):'<small style="margin:0">소수 지분이라 경영에는 참여할 수 없습니다.</small>'}<span style="flex:1"></span><button class="btn" type="button" data-sell="${b.bid}">팔기 · ${won(Math.round(v*.9))}</button></div></div>`}).join('');
  if((s.col||[]).length)h+=`<h3 style="font-size:15px;margin:16px 0 8px">수집품</h3><div class="owned">${s.col.map(c=>{const v=colValue(s,c);return`<div class="orow"><span>${esc(c.name)} <small style="color:var(--ink3)">산 값 ${won(c.paid)}</small></span><span class="num ${v>c.paid?'pos':v<c.paid?'neg':''}">${won(Math.round(v*.88))}</span><button class="btn" type="button" data-csell="${c.cid}">팔기</button></div>`}).join('')}</div>`;
@@ -2249,6 +2889,133 @@ function renderOwn(){const s=S;const B=s.biz||[];const mine=B.reduce((a,b)=>a+bi
   if(t.dataset.sell){const r=sellBiz(S,t.dataset.sell,.9);if(r)toast(`${won(r.v)}에 팔았어요.`)}
   if(t.dataset.csell){const r=sellCol(S,t.dataset.csell);if(r)toast(`${won(r.v)}에 팔았어요.`)}
   flushAch();save();renderAll()}}
+
+/* ================================================================
+   데뷔각 — interface 4: 내 회사 (기획사 · 방송국), 컴백 고르기, 차트 결과, 투자 탭
+   ================================================================ */
+let CSUB='ag',ISUB='money';
+const AGUI={form:false,pick:[],con:null,bud:1,name:'',bform:false,genre:'variety',bbud:0,cast:'rookie',title:'',newName:'',newBc:''};
+const apDots=(n,max)=>`<span class="ap">${Array.from({length:max},(_,i)=>`<i class="${i<n?'on':''}"></i>`).join('')}</span>`;
+const avCanvas=(id,k)=>`<canvas class="mav" width="32" height="40" data-av="${esc(id)}" data-k="${k}"></canvas>`;
+function paintAvs(root){root.querySelectorAll('canvas[data-av]').forEach(cv=>drawAvatar(cv,{id:cv.dataset.av,name:cv.dataset.av,career:{id:cv.dataset.k},own:{},peakFame:cv.dataset.k==='idol'?70:0}))}
+const stKo=k=>(AG_ST.find(a=>a[0]===k)||[k,k])[1];
+const keyStats=c=>Object.entries(CONCEPT[c].w).filter(([,v])=>v>=.3).map(([x])=>stKo(x)).join(' · ');
+
+/* ---------------- chart reveal ---------------- */
+function chartHtml(c){if(!c)return'';const big=c.big||(c.peak?`${c.peak}위`:'차트 밖');const label=c.label!=null?c.label:(c.big?'':CHART_TIER[c.tier]);
+ return`<div class="chart t${c.tier}${c.tier>=4?' boom':''}"><div class="burst" aria-hidden="true">${c.tier>=4?Array.from({length:14},(_,i)=>`<i style="--a:${(i*25.7).toFixed(1)}deg;--d:${60+(i%3)*25}px;--c:${['#FF5AA8','#4CC9E2','#E8B84A','#ffffff'][i%4]}"></i>`).join(''):''}</div>
+  <small>${esc(c.kicker||'최고 순위')}</small><b>${esc(big)}</b>${c.sub?`<span class="csub">${esc(c.sub)}</span>`:''}${label?`<div class="clabel">${esc(label)}</div>`:''}
+  ${c.title?`<div class="ctitle">「${esc(c.title)}」${c.conc?` · ${esc(c.conc)}`:''}</div>`:''}${c.wins?`<div class="cwins">음악 방송 ${c.wins}관왕</div>`:''}</div>`}
+function openChartResult(r,title){modal('결과','res',title,'',null);$('mBody').onclick=null;
+ $('mBody').innerHTML=`${chartHtml(r.chart)}<p class="res ${r.g>0?'good':r.g<0?'bad':''}">${esc(r.t)}</p>${chipsHtml(r.chips)}`;okButton('확인',()=>{closeModal();flushAch();save();renderAll()})}
+function confirmBox(title,txt,ok,fn){modal('확인','',title,'',null);$('mBody').onclick=null;$('mBody').innerHTML=`<p class="res">${esc(txt)}</p>`;
+ const row=document.createElement('div');row.className='row';row.style.gap='8px';const a=document.createElement('button');a.className='btn pri';a.type='button';a.textContent=ok;a.onclick=()=>{closeModal();fn();flushAch();save();renderAll()};
+ const b=document.createElement('button');b.className='btn';b.type='button';b.textContent='취소';b.onclick=closeModal;row.append(a,b);$('mBody').appendChild(row);setTimeout(()=>b.focus({preventScroll:true}),30)}
+
+/* ---------------- my comeback: pick a concept ---------------- */
+function openComebackPicker(){const s=S;let con=null,ef=1;const tr=trendOf(s);
+ modal('컴백 준비','res',s.career.id==='solo'?'새 싱글 준비':'새 앨범 준비',`올해 유행은 ‘${CONCEPT[tr].ko}’입니다. 지난번과 같은 콘셉트로 가면 식상하다는 말을 듣습니다.`,`${careerName(s)}${s.flags.pos?` · 내 포지션 ${POS[s.flags.pos].ko}`:''}`);
+ const go=()=>{const r=doAction(S,'comeback',{conc:con,ef});if(r.err){toast(r.err);return}S._last={title:'컴백',...r};openChartResult(r,`${S.career.group||S.stageName||S.name} 컴백`)};
+ const draw=()=>{$('mBody').innerHTML=`<h4 class="pk">콘셉트</h4><div class="cgrid">${Object.entries(CONCEPT).map(([k,c])=>`<button type="button" class="cbtn" data-c="${k}" aria-pressed="${con===k}"><b>${c.ko}${k===tr?' <i>유행</i>':''}${k===s.flags.lastConc?' <em>지난번</em>':''}</b><small>${keyStats(k)} 중요</small></button>`).join('')}</div>
+  <h4 class="pk">준비 강도</h4><div class="seg">${EFFORT.map((e,i)=>`<button type="button" data-e="${i}" aria-pressed="${ef===i}">${e.ko} <small>${e.sub}</small></button>`).join('')}</div><div style="height:14px"></div>`;
+  const b=document.createElement('button');b.className='btn pri';b.type='button';b.textContent=con?'발매하기':'콘셉트를 골라 주세요';b.disabled=!con;b.onclick=go;$('mBody').appendChild(b)};
+ $('mBody').onclick=e=>{const c=e.target.closest('[data-c]');if(c){con=c.dataset.c;draw();return}const x=e.target.closest('[data-e]');if(x){ef=+x.dataset.e;draw()}};draw()}
+
+/* ---------------- 투자 tab (money · market · what I bought) ---------------- */
+function renderInv(){$('invSeg').innerHTML=[['money','돈 · 대출'],['mkt','사고팔기'],['own','내가 산 것']].map(([k,t])=>`<button type="button" data-is="${k}" aria-pressed="${ISUB===k}">${t}</button>`).join('');
+ $('invSeg').onclick=e=>{const b=e.target.closest('[data-is]');if(!b)return;ISUB=b.dataset.is;renderInv()};
+ for(const k of['money','mkt','own'])$('tp-'+k).hidden=k!==ISUB;({money:renderMoney,mkt:renderMarket,own:renderOwn})[ISUB]()}
+
+/* ---------------- 회사 tab ---------------- */
+function renderCo(){const s=S,p=$('tp-co');
+ let h=`<div class="seg cosub"><button type="button" data-cs="ag" aria-pressed="${CSUB==='ag'}">기획사${s.ag?` · ${esc(s.ag.name)}`:''}</button><button type="button" data-cs="bc" aria-pressed="${CSUB==='bc'}">방송국${s.bc?` · ${esc(s.bc.name)}`:''}</button></div>`;
+ h+=CSUB==='ag'?agHtml(s):bcHtml(s);p.innerHTML=h;paintAvs(p);p.onclick=coClick;p.oninput=coInput;p.onchange=coInput}
+function foundHtml(s,kind){const A=kind==='ag';if(A&&!AGUI.newName)AGUI.newName=agName();if(!A&&!AGUI.newBc)AGUI.newBc=bcName();const nm=A?AGUI.newName:AGUI.newBc;
+ const plans=A?[['small','1인 기획사',3000,'책상 하나, 의자 둘. 연습생 몇 명부터'],['big','제대로 차리기',30000,'연습실과 녹음실까지 갖추고 시작']]:[['small','개인 채널',1000,'카메라 한 대로 웹예능부터'],['big','제작사로 시작',20000,'스튜디오와 작가진까지 갖추고 시작']];
+ return`<div class="cofound"><span class="cfk">2막</span><h3>${A?'내 기획사 세우기':'내 방송국 세우기'}</h3>
+ <p>${A?'연습생을 뽑고, 키우고, 데뷔시켜서 차트 1위를 노립니다. 회사가 크면 사옥을 올리고 해외로 나갑니다.':'프로그램을 기획하고 출연자를 섭외해서 시청률을 올립니다. 개인 채널에서 시작해 지상파급 방송국까지 키울 수 있어요. 나나 내 기획사 가수를 출연시킬 수도 있어요.'}</p>
+ <p class="d">내 직업과는 따로 굴러가요. 오디션에 붙어 연습생이 되어도, 직업이 바뀌어도 회사는 그대로예요.</p>
+ <label class="h" for="nmIn">${A?'회사 이름':'채널 이름'}</label><div class="nmrow"><input id="nmIn" maxlength="16" value="${esc(nm)}"><button class="btn" type="button" data-roll="${kind}">다른 이름</button></div>
+ <div class="plans">${plans.map(([k,t,c,d])=>`<button type="button" class="plan" data-found="${kind}" data-plan="${k}"${c>s.cash?' aria-disabled="true"':''}><b>${t}</b><span class="pc">${won(c)}</span><small>${d}</small>${c>s.cash?`<em>${won(c-s.cash)} 모자람</em>`:''}</button>`).join('')}</div>
+ <p class="d">돈이 모자라면 ‘투자’ 탭 → ‘돈 · 대출’에서 은행 대출을 받을 수 있어요.</p></div>`}
+function coHead(name,tierKo,extra,val,profit,third,prog,next,ap,max,label){return`<div class="cohead"><div class="cot"><b>${esc(name)}</b><span class="tierb">${tierKo}</span>${extra}</div>
+ <div class="conums"><div><small>회사 가치</small><b>${won(val)}</b></div><div><small>지난 분기</small><b class="${cls(profit)}">${signed(profit)}</b></div><div><small>${third[0]}</small><b>${third[1]}</b></div></div>
+ <div class="coprog"><i style="width:${prog}%"></i></div><small class="cop">${next}</small><div class="coap"><span>${label}</span>${apDots(ap,max)}</div></div>`}
+const tierProg=(T,i,v)=>T[i+1]?clamp((v-T[i][0])/(T[i+1][0]-T[i][0])*100,2,100):100;
+const statBars=m=>`<div class="sbars">${AG_ST.map(([k,ko])=>`<span><em>${ko}</em><i><u style="width:${Math.round(m.st[k])}%"></u></i><b>${Math.round(m.st[k])}</b></span>`).join('')}</div>`;
+function facHtml(s,kind,k,F,lv){const c=F.cost[lv];return`<div class="fac"><div class="fh"><b>${F.ko}</b><span class="lv">${[0,1,2].map(i=>`<i class="${i<lv?'on':''}"></i>`).join('')}</span></div><small>${lv?esc(F.lv[lv-1]):'아직 없음'} · ${F.d}</small>${lv<3?`<button class="btn" type="button" data-build="${kind}:${k}"${c>s.cash?' disabled':''}>${esc(F.lv[lv])} · ${won(c)}</button>`:'<span class="max">최고 단계</span>'}</div>`}
+
+function agHtml(s){const ag=s.ag;if(!ag)return foundHtml(s,'ag');const ti=agTier(ag),nx=AG_TIERS[ti+1],ready=ag.tr.filter(agReady).length,live=agLive(ag);
+ let h=coHead(ag.name,agTierKo(ag),`${ag.listed?'<span class="tierb alt">상장사</span>':''}${ag.own<1?`<span class="tierb alt">내 지분 ${Math.round(ag.own*100)}%</span>`:''}`,Math.round(ag.val*ag.own),ag.lastProfit,['올해 유행',CONCEPT[trendOf(s)].ko],tierProg(AG_TIERS,ti,ag.val),nx?`다음 단계 ‘${nx[1]}’까지 ${won(nx[0]-ag.val)}`:'최고 단계에 올랐습니다',ag.ap,agAPMax(ag),'이번 분기 회사 일정');
+ h+=`<div class="coacts"><button type="button" class="cact" data-ag="aud"${ag.ap<1?' disabled':''}><b>오디션 열기</b><small>${won(audCost(ag))} · 후보 ${ag.fac.hq>=2?4:3}명</small></button>
+  <button type="button" class="cact" data-ag="street"${ag.ap<1?' disabled':''}><b>길거리 캐스팅</b><small>100만 원 · 허탕 아니면 대어</small></button>
+  <button type="button" class="cact" data-ag="drill"${ag.ap<1||!ag.tr.length?' disabled':''}><b>집중 트레이닝</b><small>${ag.tr.length?`연습생 ${ag.tr.length}명 · ${won(100*ag.tr.length)}`:'연습생이 없어요'}</small></button>
+  <button type="button" class="cact pri" data-ag="form"${ready<1?' disabled':''}><b>그룹 만들어 데뷔</b><small>${ready?`데뷔 가능 ${ready}명`:'반년 넘게 연습한 연습생 필요'}</small></button></div>`;
+ if(ag.auds)h+=`<div class="auds"><h4 class="coh">최종 후보 <small>이번 분기가 끝나면 떠나요</small></h4>${ag.auds.map(m=>`<div class="cand">${avCanvas(m.id,'student')}<div class="cb"><b>${esc(m.name)}</b><small>${m.age}세 · ${m.sex==='F'?'여':'남'} · ${m.from}${m.tags.length?' · '+m.tags.map(esc).join(' · '):''}</small>${statBars(m)}
+  ${m.checked?`<div class="chk">검증 결과 · ${m.flaw?`<span class="neg">${flawKo[m.flaw]}</span>`:'<span class="pos">문제 없음</span>'} · 잠재력 <b>${potKo(m)}</b>${['composer','chaebol','genius'].includes(m.tw)?' · 뭔가 숨은 게 있어 보임':''}</div>`:''}
+  <div class="cbtns"><button class="btn pri" type="button" data-sign="${m.id}"${m.cost>s.cash?' disabled':''}>계약 · ${won(m.cost)}</button>${m.checked?'':`<button class="btn" type="button" data-check="${m.id}"${200>s.cash?' disabled':''}>검증 · 200만 원</button>`}<button class="lnk" type="button" data-pass="${m.id}">보내기</button></div></div></div>`).join('')}</div>`;
+ if(AGUI.form){const rd=ag.tr.filter(agReady);AGUI.pick=AGUI.pick.filter(id=>rd.some(m=>m.id===id));if(!AGUI.con)AGUI.con=trendOf(s);if(!AGUI.name)AGUI.name=grName();const pk=rd.filter(m=>AGUI.pick.includes(m.id)),B=BUDGET[AGUI.bud];
+  const sk=pk.length?Math.round(pk.reduce((a,m)=>a+agSkill(m,AGUI.con),0)/pk.length):0;
+  h+=`<div class="builder"><h4 class="coh">새 그룹 만들기</h4><div class="pk">멤버 <small>${pk.length}명 골랐어요 · 3~7명이 합이 좋아요 · 1명이면 솔로</small></div>
+  <div class="pickm">${rd.map(m=>`<button type="button" class="pm" data-pick="${m.id}" aria-pressed="${AGUI.pick.includes(m.id)}">${avCanvas(m.id,'trainee')}<b>${esc(m.name)}</b><small>${CONCEPT[AGUI.con].ko} 실력 ${Math.round(agSkill(m,AGUI.con))}</small></button>`).join('')}</div>
+  <div class="pk">그룹 이름</div><div class="nmrow"><input id="gNm" maxlength="18" value="${esc(AGUI.name)}"><button class="btn" type="button" data-groll="1">다른 이름</button></div>
+  <div class="pk">콘셉트</div><div class="cgrid">${Object.entries(CONCEPT).map(([k,c])=>`<button type="button" class="cbtn" data-gc="${k}" aria-pressed="${AGUI.con===k}"><b>${c.ko}${k===trendOf(s)?' <i>유행</i>':''}</b><small>${keyStats(k)} 중요</small></button>`).join('')}</div>
+  <div class="pk">제작비</div><div class="seg">${BUDGET.map((b,i)=>`<button type="button" data-gb="${i}" aria-pressed="${AGUI.bud===i}">${b.ko} · ${won(b.cost)}</button>`).join('')}</div>
+  <p class="d">고른 멤버 평균 ${CONCEPT[AGUI.con].ko} 실력 <b>${sk||'-'}</b>. 스타성은 무대에 올라 봐야 압니다.</p>
+  <div class="row" style="gap:8px"><button class="btn pri" type="button" data-debut="1"${!pk.length||B.cost>s.cash||ag.ap<1?' disabled':''}>데뷔시키기 · ${won(B.cost)}</button><button class="btn" type="button" data-ag="formx">닫기</button></div></div>`}
+ h+=`<h4 class="coh">아티스트 <small>${live.length}팀</small></h4>`+(live.length?live.map(g=>{const last=g.albums[g.albums.length-1],can=g.cd<=s.t,k=AGUI['c'+g.id]||trendOf(s),b=AGUI['b'+g.id]!=null?AGUI['b'+g.id]:1;
+  return`<div class="grp"><div class="grph"><div><b>${esc(g.name)}</b><small>${g.mem.length===1?'솔로':`${g.mem.length}인조`} · ${Math.floor((s.t-g.debut)/4)+1}년 차${g.end-s.t<=4&&g.end>s.t?' · 재계약 임박':''}</small></div><div class="gfans"><small>팬</small><b>${fansTxt(g.fans)}</b></div></div>
+  <div class="mems">${g.mem.map(m=>`<span class="mm">${avCanvas(m.id,'idol')}<small>${esc(m.name)}</small></span>`).join('')}</div>
+  <div class="gst"><span>화제성 <i class="hbar"><u style="width:${g.buzz}%"></u></i></span><span>최고 기록 <b>${g.albums.length?CHART_TIER[g.best]:'-'}</b></span>${last?`<span>최근 「${esc(last.title)}」 ${last.peak?last.peak+'위':'차트 밖'}</span>`:''}<span>분기 수익 <b class="${cls(g.qrev||0)}">${signed(g.qrev||0)}</b></span></div>
+  <div class="gact"><div class="cb2"><select data-gcsel="${g.id}" aria-label="컴백 콘셉트">${Object.entries(CONCEPT).map(([kk,c])=>`<option value="${kk}"${kk===k?' selected':''}>${c.ko}${kk===trendOf(s)?' (유행)':''}${kk===g.lastConc?' (지난번)':''}</option>`).join('')}</select><select data-gbsel="${g.id}" aria-label="제작비">${BUDGET.map((x,i)=>`<option value="${i}"${i===b?' selected':''}>${x.ko} ${won(x.cost)}</option>`).join('')}</select><button class="btn pri" type="button" data-cb="${g.id}"${!can||ag.ap<1?' disabled':''}>${can?'컴백':'컴백 준비 중'}</button></div>
+  <div class="cb3"><button class="btn" type="button" data-promo="${g.id}"${ag.ap<1?' disabled':''}>예능 · 광고 · 행사</button>${g.fans>=100000?`<button class="btn" type="button" data-tour="${g.id}"${ag.ap<1||(g.tourCd||0)>s.t?' disabled':''}>${(g.tourCd||0)>s.t?'투어 쉬는 중':'투어'}</button>`:''}<button class="lnk" type="button" data-disband="${g.id}">활동 종료</button></div></div></div>`}).join(''):`<p class="d">아직 데뷔한 팀이 없어요. 연습생을 뽑아 반년 넘게 키우면 데뷔시킬 수 있어요.</p>`);
+ h+=`<h4 class="coh">연습생 <small>${ag.tr.length} / ${agCap(ag)}명</small></h4>`+(ag.tr.length?`<div class="trl">${ag.tr.map(m=>`<div class="trn">${avCanvas(m.id,'trainee')}<div class="trb"><div><b>${esc(m.name)}</b> <small>${m.age}세 · ${m.q}분기째${m.tags.length?' · '+m.tags.map(esc).join(' · '):''}${m.pre?` · 팬 ${fansTxt(m.pre)}`:''}</small></div>${statBars(m)}</div><div class="tre">${agReady(m)?'<span class="rdy">데뷔 가능</span>':`<span class="nrdy">${2-m.q}분기 더</span>`}${m.mood<30?'<span class="sad">지침</span>':''}<button class="lnk" type="button" data-fire="${m.id}">내보내기</button></div></div>`).join('')}</div>`:`<p class="d">오디션이나 길거리 캐스팅으로 연습생을 뽑으세요.</p>`);
+ h+=`<h4 class="coh">회사 키우기</h4><div class="facs">${Object.entries(AG_FAC).map(([k,F])=>facHtml(s,'ag',k,F,ag.fac[k])).join('')}</div>`;
+ const gone=ag.gr.filter(g=>g.gone);if(gone.length)h+=`<p class="d">활동을 마친 팀 · ${gone.map(g=>esc(g.name)).join(', ')}</p>`;
+ h+=`<p class="d">${ag.name} 기록 · 데뷔 ${ag.stats.debut}팀 · TOP 10 ${ag.stats.hits}번 · 1위 ${ag.stats.no1}번 · 시상식 ${ag.stats.award}번</p><div class="cofoot"><button class="lnk" type="button" data-ag="sell">회사 팔기 · ${won(Math.round(ag.val*ag.own*.8))}</button></div>`;return h}
+
+function bcHtml(s){const bc=s.bc;if(!bc)return foundHtml(s,'bc');const ti=bcTier(bc),nx=BC_TIERS[ti+1],live=bcLive(bc);
+ let h=coHead(bc.name,bcTierKo(bc),`<span class="tierb alt">${bc.fac.ch?BC_FAC.ch.lv[bc.fac.ch-1]:'인터넷 채널'}</span>${bc.listed?'<span class="tierb alt">상장사</span>':''}${bc.own<1?`<span class="tierb alt">내 지분 ${Math.round(bc.own*100)}%</span>`:''}`,Math.round(bc.val*bc.own),bc.lastProfit,['올해 인기 장르',GENRE[bc.trend].ko],tierProg(BC_TIERS,ti,bc.val),nx?`다음 단계 ‘${nx[1]}’까지 ${won(nx[0]-bc.val)}`:'최고 단계에 올랐습니다',bc.ap,bcAPMax(bc),'이번 분기 방송국 일정');
+ h+=`<div class="coacts one"><button type="button" class="cact pri" data-bc="new"${bc.ap<1?' disabled':''}><b>새 프로그램 기획</b><small>장르 · 제작비 · 섭외를 고르면 첫 방송 시청률이 나와요</small></button></div>`;
+ if(AGUI.bform){const cl=castList(s);if(!cl.some(c=>c.k===AGUI.cast))AGUI.cast='rookie';if(!AGUI.title)AGUI.title=showName(AGUI.genre);const C=cl.find(c=>c.k===AGUI.cast),cost=showCost(AGUI.genre,AGUI.bbud,bc)+C.cost;
+  h+=`<div class="builder"><h4 class="coh">새 프로그램</h4><div class="pk">장르</div><div class="cgrid">${Object.entries(GENRE).map(([k,G])=>`<button type="button" class="cbtn" data-genre="${k}" aria-pressed="${AGUI.genre===k}"><b>${G.ko}${k===bc.trend?' <i>인기</i>':''}</b><small>${G.d}</small></button>`).join('')}</div>
+  <div class="pk">제작비</div><div class="seg">${BC_BUD.map((b,i)=>`<button type="button" data-bbud="${i}" aria-pressed="${AGUI.bbud===i}">${b.ko} · ${won(showCost(AGUI.genre,i,bc))}</button>`).join('')}</div>
+  <div class="pk">섭외</div><div class="cgrid">${cl.map(c=>`<button type="button" class="cbtn" data-cast="${c.k}" aria-pressed="${AGUI.cast===c.k}"><b>${c.ko}</b><small>${esc(c.sub)}${c.cost?` · ${won(c.cost)}`:''}</small></button>`).join('')}</div>
+  <div class="pk">프로그램 이름</div><div class="nmrow"><input id="tNm" maxlength="20" value="${esc(AGUI.title)}"><button class="btn" type="button" data-troll="1">다른 이름</button></div>
+  <div class="row" style="gap:8px;margin-top:12px"><button class="btn pri" type="button" data-launch="1"${cost>s.cash||bc.ap<1?' disabled':''}>첫 방송 내보내기 · ${won(cost)}</button><button class="btn" type="button" data-bc="close">닫기</button></div></div>`}
+ h+=`<h4 class="coh">방송 중 <small>${live.length}개</small></h4>`+(live.length?live.map(x=>`<div class="grp show"><div class="grph"><div><b>「${esc(x.name)}」</b><small>${GENRE[x.genre].ko} · ${esc(x.castKo)}${x.castG?` (${esc(x.castG)})`:''} · 남은 ${x.life}분기</small></div><div class="gfans"><small>${bc.fac.ch?'시청률':'조회수'}</small><b>${bc.fac.ch?x.rating.toFixed(1)+'%':fmt(Math.max(1,Math.round(x.rating*14)))+'만'}</b></div></div>
+  <div class="gst"><span>첫 반응 <b>${SHOW_TIER[x.tier]}</b></span><span>최고 ${ratingTxt(bc,x.peak)}</span><span>분기 수익 <b class="pos">${won(showRev(bc,x))}</b></span></div>
+  <div class="gact"><div class="cb3"><button class="btn" type="button" data-bpromo="${x.id}"${bc.ap<1?' disabled':''}>홍보 강화 · ${won(Math.round(showCost(x.genre,0,bc)*.6))}</button><button class="lnk" type="button" data-bend="${x.id}">조기 종영</button></div></div></div>`).join(''):`<p class="d">방송 중인 프로그램이 없어요. 새 프로그램을 기획해 보세요.</p>`);
+ const ended=bc.shows.filter(x=>x.done).slice(-6).reverse();if(ended.length)h+=`<h4 class="coh">지난 프로그램</h4><div class="trl">${ended.map(x=>`<div class="trn ended"><div class="trb"><b>「${esc(x.name)}」</b> <small>${GENRE[x.genre].ko} · ${SHOW_TIER[x.tier]} · 최고 ${ratingTxt(bc,x.peak)}</small></div><div class="tre">${x.tier>=3&&!x.next?`<button class="btn" type="button" data-s2="${x.id}"${bc.ap<1?' disabled':''}>시즌 ${x.season+1}</button>`:''}</div></div>`).join('')}</div>`;
+ h+=`<h4 class="coh">방송국 키우기</h4><div class="facs">${Object.entries(BC_FAC).map(([k,F])=>facHtml(s,'bc',k,F,bc.fac[k])).join('')}</div>`;
+ h+=`<p class="d">${bc.name} 기록 · 프로그램 ${bc.stats.shows}개 · 히트 ${bc.stats.hits}개 · 판권 라이브러리 ${won(bc.lib)}</p><div class="cofoot"><button class="lnk" type="button" data-bc="sell">방송국 팔기 · ${won(Math.round(bc.val*bc.own*.8))}</button></div>`;return h}
+
+function coInput(e){const t=e.target;if(t.id==='nmIn'){if(CSUB==='ag')AGUI.newName=t.value;else AGUI.newBc=t.value}if(t.id==='gNm')AGUI.name=t.value;if(t.id==='tNm')AGUI.title=t.value;
+ if(t.dataset.gcsel)AGUI['c'+t.dataset.gcsel]=t.value;if(t.dataset.gbsel)AGUI['b'+t.dataset.gbsel]=+t.value}
+function coClick(e){const t=e.target.closest('button');if(!t)return;if(t.getAttribute('aria-disabled')==='true'){toast('돈이 모자라요. ‘투자’ 탭에서 빌릴 수 있어요.');return}if(t.disabled)return;
+ const s=S,d=t.dataset;let r=null;const done=()=>{if(r&&r.err){toast(r.err);return}if(r&&r.t)toast(r.t);flushAch();save();renderAll()};
+ if(d.cs){CSUB=d.cs;renderCo();return}
+ if(d.roll){if(d.roll==='ag')AGUI.newName=agName();else AGUI.newBc=bcName();renderCo();return}
+ if(d.found){const nm=$('nmIn').value;r=d.found==='ag'?agFound(s,d.plan,nm):bcFound(s,d.plan,nm);if(r.err){toast(r.err);return}flushAch();save();renderAll();openNews({kicker:'2막',title:d.found==='ag'?s.ag.name:s.bc.name,txt:r.t,chips:r.chips,g:2},true);return}
+ if(d.ag){const k=d.ag;if(k==='aud')r=agAudition(s);else if(k==='street')r=agStreet(s);else if(k==='drill')r=agDrill(s);
+  else if(k==='form'){AGUI.form=true;AGUI.pick=[];AGUI.name=grName();AGUI.con=trendOf(s);renderCo();return}else if(k==='formx'){AGUI.form=false;renderCo();return}
+  else if(k==='sell'){confirmBox(`${s.ag.name} 팔기`,`${won(Math.round(s.ag.val*s.ag.own*.8))}을 받고 회사를 넘깁니다. 연습생과 아티스트도 함께 넘어갑니다.`,'판다',()=>agSell(S));return}return done()}
+ if(d.sign){r=agSign(s,d.sign);return done()}if(d.check){r=agCheck(s,d.check);return done()}if(d.pass){agPass(s,d.pass);return done()}
+ if(d.fire){const m=s.ag.tr.find(x=>x.id===d.fire);if(m)confirmBox('연습생 내보내기',`${m.name}${P(m.name,'을/를')} 내보낼까요?`,'내보낸다',()=>agFire(S,m.id));return}
+ if(d.pick){const i=AGUI.pick.indexOf(d.pick);if(i>=0)AGUI.pick.splice(i,1);else AGUI.pick.push(d.pick);renderCo();return}
+ if(d.groll){AGUI.name=grName();renderCo();return}if(d.gc){AGUI.con=d.gc;renderCo();return}if(d.gb){AGUI.bud=+d.gb;renderCo();return}
+ if(d.debut){const nm=$('gNm').value;r=agDebut(s,AGUI.pick,nm,AGUI.con,AGUI.bud);if(r.err){toast(r.err);return}AGUI.form=false;AGUI.pick=[];AGUI.name='';openChartResult(r,`${nm||'새 그룹'} 데뷔`);return}
+ if(d.cb){const g=s.ag.gr.find(x=>x.id===d.cb);const conc=AGUI['c'+d.cb]||trendOf(s),bud=AGUI['b'+d.cb]!=null?AGUI['b'+d.cb]:1;r=agComeback(s,d.cb,conc,bud);if(r.err){toast(r.err);return}openChartResult(r,`${g.name} 컴백`);return}
+ if(d.promo||d.tour){r=d.promo?agPromo(s,d.promo):agTour(s,d.tour);if(r.err){toast(r.err);return}flushAch();save();renderAll();openNews({kicker:'결과',title:d.promo?'예능 · 광고 · 행사':'투어',txt:r.t,chips:r.chips,g:r.g},true);return}
+ if(d.disband){const g=s.ag.gr.find(x=>x.id===d.disband);confirmBox(`${g.name} 활동 종료`,'팀 활동을 마칩니다. 더 이상 수익도 비용도 생기지 않습니다.','활동 종료',()=>agDisband(S,g.id));return}
+ if(d.build){const[kind,k]=d.build.split(':');r=kind==='ag'?agBuild(s,k):bcBuild(s,k);return done()}
+ if(d.bc){if(d.bc==='new'){AGUI.bform=true;AGUI.title=showName(AGUI.genre);renderCo();return}if(d.bc==='close'){AGUI.bform=false;renderCo();return}
+  if(d.bc==='sell'){confirmBox(`${s.bc.name} 팔기`,`${won(Math.round(s.bc.val*s.bc.own*.8))}을 받고 방송국을 넘깁니다.`,'판다',()=>bcSell(S));return}}
+ if(d.genre){AGUI.genre=d.genre;AGUI.title=showName(d.genre);renderCo();return}if(d.bbud){AGUI.bbud=+d.bbud;renderCo();return}if(d.cast){AGUI.cast=d.cast;renderCo();return}if(d.troll){AGUI.title=showName(AGUI.genre);renderCo();return}
+ if(d.launch){r=bcLaunch(s,AGUI.genre,AGUI.bbud,AGUI.cast,$('tNm').value);if(r.err){toast(r.err);return}AGUI.bform=false;AGUI.title='';openChartResult(r,'첫 방송');return}
+ if(d.bpromo){r=bcPromo(s,d.bpromo);return done()}
+ if(d.bend){const x=s.bc.shows.find(y=>y.id===d.bend);confirmBox(`「${x.name}」 조기 종영`,'더 이상 광고 수익이 들어오지 않습니다.','종영한다',()=>bcEnd(S,x.id));return}
+ if(d.s2){const x=s.bc.shows.find(y=>y.id===d.s2);const base=x.name.replace(/ 시즌\d+$/,'');r=bcLaunch(s,x.genre,1,castList(s).some(c=>c.k===x.cast)?x.cast:'rookie',`${base} 시즌${x.season+1}`,x.season+1);if(r.err){toast(r.err);return}x.next=true;openChartResult(r,`「${base}」 새 시즌`);return}}
 
 /* ================================================================
    데뷔각 — interface 2: the season flow, modals, AI, ending
@@ -2278,7 +3045,7 @@ function openChoice(prep){const ai=prep.kind==='ai';modal(ai?'AI 사건':'갈림
  $('mBody').onclick=e=>{const b=e.target.closest('.opt');if(!b||b.disabled)return;const r=resolveChoice(S,prep,+b.dataset.i);if(r.err){toast(r.err);b.disabled=true;return}$('mBody').onclick=null;showResult(r)};
  setTimeout(()=>{const f=$('mBody').querySelector('.opt:not(:disabled)');if(f)f.focus({preventScroll:true})},30)}
 function showResult(r,others){$('mK').textContent='결과';$('mK').className='mk res';
- $('mBody').innerHTML=`<p class="res ${r.g>0?'good':r.g<0?'bad':''}">${esc(r.t)}</p>${chipsHtml(r.chips)}${others&&others.length?`<p class="others">다른 가능성도 있었습니다: ${others.map(esc).join(' / ')}</p>`:''}`;
+ $('mBody').innerHTML=`${chartHtml(r.chart)}<p class="res ${r.g>0?'good':r.g<0?'bad':''}">${esc(r.t)}</p>${chipsHtml(r.chips)}${others&&others.length?`<p class="others">다른 가능성도 있었습니다: ${others.map(esc).join(' / ')}</p>`:''}`;
  renderAll();okButton(S.endNow?'마지막 장으로':'계속',()=>{closeModal();flushAch();renderAll();nextItem()})}
 
 /* ---------------- the season ---------------- */
@@ -2309,6 +3076,7 @@ function finishLife(){const s=S;if(!s)return;closeModal();const L=lifeTitle(s);c
  $('enWhy').textContent=`${s.stageName?`${s.stageName} (${s.name})`:s.name} · ${Math.floor(s.age)}세 · ${END_WHY[s.endNow]||''}`;$('enDesc').textContent=L.d;
  const best=Object.entries(s.careers).filter(([k])=>k!=='student').sort((a,b)=>b[1]-a[1]).map(([k,r])=>rankName(k,r)).slice(0,3).join(', ')||'학생';
  const grid=[['최고 인지도',`팬 ${fansTxt(fansOf(s.peakFame))}`],['거쳐 간 길',best],['최종 순자산',won(netWorth(s))],['수상',s.awards.length?s.awards.map(a=>a.t).slice(-3).join(', '):'없음'],['평판',Math.round(s.rep)],['살아온 분기',`${s.t}분기`]];
+ if(s.ag)grid.splice(2,0,['내 기획사',`${s.ag.name} · ${agTierKo(s.ag)} · 1위 ${s.ag.stats.no1}번`]);if(s.bc)grid.splice(2,0,['내 방송국',`${s.bc.name} · ${bcTierKo(s.bc)} · 히트 ${s.bc.stats.hits}개`]);
  $('enGrid').innerHTML=grid.map(([a,b])=>`<div><small>${a}</small><b>${esc(b)}</b></div>`).join('');
  const mom=s.big.slice().sort((a,b)=>Math.abs(b.g)-Math.abs(a.g)).slice(0,6).sort((a,b)=>a.t-b.t);
  $('enMoments').innerHTML=(mom.length?mom:[{age:Math.floor(s.age),txt:'조용한 나날이었습니다.',g:0}]).map(m=>`<li><span class="num">${m.age}세</span> · <span class="${m.g>0?'pos':m.g<0?'neg':''}">${esc(m.txt)}</span></li>`).join('');
@@ -2321,7 +3089,7 @@ const FLOW={on:LS.get('db.flow',true),speed:LS.get('db.speed',1),autoAct:LS.get(
 const SEASON_SEC=10;
 function flowLoop(ts){if(!S||$('game').hidden){FLOW.raf=null;FLOW.last=0;return}
  const dt=Math.min(.25,FLOW.last?(ts-FLOW.last)/1000:0);FLOW.last=ts;
- const typing=document.activeElement&&document.activeElement.id==='freeIn';
+ const ae=document.activeElement,typing=(ae&&/^(INPUT|SELECT|TEXTAREA)$/.test(ae.tagName))||AGUI.form||AGUI.bform||(TAB==='co'&&S.ag&&S.ag.auds&&CSUB==='ag');
  if(FLOW.on&&!RUN.busy&&$('modal').hidden&&!S.endNow&&!typing&&!document.hidden){FLOW.prog+=dt*FLOW.speed/SEASON_SEC;if(FLOW.prog>=1){FLOW.prog=0;nextSeason()}}
  $('flowBar').style.width=Math.min(1,FLOW.prog)*100+'%';
  FLOW.raf=requestAnimationFrame(flowLoop)}
@@ -2331,7 +3099,7 @@ function syncFlow(){$('flowBtn').textContent=FLOW.on?'❚❚ 멈춤':'▶ 흐르
 const DREAM_CAREERS={idol:['trainee','idol','solo'],actor:['actor'],broadcast:['writer','pd'],music:['composer','solo','idol'],any:[]};
 const DREAM_APPLY={idol:['aud_small','aud_big','survival'],actor:['aud_actor'],broadcast:['writer_app','pd_exam'],music:['compose_contest','aud_small'],any:[]};
 const STAT_ACT={vocal:'vocal',dance:'dance',act:'acting',look:'workout',music:'compose',write:'writing',plan:'writing',variety:'variety'};
-function pickAuto(s){const can=ACTIONS.filter(a=>!['retire','found','debutgem','phone'].includes(a.id)&&(!a.when||a.when(s))&&a.ap<=s.ap&&!(a.cost(s)>0&&a.cost(s)>s.cash));const by=id=>can.find(a=>a.id===id);
+function pickAuto(s){const can=ACTIONS.filter(a=>!a.nav&&!['retire','found','debutgem','phone'].includes(a.id)&&(!a.when||a.when(s))&&a.ap<=s.ap&&!(a.cost(s)>0&&a.cost(s)>s.cash));const by=id=>can.find(a=>a.id===id);
  if(s.hp<35||s.mental<30)return by('rest')||by('workout');
  const dc=DREAM_CAREERS[s.dream]||[];if(!dc.includes(s.career.id)&&chance(.3)){const ap=(DREAM_APPLY[s.dream]||[]).map(by).filter(Boolean);if(ap.length)return pick(ap)}
  const work=can.filter(a=>a.g==='일');if(work.length&&chance(.6))return pick(work);
