@@ -485,6 +485,16 @@ h4.pk:first-child{margin-top:0}
 .childbox{border:1px solid var(--rule);border-radius:16px;padding:14px;background:var(--card)}
 .chh{margin-bottom:12px}.chh b{display:block;font-family:var(--f-disp);font-weight:400;font-size:22px}.chh small{color:var(--ink3);font-size:13px}
 .startgrid.one{grid-template-columns:1fr}
+/* ---------------- simpler screens ---------------- */
+.tip{border:1.5px dashed var(--pink);border-radius:12px;padding:10px 12px;margin-bottom:12px;font-size:13.5px;line-height:1.6;background:var(--pink-soft)}
+.tip b{color:var(--pink)}
+.lastq{border:1px solid var(--rule);border-radius:12px;margin-bottom:12px;background:var(--card);overflow:hidden}
+.lqh{width:100%;display:flex;align-items:center;gap:10px;padding:10px 12px;background:none;border:0;text-align:left;font:inherit;cursor:pointer}
+.lqh span{font-size:12.5px;color:var(--ink3)}.lqh b{font-family:var(--f-num);font-size:16px;font-weight:500}.lqh small{flex:1;color:var(--ink3);font-size:12px}.lqh i{font-style:normal;font-size:12px;color:var(--cyan)}
+.lqb{padding:0 12px 10px}
+.morebtn{display:block;margin:6px auto 0}
+.morehint{display:block;grid-column:1/-1;color:var(--ink3);font-size:11.5px;margin-top:4px}
+.panel h3 .lnk{float:right;font-size:12px;padding:0}
 
 </style>
 <main id="app">
@@ -549,25 +559,24 @@ h4.pk:first-child{margin-top:0}
    <div>
     <div class="panel me"><div class="inner"><canvas class="av" id="meAv" width="32" height="40" aria-label="내 캐릭터"></canvas><div class="nm" id="meName"></div><div class="cr" id="meCareer"></div><div class="ag" id="meAgency"></div><div class="fans" id="meFans"></div><div class="clear"></div></div></div>
     <div class="panel spbox" id="spBox" hidden></div>
-    <div class="panel"><h3>상태</h3><div class="bars" id="vitals"></div></div>
+    <div class="panel"><h3>상태 <button class="lnk" type="button" id="sideMore">자세히</button></h3><div class="bars" id="vitals"></div></div>
     <div class="panel"><h3>능력치 <small>분홍색은 타고난 재능</small></h3><div class="bars" id="skills"></div></div>
     <div class="panel"><h3>내 것들 <small id="netW"></small></h3><canvas id="homecv" width="96" height="40" aria-label="집과 차를 그린 그림"></canvas><dl class="kv" id="mine" style="margin-top:10px"></dl></div>
    </div>
    <div>
     <div class="panel">
      <div class="tabs" role="tablist" id="tabs">
-      <button role="tab" type="button" data-t="act" aria-selected="true">행동</button><button role="tab" type="button" data-t="co" aria-selected="false">내 회사</button><button role="tab" type="button" data-t="shop" aria-selected="false">쇼핑</button><button role="tab" type="button" data-t="inv" aria-selected="false">투자</button><button role="tab" type="button" data-t="log" aria-selected="false">기록</button><button role="tab" type="button" data-t="ach" aria-selected="false">업적</button>
+      <button role="tab" type="button" data-t="act" aria-selected="true">행동</button><button role="tab" type="button" data-t="cash" aria-selected="false" id="tabCash">돈</button><button role="tab" type="button" data-t="co" aria-selected="false" id="tabCo" hidden>내 회사</button><button role="tab" type="button" data-t="log" aria-selected="false">기록</button>
      </div>
      <div class="tabpanel" id="tp-act"></div>
-     <div class="tabpanel" id="tp-co" hidden></div><div class="tabpanel" id="tp-shop" hidden></div>
-     <div class="tabpanel" id="tp-inv" hidden><div class="seg invseg" id="invSeg"></div><div id="tp-money"></div><div id="tp-mkt" hidden></div><div id="tp-own" hidden></div></div>
-     <div class="tabpanel" id="tp-log" hidden><div class="loglist" id="logList"></div></div>
-     <div class="tabpanel" id="tp-ach" hidden><div class="achgrid" id="achGrid"></div></div>
+     <div class="tabpanel" id="tp-co" hidden></div>
+     <div class="tabpanel" id="tp-cash" hidden><div class="seg invseg" id="invSeg"></div><div id="tp-shop"></div><div id="tp-own" hidden></div><div id="tp-mkt" hidden></div><div id="tp-money" hidden></div></div>
+     <div class="tabpanel" id="tp-log" hidden><div class="seg invseg" id="logSeg"></div><div class="loglist" id="logList"></div><div class="achgrid" id="achGrid" hidden></div></div>
     </div>
    </div>
   </div>
  </div>
- <div class="nextbar"><button class="pillbtn" type="button" id="flowBtn">❚❚ 멈춤</button><div class="seg" id="spd" role="group" aria-label="빠르기"><button type="button" data-s="1">1×</button><button type="button" data-s="2">2×</button><button type="button" data-s="4">4×</button><button type="button" data-s="8">8×</button></div><div class="flow"><div class="fl1"><span id="flowLbl"></span><label class="aa"><input type="checkbox" id="autoAct" checked> 남은 행동 자동</label></div><div class="fbar"><i id="flowBar"></i></div></div><button class="btn pri" type="button" id="nextBtn">다음 분기 →</button></div>
+ <div class="nextbar"><button class="pillbtn" type="button" id="flowBtn">❚❚ 멈춤</button><button class="pillbtn" type="button" id="spd" aria-label="빠르기">1×</button><div class="flow"><div class="fl1"><span id="flowLbl"></span><input type="checkbox" id="autoAct" checked hidden></div><div class="fbar"><i id="flowBar"></i></div></div><button class="btn pri" type="button" id="nextBtn">다음 분기 →</button></div>
 </section>
 
 <!-- ================= END ================= -->
@@ -2366,7 +2375,7 @@ const FOCUS={
  sport:{ko:'운동',d:'외모 · 체력',min:6,st:'look'},
  study:{ko:'공부',d:'기획력 · 글솜씨 · 멘탈↓',min:7,st:'plan'},
  kpop:{ko:'K-pop 덕질',d:'한국어 · 댄스',min:8,when:s=>!isKor(s)}};
-const focusOK=(s,k)=>{const F=FOCUS[k];return s.age>=F.min&&(!F.when||F.when(s))};
+const focusOK=(s,k)=>{const F=FOCUS[k];if(!F)return false;return s.age>=F.min&&(!F.when||F.when(s))};
 const GIFT_LINE={vocal:'노래',dance:'춤',act:'연기',look:'외모',variety:'예능감',music:'작곡',write:'글솜씨',plan:'기획력'};
 function revealGift(s,k,why){if(!s.gifts.includes(k)||(s.giftsKnown||[]).includes(k))return null;(s.giftsKnown=s.giftsKnown||[]).push(k);addLog(s,`재능 발견 · ${GIFT_LINE[k]}. ${why}`,'mile');return`${GIFT_LINE[k]}에 타고난 재능이 있다는 걸 알게 됐습니다. ${why}`}
 
@@ -2796,7 +2805,7 @@ const pctFans=(g,p,min)=>Math.round(Math.max(min||0,g.fans*p));
 function agValue(s){const ag=s.ag;let v=2000;for(const k in AG_FAC)for(let i=0;i<ag.fac[k];i++)v+=AG_FAC[k].cost[i]*.6;
  for(const g of agLive(ag))v+=g.fans*.35+Math.max(0,g.qrev||0)*6;for(const m of ag.tr)v+=600+agAvg(m)*25*m.pot;return Math.round(v+ag.hype*300)}
 function agFound(s,plan,name,quiet){if(s.ag)return{err:'이미 기획사가 있습니다.'};const pl=plan==='big'?{cost:30000,room:1,studio:1,hype:12}:{cost:3000,room:0,studio:0,hype:5};
- if(!quiet&&pl.cost>s.cash)return{err:`${won(pl.cost-s.cash)}이 모자랍니다. ‘투자’ 탭에서 빌릴 수 있어요.`};
+ if(!quiet&&pl.cost>s.cash)return{err:`${won(pl.cost-s.cash)}이 모자랍니다. ‘돈’ 탭 → ‘대출’에서 빌릴 수 있어요.`};
  if(!quiet)s.cash-=pl.cost;const nm=String(name||'').trim().slice(0,16)||agName();
  s.ag={name:nm,since:s.t,val:0,hype:pl.hype,fac:{room:pl.room,studio:pl.studio,mkt:0,global:0,hq:0},tr:[],gr:[],auds:null,ap:2,own:1,nid:0,stats:{debut:0,hits:0,no1:0,award:0},hist:[],listed:false,boost:0,lastProfit:0,maxTier:0,cd:{}};
  s.ag.val=agValue(s);s.ag.hist=[s.ag.val];s.ag.ap=agAPMax(s.ag);unlock(s,'label');
@@ -3074,7 +3083,7 @@ function castList(s){const L=[{k:'rookie',ko:'무명 신인',sub:'공짜. 가끔
 
 function bcValue(s){const bc=s.bc;let v=1000;for(const k in BC_FAC)for(let i=0;i<bc.fac[k];i++)v+=BC_FAC[k].cost[i]*.6;for(const x of bcLive(bc))v+=showRev(bc,x)*3;return Math.round(v+bc.lib+bc.hype*300)}
 function bcFound(s,plan,name){if(s.bc)return{err:'이미 방송국이 있습니다.'};const pl=plan==='big'?{cost:20000,studio:1,writer:1,hype:10}:{cost:1000,studio:0,writer:0,hype:4};
- if(pl.cost>s.cash)return{err:`${won(pl.cost-s.cash)}이 모자랍니다. ‘투자’ 탭에서 빌릴 수 있어요.`};s.cash-=pl.cost;const nm=String(name||'').trim().slice(0,16)||bcName();
+ if(pl.cost>s.cash)return{err:`${won(pl.cost-s.cash)}이 모자랍니다. ‘돈’ 탭 → ‘대출’에서 빌릴 수 있어요.`};s.cash-=pl.cost;const nm=String(name||'').trim().slice(0,16)||bcName();
  s.bc={name:nm,since:s.t,val:0,hype:pl.hype,fac:{studio:pl.studio,writer:pl.writer,ch:0,ott:0,global:0},shows:[],ap:2,own:1,nid:0,lib:0,boost:0,stats:{shows:0,hits:0,best:0},hist:[],listed:false,maxTier:0,lastProfit:0,trend:pick(Object.keys(GENRE)),cd:{}};
  s.bc.val=bcValue(s);s.bc.hist=[s.bc.val];s.bc.ap=bcAPMax(s.bc);unlock(s,'bc_found');
  const t=plan==='big'?`${nm}${P(nm,'을/를')} 세웠습니다. 스튜디오와 작가진까지 갖춘 제작사로 출발합니다.`:`${nm}${P(nm,'을/를')} 열었습니다. 카메라 한 대와 조명 두 개. 개인 채널로 출발합니다.`;
@@ -3282,7 +3291,7 @@ function startLife(){S=newLife({dream:prefs.dream});LS.set('db.count',LS.get('db
 function save(){if(!S)return;try{localStorage.setItem('db.cur',JSON.stringify(S))}catch(e){}}
 
 /* ---------------- game panels ---------------- */
-let TAB='act';
+let TAB='act';let SIDE_OPEN=false;
 function enterGame(){show('game');renderAll();startFlow()}
 function renderAll(){if(!S)return;renderTop();renderSide();renderTab()}
 function renderTop(){const s=S;$('gName').textContent=s.stageName||s.name;$('gMeta').textContent=`${Math.floor(s.age)}세 · ${s.year}년 ${QNAME[s.q]} · ${careerName(s)}${s.ag||s.bc?` · ${[s.ag&&s.ag.name,s.bc&&s.bc.name].filter(Boolean).join(' · ')} 대표`:''} · 팬 ${fansTxt(fansOf(s.fame))} · 체력 ${Math.round(s.hp)} · 멘탈 ${Math.round(s.mental)}`;
@@ -3293,20 +3302,30 @@ function bar(label,v,max,col,gift){const p=clamp(v/max*100,0,100);return`<span c
 function renderSide(){const s=S;drawAvatar($('meAv'),s);$('meName').textContent=s.stageName?`${s.stageName} (${s.name})`:s.name;$('meCareer').textContent=careerName(s)+(isKor(s)?'':` · ${coKo(s)} 출신${inKR(s)?'':' · 해외에 있음'}`);
  $('meAgency').textContent=s.career.agency?agencyName(s.career.agency)+(s.career.group?` · ${s.career.group}`:''):(s.flags.label?'내 회사':'소속 없음');
  $('meFans').textContent=`팬 ${fansTxt(fansOf(s.fame))} · 평판 ${Math.round(s.rep)}${s.debutDebt>0?` · 데뷔 빚 ${won(s.debutDebt)}`:''}${s.flags.army?' · 군 복무 중':''}`;
- $('vitals').innerHTML=bar('체력',s.hp,100,'var(--good)')+bar('멘탈',s.mental,100,'var(--cyan)')+bar('인지도',s.fame,100,'var(--pink)')+bar('인맥',s.network,100,'var(--gold)')+bar('신용',s.credit,100,'var(--ink3)')+(isKor(s)?'':bar('한국어',s.kor||0,100,'var(--warn)'));
- const gk=s.giftsKnown||s.gifts;$('skills').innerHTML=STATS.map(([k,v])=>bar(v,s.st[k],100,gk.includes(k)?'var(--pink)':'var(--ink2)',gk.includes(k))).join('');
+ $('vitals').innerHTML=bar('체력',s.hp,100,'var(--good)')+bar('멘탈',s.mental,100,'var(--cyan)')+bar('인지도',s.fame,100,'var(--pink)')+(isKor(s)?'':bar('한국어',s.kor||0,100,'var(--warn)'))+(SIDE_OPEN?bar('인맥',s.network,100,'var(--gold)')+bar('신용',s.credit,100,'var(--ink3)'):'');$('sideMore').textContent=SIDE_OPEN?'간단히':'자세히';
+ const gk=s.giftsKnown||s.gifts;const rel=STATS.filter(([k])=>SIDE_OPEN||gk.includes(k)||fits(s,TAG_OF[k]));$('skills').innerHTML=(rel.length?rel:STATS).map(([k,v])=>bar(v,s.st[k],100,gk.includes(k)?'var(--pink)':'var(--ink2)',gk.includes(k))).join('')+(!SIDE_OPEN&&rel.length<STATS.length?`<small class="morehint">나머지 ${STATS.length-rel.length}개는 ‘자세히’에서</small>`:'');
  const sp=s.spouse,sb=$('spBox');sb.hidden=!sp;if(sp){const bs=Object.entries(sp.badges).filter(([k,v])=>v>s.t&&SP_BADGE[k]).map(([k])=>`<span class="spb ${k}">${SP_BADGE[k]}</span>`).join('');sb.innerHTML=`<h3>배우자</h3><div class="spn"><b>${esc(sp.name)}</b> <small>${sp.age}세 · ${esc(sp.job)}${sp.kids?` · 아이 ${sp.kids}명`:''}</small></div>${bs?`<div class="spbs">${bs}</div>`:''}<div class="bars">${bar('마음',sp.mood,100,sp.mood<30?'var(--bad)':'var(--pink)')}</div>`}
  drawHome($('homecv'),s);const nw=netWorth(s);$('netW').innerHTML=`순자산 <span class="${cls(nw)}">${won(nw)}</span>`;
  const rows=[['집',SHOP_BY[s.own.home.id].ko],['차',s.own.car?SHOP_BY[s.own.car.id].ko:'없음']];for(const k of['pet','building','yacht','studio','camera','mic','tripod'])if(s.own[k]&&SHOP_BY[s.own[k].id])rows.push([SHOP_BY[s.own[k].id].cat||'',SHOP_BY[s.own[k].id].ko]);for(const it of s.items)rows.push(['소장',SHOP_BY[it.id].ko]);
  if((s.biz||[]).length)rows.push(['회사',`${s.biz.length}곳 · ${won(s.biz.reduce((a,b)=>a+bizValueMine(b),0))}`]);if((s.col||[]).length)rows.push(['수집품',`${s.col.length}점`]);if(s.bank)rows.push(['은행 빚',`<span class="neg">${won(s.bank)}</span>`]);if(s.shark)rows.push(['사채',`<span class="neg">${won(s.shark)}</span>`]);if(s.friendDebt)rows.push(['빌린 돈',`<span class="neg">${won(s.friendDebt)}</span>`]);if(s.royalty>1)rows.push(['저작권료',`${won(s.royalty)}/분기`]);
- $('mine').innerHTML=rows.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${b.includes('<span')?b:esc(b)}</dd>`).join('')}
-function renderTab(){for(const b of $('tabs').children)b.setAttribute('aria-selected',String(b.dataset.t===TAB));for(const t of['act','co','shop','inv','log','ach'])$('tp-'+t).hidden=t!==TAB;
- ({act:renderActs,co:renderCo,shop:renderShop,inv:renderInv,log:renderLog,ach:renderAch})[TAB]()}
+ const rowsV=SIDE_OPEN?rows:rows.slice(0,2);if(!SIDE_OPEN&&rows.length>2)rowsV.push(['그 밖에',`${rows.length-2}개`]);$('mine').innerHTML=rowsV.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${b.includes('<span')?b:esc(b)}</dd>`).join('')}
+function renderTab(){const s=S,kid=isChild(s);if(['inv','shop','money'].includes(TAB))TAB='cash';if(TAB==='ach')TAB='log';if(kid&&TAB!=='log')TAB='act';
+ $('tabCash').hidden=kid;$('tabCo').hidden=kid||!(s.ag||s.bc||TAB==='co');
+ for(const b of $('tabs').children)b.setAttribute('aria-selected',String(b.dataset.t===TAB));for(const t of['act','cash','co','log'])$('tp-'+t).hidden=t!==TAB;
+ ({act:renderActs,cash:renderCash,co:renderCo,log:renderLogTab})[TAB]()}
+const ACT_SHOW={일:5,훈련:4,도전:3,생활:4,인생:1};const ACT_OPEN=new Set();let LQ_OPEN=false;
+const LIFE_PRI={rest:s=>s.hp<50||s.mental<50?0:6,parttime:s=>s.cash<500?1:3,spouse:()=>2,busking:()=>3,schoolfest:()=>3,fancafe:()=>3,cover:()=>3,neighbor:()=>4,live:()=>4,kdrama:()=>4,dating:()=>5,sns:()=>5,walk:()=>5,citywalk:()=>5,nightshift:()=>6,delivery:()=>6,network:()=>6,trip:()=>7,homeparty:()=>7,volunteer:()=>8};
+function lastQuarterCard(s){const R0=s._rep;if(!R0)return'';const rows=R0.lines.map(([k,v])=>`<div class="rl"><span>${esc(k)}</span><span class="${cls(v)}">${signed(v)}</span></div>`).join('');
+ return`<div class="lastq"><button type="button" class="lqh" data-lq="1"><span>지난 분기</span><b class="${cls(R0.total)}">${signed(R0.total)}</b><small>통장 ${won(s.cash)}${R0.news.length?` · 소식 ${R0.news.length}개`:''}</small><i>${LQ_OPEN?'접기':'자세히'}</i></button>${LQ_OPEN?`<div class="lqb repl">${rows}${R0.auto.length?`<div class="news"><b>남은 행동력으로 한 일</b><br>${R0.auto.map(a=>'· '+esc(a)).join('<br>')}</div>`:''}${R0.news.length?`<div class="news">${R0.news.map(n=>'· '+esc(n)).join('<br>')}</div>`:''}</div>`:''}</div>`}
 function renderActs(){const s=S;if(isChild(s)){renderChild();return}const groups={};for(const a of ACTIONS){if(a.when&&!a.when(s))continue;(groups[a.g]=groups[a.g]||[]).push(a)}
- let h='';if(AI.fn){h+=`<div class="free"><h4>직접 해 보기 · 행동력 1</h4><div class="row"><input id="freeIn" maxlength="200" placeholder="예: 유명 PD 단골 술집에 몰래 데모 CD를 두고 온다" aria-label="직접 할 행동"><button class="btn pri" type="button" id="freeGo"${s.ap<1?' disabled':''}>해 보기</button></div><small>무엇이든 써 보세요. Claude가 가능한 결과들을 쓰고, 주사위가 하나를 고릅니다.</small></div>`}
- for(const g of['일','훈련','도전','생활','인생'])if(groups[g])h+=`<div class="agroup"><h4>${g}</h4><div class="acts">${groups[g].map(a=>{const c=a.cost(s);const dis=a.ap>s.ap||(c>0&&c>s.cash);return`<button type="button" class="act" data-a="${a.id}"${dis?' disabled':''}><span class="tag">${a.ap?'●'.repeat(a.ap):''}</span><b>${esc(a.ko)}</b><small>${esc(typeof a.sub==='function'?a.sub(s):a.sub)}${c?` · ${won(c)}`:''}</small></button>`}).join('')}</div></div>`;
+ if(groups['생활'])groups['생활'].sort((a,b)=>((LIFE_PRI[a.id]||(()=>5))(s))-((LIFE_PRI[b.id]||(()=>5))(s)));
+ if(groups['도전']){const want=DREAM_APPLY[s.dream]||[];groups['도전'].sort((a,b)=>(want.includes(b.id)?1:0)-(want.includes(a.id)?1:0)||(a.id==='found')-(b.id==='found'))}
+ let h='';if(!s.flags.tipDone)h+=`<div class="tip"><b>처음이라면</b> 행동 버튼을 눌러 행동력 ●●●을 다 쓰고, 아래 <b>다음 분기 →</b>를 누르세요. 그사이 생기는 일은 하나 고르기만 하면 됩니다. <button class="lnk" type="button" data-tip="1">알겠어요</button></div>`;
+ h+=lastQuarterCard(s);
+ for(const g of['일','훈련','도전','생활','인생'])if(groups[g]){const L=groups[g],n=ACT_SHOW[g]||4,open=ACT_OPEN.has(g),show=open?L:L.slice(0,n);
+  h+=`<div class="agroup"><h4>${g}</h4><div class="acts">${show.map(a=>{const c=a.cost(s);const dis=a.ap>s.ap||(c>0&&c>s.cash);return`<button type="button" class="act" data-a="${a.id}"${dis?' disabled':''}><span class="tag">${a.ap?'●'.repeat(a.ap):''}</span><b>${esc(a.ko)}</b><small>${esc(typeof a.sub==='function'?a.sub(s):a.sub)}${c?` · ${won(c)}`:''}</small></button>`}).join('')}</div>${L.length>n?`<button class="lnk morebtn" type="button" data-more="${g}">${open?'접기':`+ ${L.length-n}개 더 보기`}</button>`:''}</div>`}
  $('tp-act').innerHTML=h;
- $('tp-act').onclick=e=>{const b=e.target.closest('.act');if(b&&!b.disabled){const a=ACT_BY[b.dataset.a];if(a.id==='retire'){confirmRetire();return}if(a.nav){TAB=a.nav;renderTab();return}if(a.id==='comeback'){openComebackPicker();return}const r=doAction(S,b.dataset.a);if(r.err){toast(r.err);return}afterAct(r,a.ko)}};
+ $('tp-act').onclick=e=>{const mo=e.target.closest('[data-more]');if(mo){const g=mo.dataset.more;ACT_OPEN.has(g)?ACT_OPEN.delete(g):ACT_OPEN.add(g);renderActs();return}if(e.target.closest('[data-tip]')){S.flags.tipDone=1;save();renderActs();return}if(e.target.closest('[data-lq]')){LQ_OPEN=!LQ_OPEN;renderActs();return}const b=e.target.closest('.act');if(b&&!b.disabled){const a=ACT_BY[b.dataset.a];if(a.id==='retire'){confirmRetire();return}if(a.nav){TAB=a.nav;renderTab();return}if(a.id==='comeback'){openComebackPicker();return}const r=doAction(S,b.dataset.a);if(r.err){toast(r.err);return}afterAct(r,a.ko)}};
  const fg=$('freeGo');if(fg)fg.onclick=freeAction;const fi=$('freeIn');if(fi)fi.onkeydown=e=>{if(e.key==='Enter')freeAction()}}
 function renderShop(){const s=S;const cats={};let hidden=0;for(const it of SHOP){if(!shopVisible(s,it)){hidden++;continue}(cats[it.cat]=cats[it.cat]||[]).push(it)}
  const W=wealthLv(s);let h=`<p class="d" style="margin:0 0 12px">지금 형편 <b>${WEALTH_KO[W]}</b>. ${hidden?`돈을 더 벌면 물건 ${hidden}개가 더 보입니다. `:''}${inKR(s)?'':'집은 한국에 가야 구할 수 있어요. '}물건마다 숨은 사연이 있을 수 있습니다.</p>`;
@@ -3331,6 +3350,8 @@ function renderMoney(){const s=S;const lim=bankLimit(s);
   if(t.dataset.bb)r=borrow(S,'bank',+t.dataset.bb);else if(t.dataset.sb)r=borrow(S,'shark',+t.dataset.sb);else if(t.dataset.rb){const k=t.dataset.rb;r=repay(S,k,k==='bank'?S.bank:k==='shark'?S.shark:S.friendDebt);if(!r)toast('갚을 현금이 없어요.')}
   else if(t.dataset.ib)r=trade(S,t.dataset.ib,Math.floor(S.cash*+t.dataset.p));else if(t.dataset.is){const a=t.dataset.is;r=trade(S,a,-Math.ceil(S.inv[a]*S.mk[a]/100*+t.dataset.p))}
   if(r&&r.err)toast(r.err);flushAch();save();renderAll()}}
+let LSUB='log';
+function renderLogTab(){const n=Object.keys(S.ach).length;$('logSeg').innerHTML=[['log','기록'],['ach',`업적 ${n}/${Object.keys(ACH).length}`]].map(([k,l])=>`<button type="button" data-ls="${k}" aria-pressed="${LSUB===k}">${l}</button>`).join('');$('logSeg').onclick=e=>{const b=e.target.closest('[data-ls]');if(!b)return;LSUB=b.dataset.ls;renderLogTab()};$('logList').hidden=LSUB!=='log';$('achGrid').hidden=LSUB!=='ach';if(LSUB==='log')renderLog();else renderAch()}
 function renderLog(){$('logList').innerHTML=S.log.slice(0,300).map(l=>`<div class="lg ${l.c}"><span class="a">${l.age}세 ${QNAME[l.q]}</span><span class="t">${esc(l.txt)}</span><span class="m ${l.money!=null?cls(l.money):''}">${l.money?signed(l.money):''}</span></div>`).join('')}
 function renderAch(){$('achGrid').innerHTML=Object.entries(ACH).map(([k,t])=>`<div class="ach ${S.ach[k]?'on':'off'}">${S.ach[k]?esc(t):'？？？'}</div>`).join('')}
 
@@ -3462,12 +3483,12 @@ function initPWA(){
 let MSUB='pj';
 const condKo=k=>(CONDS.find(c=>c.k===k)||{ko:k}).ko;
 const stakeKo=v=>(STAKES.find(x=>x.v===v)||{ko:Math.round(v*100)+'%'}).ko;
-function renderMarket(){const s=S;if(!s.mkt)refreshMarket(s);
- let h=`<div class="seg" id="msub" style="margin-bottom:12px"><button type="button" data-m="pj" aria-pressed="${MSUB==='pj'}">프로젝트 투자</button><button type="button" data-m="biz" aria-pressed="${MSUB==='biz'}">엔터 회사</button><button type="button" data-m="stk" aria-pressed="${MSUB==='stk'}">주식</button><button type="button" data-m="col" aria-pressed="${MSUB==='col'}">연예계 수집품</button></div>`;
+function renderMarket(){const s=S;if(!s.mkt)refreshMarket(s);const adv=wealthLv(s)>=2||Object.keys(s.stk||{}).length||(s.col||[]).length;if(!adv&&(MSUB==='stk'||MSUB==='col'))MSUB='pj';
+ let h=`<div class="seg" id="msub" style="margin-bottom:12px"><button type="button" data-m="pj" aria-pressed="${MSUB==='pj'}">프로젝트 투자</button><button type="button" data-m="biz" aria-pressed="${MSUB==='biz'}">엔터 회사</button>${adv?`<button type="button" data-m="stk" aria-pressed="${MSUB==='stk'}">주식</button>`:''}${adv?`<button type="button" data-m="col" aria-pressed="${MSUB==='col'}">연예계 수집품</button>`:''}</div>`;
  if(MSUB==='pj'){h+=`<p class="d" style="margin:0 0 12px">걸그룹 데뷔, 드라마, 영화, 예능, 투어에 돈을 넣습니다. 단서는 과장 홍보일 수도 있습니다. 조사를 하면 업계 평가를 들을 수 있습니다. 결과는 몇 분기 뒤에 나옵니다. 대박이면 몇 배, 망하면 거의 다 잃습니다.</p><div class="items">`+(s.mkt.proj||[]).map(p=>{const K=PJ_KIND[p.kind];const amts=[p.min,p.min*2,p.min*5].filter((a,i)=>i===0||a<=s.cash);
   return`<div class="item" style="gap:3px"><small style="color:var(--pink);font-weight:700">${esc(K.ko)} · ${esc(p.maker)}</small><b>${esc(p.title)}</b>${p.shown.map(([l,v])=>`<small>${esc(l)} · ${esc(v)}</small>`).join('')}<small>결과까지 약 ${p.hz}분기 · 최소 ${won(p.min)}</small>${p.dd?`<small style="color:var(--cyan)">${esc(p.dd)}</small>`:''}
    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">${amts.map(a=>`<button class="btn${a<=s.cash?' pri':''}" type="button" data-pj="${p.pid}" data-a="${a}"${a>s.cash?' disabled':''}>${a<=s.cash?`${won(a)} 넣기`:`${won(a-s.cash)} 모자람`}</button>`).join('')}${p.dd?'':`<button class="btn" type="button" data-pjc="${p.pid}"${pjFee(p)>s.cash?' disabled':''}>조사 ${won(pjFee(p))}</button>`}</div></div>`}).join('')+'</div>'}
- if(MSUB==='biz'){h+=`<p class="d" style="margin:0 0 12px">매물은 분기마다 바뀝니다. 판매자 말이 다 맞지는 않습니다. 돈을 내고 실사를 하면 숨은 사정을 엿볼 수 있습니다. 모자란 돈은 ‘돈 · 대출’에서 빌릴 수 있습니다.</p><div class="items">`+s.mkt.list.map(l=>{const T=BTYPE[l.type];const ddFee=Math.max(100,Math.round(l.price*.008/10)*10);const can=l.price<=s.cash;
+ if(MSUB==='biz'){h+=`<p class="d" style="margin:0 0 12px">매물은 분기마다 바뀝니다. 판매자 말이 다 맞지는 않습니다. 돈을 내고 실사를 하면 숨은 사정을 엿볼 수 있습니다. 모자란 돈은 ‘대출’에서 빌릴 수 있습니다.</p><div class="items">`+s.mkt.list.map(l=>{const T=BTYPE[l.type];const ddFee=Math.max(100,Math.round(l.price*.008/10)*10);const can=l.price<=s.cash;
   return`<div class="item" style="gap:3px"><small style="color:var(--pink);font-weight:700">${esc(T.cat)} · ${esc(condKo(l.cond))}</small><b>${esc(l.name)}</b><small>${esc(SIZES[l.sz].ko)} ${esc(T.ko)} · ${esc(l.place)}</small><span class="pr">${esc(stakeKo(l.stake))} · ${won(l.price)}</span><small>판매자 말로는 회사 분기 이익 약 ${won(l.claim)}</small>${l.dd?`<small style="color:var(--cyan)">실사: ${esc(l.dd)}</small>`:''}
    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px"><button class="btn${can?' pri':''}" type="button" data-bb="${l.lid}"${can?'':' disabled'}>${can?'사기':`${won(l.price-s.cash)} 모자람`}</button>${l.dd?'':`<button class="btn" type="button" data-dd="${l.lid}"${ddFee>s.cash?' disabled':''}>실사 ${won(ddFee)}</button>`}${l.neg?'':`<button class="btn" type="button" data-ng="${l.lid}">깎아 보기</button>`}</div></div>`}).join('')+'</div>'}
  if(MSUB==='stk'){h+=`<p class="d" style="margin:0 0 6px">가상의 엔터 · 방송 · 플랫폼 회사들입니다. 소속 가수의 성적이나 흥행 소식에 크게 출렁입니다. 가끔 상장 폐지되는 회사도 있습니다.</p>`+s.mkt.stocks.map(k=>{const hv=stockHolding(s,k),st=stockStake(s,k),hist=k.hist,chg=hist.length>1?(hist[hist.length-1]/hist[hist.length-2]-1)*100:0;const h0=(s.stk||{})[k.id];const pl=h0?hv-h0.paid:0;
@@ -3488,7 +3509,7 @@ function renderMarket(){const s=S;if(!s.mkt)refreshMarket(s);
 function renderOwn(){const s=S;const B=s.biz||[];const mine=B.reduce((a,b)=>a+bizValueMine(b),0);
  let h=`<div class="money2" style="margin-bottom:14px"><div class="box"><h4>내 회사</h4><div class="big">${B.length}곳</div><small>내 몫 가치 합계 ${won(mine)}</small></div><div class="box"><h4>주식 · 수집품</h4><div class="big">${won((s.mkt?s.mkt.stocks.reduce((a,k)=>a+stockHolding(s,k),0):0)+(s.col||[]).reduce((a,c)=>a+colValue(s,c),0))}</div><small>순자산 ${won(netWorth(s))}</small></div></div>`;
  if((s.pj||[]).length)h+=`<h3 style="font-size:15px;margin:0 0 8px">진행 중인 프로젝트 투자</h3><div class="owned" style="margin-bottom:14px">${s.pj.map(p=>`<div class="orow"><span>${esc(p.title)} <small style="color:var(--ink3)">${esc(PJ_KIND[p.kind].ko)}</small></span><span class="num">${won(p.amt)}</span><small style="color:var(--ink3)">${Math.max(0,p.due-s.t)}분기 뒤 결과</small></div>`).join('')}</div>`;
- if(!B.length)h+=`<p class="d">아직 가진 회사가 없습니다. ‘사고팔기’에서 코인노래방부터 방송 채널까지 살 수 있습니다.</p>`;
+ if(!B.length)h+=`<p class="d">아직 가진 회사가 없습니다. 아래 ‘엔터 회사’에서 코인노래방부터 방송 채널까지 살 수 있습니다.</p>`;
  h+=B.map(b=>{const T=BTYPE[b.type],v=bizValueMine(b),boss=b.stake>=.51;return`<div class="box" style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><div><b>${esc(b.name)}</b> <small style="color:var(--ink3)">${esc(SIZES[b.sz].ko)} ${esc(T.ko)} · ${esc(b.place)}${b.listed?' · 상장사':''}</small><div class="num" style="font-size:13px;margin-top:4px">지분 ${Math.round(b.stake*100)}% · 내 몫 <span class="${v>=b.paid?'pos':'neg'}">${won(v)}</span> <small style="color:var(--ink3)">(산 값 ${won(b.paid)})</small></div><div class="num" style="font-size:12.5px;color:var(--ink2)">지난 분기 회사 이익 <span class="${cls(b.profit)}">${signed(b.profit||0)}</span></div></div>${spark(b.hist.slice(-24),v>=b.paid?'var(--good)':'var(--bad)')}</div>
   <div class="row" style="align-items:center">${boss?Object.entries(POLICY).map(([k,p])=>`<button class="btn" type="button" data-pol="${b.bid}" data-p="${k}" aria-pressed="${b.policy===k}" style="${b.policy===k?'background:var(--ink);color:var(--bg);border-color:var(--ink)':''}">${p.ko}</button>`).join(''):'<small style="margin:0">소수 지분이라 경영에는 참여할 수 없습니다.</small>'}<span style="flex:1"></span><button class="btn" type="button" data-sell="${b.bid}">팔기 · ${won(Math.round(v*.9))}</button></div></div>`}).join('');
  if((s.col||[]).length)h+=`<h3 style="font-size:15px;margin:16px 0 8px">수집품</h3><div class="owned">${s.col.map(c=>{const v=colValue(s,c);return`<div class="orow"><span>${esc(c.name)} <small style="color:var(--ink3)">산 값 ${won(c.paid)}</small></span><span class="num ${v>c.paid?'pos':v<c.paid?'neg':''}">${won(Math.round(v*.88))}</span><button class="btn" type="button" data-csell="${c.cid}">팔기</button></div>`}).join('')}</div>`;
@@ -3503,7 +3524,7 @@ function renderOwn(){const s=S;const B=s.biz||[];const mine=B.reduce((a,b)=>a+bi
 /* ================================================================
    데뷔각 — interface 4: 내 회사 (기획사 · 방송국), 컴백 고르기, 차트 결과, 투자 탭
    ================================================================ */
-let CSUB='ag',ISUB='money';
+let CSUB='ag',ISUB='shop';
 const AGUI={form:false,pick:[],con:null,bud:1,name:'',bform:false,genre:'variety',bbud:0,cast:'rookie',title:'',newName:'',newBc:''};
 const apDots=(n,max)=>`<span class="ap">${Array.from({length:max},(_,i)=>`<i class="${i<n?'on':''}"></i>`).join('')}</span>`;
 const avCanvas=(id,k)=>`<canvas class="mav" width="32" height="40" data-av="${esc(id)}" data-k="${k}"></canvas>`;
@@ -3532,9 +3553,12 @@ function openComebackPicker(){const s=S;let con=null,ef=1;const tr=trendOf(s);
  $('mBody').onclick=e=>{const c=e.target.closest('[data-c]');if(c){con=c.dataset.c;draw();return}const x=e.target.closest('[data-e]');if(x){ef=+x.dataset.e;draw()}};draw()}
 
 /* ---------------- 투자 tab (money · market · what I bought) ---------------- */
-function renderInv(){$('invSeg').innerHTML=[['money','돈 · 대출'],['mkt','사고팔기'],['own','내가 산 것']].map(([k,t])=>`<button type="button" data-is="${k}" aria-pressed="${ISUB===k}">${t}</button>`).join('');
- $('invSeg').onclick=e=>{const b=e.target.closest('[data-is]');if(!b)return;ISUB=b.dataset.is;renderInv()};
- for(const k of['money','mkt','own'])$('tp-'+k).hidden=k!==ISUB;({money:renderMoney,mkt:renderMarket,own:renderOwn})[ISUB]()}
+function renderCash(){const s=S;$('invSeg').innerHTML=[['shop','쇼핑'],['invest','투자'],['loan','대출']].map(([k,l])=>`<button type="button" data-is="${k}" aria-pressed="${ISUB===k}">${l}</button>`).join('');
+ $('invSeg').onclick=e=>{const b=e.target.closest('[data-is]');if(!b)return;ISUB=b.dataset.is;renderCash()};
+ const owns=(s.biz||[]).length||(s.pj||[]).length||(s.col||[]).length||Object.keys(s.stk||{}).some(k=>s.stk[k].sh>0);
+ $('tp-shop').hidden=ISUB!=='shop';$('tp-mkt').hidden=ISUB!=='invest';$('tp-own').hidden=!(ISUB==='invest'&&owns);$('tp-money').hidden=ISUB!=='loan';
+ if(ISUB==='shop')renderShop();else if(ISUB==='invest'){if(owns)renderOwn();renderMarket()}else renderMoney()}
+const renderInv=renderCash;
 
 /* ---------------- 회사 tab ---------------- */
 function renderCo(){const s=S,p=$('tp-co');
@@ -3547,7 +3571,7 @@ function foundHtml(s,kind){const A=kind==='ag';if(A&&!AGUI.newName)AGUI.newName=
  <p class="d">내 직업과는 따로 굴러가요. 오디션에 붙어 연습생이 되어도, 직업이 바뀌어도 회사는 그대로예요.</p>
  <label class="h" for="nmIn">${A?'회사 이름':'채널 이름'}</label><div class="nmrow"><input id="nmIn" maxlength="16" value="${esc(nm)}"><button class="btn" type="button" data-roll="${kind}">다른 이름</button></div>
  <div class="plans">${plans.map(([k,t,c,d])=>`<button type="button" class="plan" data-found="${kind}" data-plan="${k}"${c>s.cash?' aria-disabled="true"':''}><b>${t}</b><span class="pc">${won(c)}</span><small>${d}</small>${c>s.cash?`<em>${won(c-s.cash)} 모자람</em>`:''}</button>`).join('')}</div>
- <p class="d">돈이 모자라면 ‘투자’ 탭 → ‘돈 · 대출’에서 은행 대출을 받을 수 있어요.</p></div>`}
+ <p class="d">돈이 모자라면 ‘돈’ 탭 → ‘대출’에서 은행 대출을 받을 수 있어요.</p></div>`}
 function coHead(name,tierKo,extra,val,profit,third,prog,next,ap,max,label){return`<div class="cohead"><div class="cot"><b>${esc(name)}</b><span class="tierb">${tierKo}</span>${extra}</div>
  <div class="conums"><div><small>회사 가치</small><b>${won(val)}</b></div><div><small>지난 분기</small><b class="${cls(profit)}">${signed(profit)}</b></div><div><small>${third[0]}</small><b>${third[1]}</b></div></div>
  <div class="coprog"><i style="width:${prog}%"></i></div><small class="cop">${next}</small><div class="coap"><span>${label}</span>${apDots(ap,max)}</div></div>`}
@@ -3602,7 +3626,7 @@ function bcHtml(s){const bc=s.bc;if(!bc)return foundHtml(s,'bc');const ti=bcTier
 
 function coInput(e){const t=e.target;if(t.id==='nmIn'){if(CSUB==='ag')AGUI.newName=t.value;else AGUI.newBc=t.value}if(t.id==='gNm')AGUI.name=t.value;if(t.id==='tNm')AGUI.title=t.value;
  if(t.dataset.gcsel)AGUI['c'+t.dataset.gcsel]=t.value;if(t.dataset.gbsel)AGUI['b'+t.dataset.gbsel]=+t.value}
-function coClick(e){const t=e.target.closest('button');if(!t)return;if(t.getAttribute('aria-disabled')==='true'){toast('돈이 모자라요. ‘투자’ 탭에서 빌릴 수 있어요.');return}if(t.disabled)return;
+function coClick(e){const t=e.target.closest('button');if(!t)return;if(t.getAttribute('aria-disabled')==='true'){toast('돈이 모자라요. ‘돈’ 탭 → ‘대출’에서 빌릴 수 있어요.');return}if(t.disabled)return;
  const s=S,d=t.dataset;let r=null;const done=()=>{if(r&&r.err){toast(r.err);return}if(r&&r.t)toast(r.t);flushAch();save();renderAll()};
  if(d.cs){CSUB=d.cs;renderCo();return}
  if(d.roll){if(d.roll==='ag')AGUI.newName=agName();else AGUI.newBc=bcName();renderCo();return}
@@ -3659,7 +3683,7 @@ function showResult(r,others){$('mK').textContent='결과';$('mK').className='mk
  renderAll();okButton(S.endNow?'마지막 장으로':'계속',()=>{closeModal();flushAch();renderAll();nextItem()})}
 
 /* ---------------- the season ---------------- */
-function nextSeason(){if(RUN.busy||!S)return;RUN.busy=true;FLOW.prog=0;const kid=isChild(S);const auto=FLOW.autoAct&&!kid?autoSpend():[];const{rep,queue}=endTurn(S);rep.auto=auto;RUN.queue=rep.child?[...queue]:[{type:'report',rep},...queue];if(rep.child)toast(rep.summary);if(AI.on&&AI.fn&&!S.endNow)RUN.queue.push({type:'ai'});save();renderAll();nextItem()}
+function nextSeason(){if(RUN.busy||!S)return;RUN.busy=true;FLOW.prog=0;const kid=isChild(S);const auto=FLOW.autoAct&&!kid?autoSpend():[];const{rep,queue}=endTurn(S);rep.auto=auto;RUN.queue=[...queue];if(rep.child)toast(rep.summary);else{const lines=[...rep.inc,...rep.exp];const total=lines.reduce((a,x)=>a+x[1],0);S._rep={lines,total,news:rep.news,auto:auto.map(a=>`${a.title} — ${a.t}`)};toast(`지난 분기 ${signed(total)}${rep.news.length?` · 소식 ${rep.news.length}개`:''}`)}if(AI.on&&AI.fn&&!S.endNow)RUN.queue.push({type:'ai'});save();renderAll();nextItem()}
 function nextItem(){if(S.endNow){RUN.queue=[];RUN.busy=false;finishLife();return}
  const it=RUN.queue.shift();if(!it){RUN.busy=false;flushAch();save();renderAll();return}
  if(it.type==='report')openReport(it.rep);else if(it.type==='choice')openChoice(it.prep);else if(it.type==='news')openNews(it);else if(it.type==='ai')runAIEvent()}
@@ -3704,7 +3728,7 @@ function flowLoop(ts){if(!S||$('game').hidden){FLOW.raf=null;FLOW.last=0;return}
  $('flowBar').style.width=Math.min(1,FLOW.prog)*100+'%';
  FLOW.raf=requestAnimationFrame(flowLoop)}
 function startFlow(){FLOW.last=0;if(!FLOW.raf)FLOW.raf=requestAnimationFrame(flowLoop);syncFlow()}
-function syncFlow(){$('flowBtn').textContent=FLOW.on?'❚❚ 멈춤':'▶ 흐르게';$('flowBtn').setAttribute('aria-pressed',String(!FLOW.on));for(const b of $('spd').children)b.setAttribute('aria-pressed',String(+b.dataset.s===FLOW.speed));$('autoAct').checked=FLOW.autoAct;
+function syncFlow(){$('flowBtn').textContent=FLOW.on?'❚❚ 멈춤':'▶ 흐르게';$('flowBtn').setAttribute('aria-pressed',String(!FLOW.on));$('spd').textContent=FLOW.speed+'×';$('autoAct').checked=FLOW.autoAct;
  const nq=QNAME[(S.q+1)%4],ny=S.q===3?S.year+1:S.year;const kid=isChild(S);$('flowLbl').textContent=FLOW.on?(kid?`${S.age+1}살까지 · 1년에 약 ${Math.round(SEASON_SEC*.45/FLOW.speed)}초`:`${ny}년 ${nq}까지 · 분기당 약 ${Math.round(SEASON_SEC/FLOW.speed)}초`):(kid?'멈춤 · 원할 때 다음 해로 넘기세요':'멈춤 · 원할 때 다음 분기로 넘기세요')}
 const DREAM_CAREERS={idol:['trainee','idol','solo'],actor:['actor'],broadcast:['writer','pd'],music:['composer','solo','idol'],any:[]};
 const DREAM_APPLY={idol:['aud_small','aud_big','survival','aud_global','flykr'],actor:['aud_actor'],broadcast:['writer_app','pd_exam'],music:['compose_contest','aud_small'],any:[]};
@@ -3719,7 +3743,8 @@ function pickAuto(s){const can=ACTIONS.filter(a=>!a.nav&&!['retire','found','deb
 function autoSpend(){const out=[];let g=0;while(S.ap>0&&g++<6){const a=pickAuto(S);if(!a)break;const r=doAction(S,a.id);if(r.err)break;out.push({title:a.ko,t:r.t,g:r.g})}return out}
 function boot(){initHome();initPWA();
  $('flowBtn').onclick=()=>{FLOW.on=!FLOW.on;LS.set('db.flow',FLOW.on);syncFlow()};
- $('spd').onclick=e=>{const b=e.target.closest('[data-s]');if(!b)return;FLOW.speed=+b.dataset.s;LS.set('db.speed',FLOW.speed);if(!FLOW.on){FLOW.on=true;LS.set('db.flow',true)}syncFlow()};
+ $('spd').onclick=()=>{const L=[1,2,4,8];FLOW.speed=L[(L.indexOf(FLOW.speed)+1)%L.length];LS.set('db.speed',FLOW.speed);if(!FLOW.on){FLOW.on=true;LS.set('db.flow',true)}syncFlow()};
+ $('sideMore').onclick=()=>{SIDE_OPEN=!SIDE_OPEN;renderSide()};
  $('autoAct').onchange=e=>{FLOW.autoAct=e.target.checked;LS.set('db.autoact',FLOW.autoAct);toast(FLOW.autoAct?'남은 행동력은 꿈과 직업에 맞게 자동으로 씁니다.':'남은 행동력은 쓰지 않고 넘어갑니다.')};
  $('tabs').onclick=e=>{const b=e.target.closest('[data-t]');if(!b)return;TAB=b.dataset.t;renderTab()};
  $('nextBtn').onclick=nextSeason;$('themeBtn2').onclick=toggleTheme;
