@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "name": "데뷔각 · 연예계 인생 시뮬레이션",
+  "short_name": "데뷔각",
+  "description": "연습생부터 재벌 회장까지. 매 분기 고르고, 돈 쓰고, 빚지고, 투자하는 연예계 인생 시뮬레이션.",
+  "lang": "ko",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F3F8",
+  "theme_color": "#F5F3F8",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="연습생부터 재벌 회장까지. 매 분기 고르고, 돈 쓰고, 빚지고, 투자하는 연예계 인생 시뮬레이션."><meta property="og:title" content="데뷔각"><meta property="og:description" content="연습생부터 재벌 회장까지. 매 분기 고르고, 돈 쓰고, 빚지고, 투자하는 연예계 인생 시뮬레이션."><meta property="og:type" content="website"><meta name="theme-color" content="#F5F3F8" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#110F17" media="(prefers-color-scheme: dark)"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="데뷔각"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D92B7F'/%3E%3Cpath d='M16 6l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L16 21l-6.1 3.4 1.5-6.8-5.2-4.6 6.9-.7z' fill='%23fff'/%3E%3C/svg%3E"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style></head><body><title>데뷔각</title>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="연습생부터 재벌 회장까지. 매 분기 고르고, 돈 쓰고, 빚지고, 투자하는 연예계 인생 시뮬레이션."><meta property="og:title" content="데뷔각"><meta property="og:description" content="연습생부터 재벌 회장까지. 매 분기 고르고, 돈 쓰고, 빚지고, 투자하는 연예계 인생 시뮬레이션."><meta property="og:type" content="website"><meta name="theme-color" content="#F5F3F8" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#110F17" media="(prefers-color-scheme: dark)"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="데뷔각"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D92B7F'/%3E%3Cpath d='M16 6l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L16 21l-6.1 3.4 1.5-6.8-5.2-4.6 6.9-.7z' fill='%23fff'/%3E%3C/svg%3E"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style></head><body><title>데뷔각</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap">
 <style>
@@ -305,8 +305,9 @@ body{word-break:keep-all;overflow-wrap:break-word}
 
 /* ---------------- intro: birth reveal ---------------- */
 .birth{position:fixed;inset:0;z-index:300;display:flex;overflow-y:auto;padding:max(56px,env(safe-area-inset-top)) 16px max(20px,env(safe-area-inset-bottom));color:#F3EFFA;
- background:radial-gradient(120% 60% at 50% -10%,rgba(255,90,168,.4),transparent 62%),radial-gradient(90% 50% at 50% 112%,rgba(76,201,226,.24),transparent 60%),#0C0A11;opacity:0;transition:opacity .3s}
-.birth.show{opacity:1}.birth.out{opacity:0}
+ background:radial-gradient(120% 60% at 50% -10%,rgba(255,90,168,.4),transparent 62%),radial-gradient(90% 50% at 50% 112%,rgba(76,201,226,.24),transparent 60%),#0C0A11;animation:bin .3s ease-out both}
+.birth.out{animation:bout .3s ease-in both}
+@keyframes bin{from{opacity:0}}@keyframes bout{to{opacity:0}}
 .bsky{position:fixed;inset:0;pointer-events:none;overflow:hidden}
 .bsky i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.15;animation:tw 3s ease-in-out infinite}
 @keyframes tw{50%{opacity:.85}}
@@ -365,18 +366,31 @@ body{word-break:keep-all;overflow-wrap:break-word}
 #game.enter .ggrid>*:nth-child(1){animation-delay:.26s}
 #game.enter .nextbar{animation:slideup .55s cubic-bezier(.2,.8,.2,1) .3s both}
 
+/* ---------------- install as app ---------------- */
+.topbtns{display:flex;gap:6px;align-items:center}
+.instpill{border-color:var(--pink);color:var(--pink);font-weight:700}
+.herobtns{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:22px;animation:rise .7s cubic-bezier(.2,.8,.2,1) .7s both}
+.herobtns .herogo{margin-top:0;animation:none}
+.instbig{background:var(--card);border-color:var(--rule)}
+.instHead{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+.instHead img{border-radius:14px;flex:none;box-shadow:0 6px 16px -8px rgba(0,0,0,.5)}
+.instSteps{margin:0 0 16px;padding:0;list-style:none;counter-reset:st;display:grid;gap:10px}
+.instSteps li{counter-increment:st;display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;font-size:15px;line-height:1.55}
+.instSteps li::before{content:counter(st);width:28px;height:28px;border-radius:50%;background:var(--pink);color:var(--pink-ink);font-weight:700;display:grid;place-items:center;font-size:14px}
+@media (max-width:600px){.herobtns{flex-direction:column;align-items:stretch}.herobtns .btn{width:100%}#instSheet .btn.pri{flex:1}}
+
 </style>
 <main id="app">
 <!-- ================= HOME ================= -->
 <section id="home" class="wrap">
- <div class="top"><span class="eyebrow">연예계 인생 시뮬레이션 · 직업 13개 · 사건 수만 가지 · 베타</span><button class="pillbtn" id="themeBtn" type="button" aria-label="밝은 화면과 어두운 화면 바꾸기">◐ 화면</button></div>
+ <div class="top"><span class="eyebrow">연예계 인생 시뮬레이션 · 직업 13개 · 사건 수만 가지 · 베타</span><span class="topbtns"><button class="pillbtn instpill" id="installBtn" type="button" hidden>＋ 앱 설치</button><button class="pillbtn" id="themeBtn" type="button" aria-label="밝은 화면과 어두운 화면 바꾸기">◐ 화면</button></span></div>
  <div id="resumeBox" hidden></div>
  <div class="hero">
   <div>
    <h1 aria-label="데뷔각"><span style="--i:0" aria-hidden="true">데</span><span style="--i:1" aria-hidden="true">뷔</span><span style="--i:2" aria-hidden="true">각</span></h1>
    <p class="lede">열다섯 살 연습생으로 시작할 수도, 스물셋에 방송국 막내 작가로 시작할 수도 있습니다. 사채 사장이 알고 보니 기획사 대표일 수도 있고, 중고 시계가 100억짜리일 수도, 꿈에 그리던 건물이 사기일 수도 있습니다. 매 분기 내가 고르고, 돈을 쓰고, 빚을 지고, 투자합니다. 결과는 아무도 모릅니다.</p>
    <div class="facts"><div><b id="fEvents">0</b><span>손으로 쓴 사건</span></div><div><b id="fComb">13만+</b><span>조합으로 생기는 사건</span></div><div><b>수십억</b><span>가지 시장 매물 조합</span></div><div><b id="fStk">24</b><span>판마다 새로 생기는 상장사</span></div></div>
-   <button class="btn pri big herogo" type="button" id="heroGo">지금 태어나기</button>
+   <div class="herobtns"><button class="btn pri big herogo" type="button" id="heroGo">지금 태어나기</button><button class="btn big instbig" type="button" id="installBtn2" hidden>홈 화면에 앱으로 추가</button></div>
   </div>
   <div class="pcard" id="heroCard" role="button" tabindex="0" aria-label="다른 인생 뽑아 보기" title="눌러서 다른 인생 뽑기"><div class="inner"><canvas id="heroAv" width="32" height="40" aria-label="무작위로 만든 캐릭터 포토카드"></canvas><b id="heroName"></b><small id="heroSub"></small></div></div>
  </div>
@@ -2093,7 +2107,7 @@ function renderAch(){$('achGrid').innerHTML=Object.entries(ACH).map(([k,t])=>`<d
    ================================================================ */
 const RM=()=>typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 // births per year in Korea, rounded to the thousand (Statistics Korea)
-const BIRTHS={2002:497000,2003:495000,2004:477000,2005:438000,2006:452000,2007:497000,2008:466000,2009:445000,2010:470000,2011:471000};
+const BIRTHS={2001:560000,2002:497000,2003:495000,2004:477000,2005:438000,2006:452000,2007:497000,2008:466000,2009:445000,2010:470000,2011:471000};
 const ease=t=>1-Math.pow(1-t,3);
 function countUp(el,to,fmtFn,dur,done){if(RM()){el.textContent=fmtFn(to);done&&done();return}const t0=performance.now(),id=el._cu={};
  (function f(now){if(el._cu!==id)return;const p=Math.min(1,(now-t0)/dur);el.textContent=fmtFn(Math.round(to*ease(p)));if(p<1)requestAnimationFrame(f);else done&&done()})(t0)}
@@ -2146,7 +2160,7 @@ function birthShow(s,onDone){introClear();const old=$('birth');if(old)old.remove
  const go=()=>{introClear();el.classList.add('out');document.body.style.overflow='';setTimeout(()=>{el.remove();onDone()},RM()?0:320)};
  el.querySelector('.bskip').onclick=finish;$('bGo').onclick=go;
  el.addEventListener('keydown',e=>{if(e.key==='Escape'&&!el.classList.contains('done')){e.preventDefault();finish()}});
- requestAnimationFrame(()=>el.classList.add('show'));el.querySelector('.bskip').focus({preventScroll:true});
+ el.querySelector('.bskip').focus({preventScroll:true});
  if(RM()){finish();return}
  later(250,()=>countUp($('bN'),born,fmt,1100));
  later(700,()=>card.classList.add('in'));
@@ -2163,6 +2177,40 @@ function birthShow(s,onDone){introClear();const old=$('birth');if(old)old.remove
 
 /* ---------------- game entrance ---------------- */
 function gameIntro(){if(RM())return;const g=$('game');g.classList.remove('enter');void g.offsetWidth;g.classList.add('enter');setTimeout(()=>g.classList.remove('enter'),1400)}
+
+/* ================================================================
+   데뷔각 — install as an app (home screen / desktop) & offline cache
+   ================================================================ */
+const PWA={evt:null};
+const UA=navigator.userAgent||'';
+const isStandalone=()=>(typeof matchMedia==='function'&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;
+const isIOS=/iPhone|iPad|iPod/.test(UA)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+const isKakao=/KAKAOTALK/i.test(UA);
+const inApp=isKakao||/Instagram|FBAN|FBAV|FB_IAB|Line\/|NAVER\(inapp|DaumApps|everytimeApp|BAND\/|Twitter|; wv\)/i.test(UA);
+const isMacSafari=!isIOS&&/Macintosh/.test(UA)&&/Version\/[\d.]+.*Safari/.test(UA)&&!/Chrome|Chromium|Edg|Firefox|OPR/.test(UA);
+function syncInstall(){const show=!isStandalone()&&!!(PWA.evt||isIOS||inApp||isMacSafari);for(const id of['installBtn','installBtn2'])if($(id))$(id).hidden=!show}
+async function doInstall(){
+ if(PWA.evt){const e=PWA.evt;PWA.evt=null;try{e.prompt();const r=await e.userChoice;if(r.outcome==='accepted')toast('설치했어요. 홈 화면이나 바탕화면에서 바로 열 수 있어요.')}catch(_){}syncInstall();return}
+ if(isKakao){location.href='kakaotalk://web/openExternal?url='+encodeURIComponent(location.href.split('#')[0]);return}
+ installSheet()}
+const SHARE_SVG='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="vertical-align:-3px"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 11v9h14v-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function installSheet(){let title,steps,extra='';
+ if(inApp){title='브라우저에서 열어 주세요';steps=['오른쪽 위나 아래에 있는 <b>⋯</b> 메뉴를 누르세요.','<b>다른 브라우저로 열기</b>(또는 Safari · Chrome으로 열기)를 고르세요.','열린 화면에서 <b>앱 설치</b> 버튼을 다시 누르세요.'];extra=`<button class="btn" type="button" id="instCopy">주소 복사하기</button>`}
+ else if(isIOS){title='홈 화면에 추가하기';steps=[`공유 버튼 ${SHARE_SVG}을 누르세요. Safari는 화면 아래쪽, Chrome은 주소창 오른쪽에 있어요. 안 보이면 <b>⋯</b> 버튼을 먼저 누르세요.`,'목록을 내려서 <b>홈 화면에 추가</b>를 누르세요.','오른쪽 위 <b>추가</b>를 누르면 끝. 이제 앱처럼 전체 화면으로 열려요.']}
+ else if(isMacSafari){title='Dock에 추가하기';steps=['화면 맨 위 메뉴 막대에서 <b>파일</b>을 누르세요.','<b>Dock에 추가</b>를 누르세요.','Dock과 Launchpad에 데뷔각 앱이 생겨요.']}
+ else{title='앱으로 설치하기';steps=['브라우저 오른쪽 위 <b>⋮</b> 메뉴를 누르세요.','<b>앱 설치</b> 또는 <b>홈 화면에 추가</b>를 누르세요.','안 보이면 Chrome이나 Edge, 삼성 인터넷에서 열어 보세요.']}
+ let el=$('instSheet');if(!el){el=document.createElement('div');el.className='mback';el.id='instSheet';document.body.appendChild(el);el.onclick=e=>{if(e.target===el||e.target.closest('[data-x]'))el.hidden=true}}
+ el.innerHTML=`<div class="modal" role="dialog" aria-modal="true" aria-labelledby="instT"><div class="mh"><span class="mk">앱 설치</span><span style="flex:1"></span><button class="pillbtn" type="button" data-x>닫기</button></div>
+  <div class="mb"><div class="instHead"><img src="icons/icon-192.png" alt="" width="56" height="56"><div><h2 class="mt" id="instT">${title}</h2><p class="d" style="margin:0">설치하면 주소창 없이 앱처럼 열리고, 하던 인생도 그대로 이어져요.</p></div></div>
+  <ol class="instSteps">${steps.map(s=>`<li><span>${s}</span></li>`).join('')}</ol><div class="row" style="gap:8px">${extra}<button class="btn pri" type="button" data-x>알겠어요</button></div></div></div>`;
+ el.hidden=false;const c=$('instCopy');if(c)c.onclick=()=>copyText(location.href.split('#')[0]);el.querySelector('[data-x]').focus({preventScroll:true})}
+function initPWA(){
+ addEventListener('beforeinstallprompt',e=>{e.preventDefault();PWA.evt=e;syncInstall()});
+ addEventListener('appinstalled',()=>{PWA.evt=null;syncInstall()});
+ addEventListener('keydown',e=>{const el=$('instSheet');if(e.key==='Escape'&&el&&!el.hidden)el.hidden=true});
+ for(const id of['installBtn','installBtn2'])if($(id))$(id).onclick=doInstall;
+ syncInstall();
+ if('serviceWorker'in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{})}
 
 /* ================================================================
    데뷔각 — interface 3: market (listings, stocks, collectibles) & my companies
@@ -2291,7 +2339,7 @@ function pickAuto(s){const can=ACTIONS.filter(a=>!['retire','found','debutgem','
  const keys=CAREERS[s.career.id].key.length?CAREERS[s.career.id].key:({idol:['vocal','dance','look'],actor:['act','look'],broadcast:['write','plan'],music:['music','vocal'],any:s.gifts})[s.dream]||s.gifts;
  return by(STAT_ACT[pick(keys)])||pick(can.filter(a=>a.g==='훈련'))||by('rest')}
 function autoSpend(){const out=[];let g=0;while(S.ap>0&&g++<6){const a=pickAuto(S);if(!a)break;const r=doAction(S,a.id);if(r.err)break;out.push({title:a.ko,t:r.t,g:r.g})}return out}
-function boot(){initHome();
+function boot(){initHome();initPWA();
  $('flowBtn').onclick=()=>{FLOW.on=!FLOW.on;LS.set('db.flow',FLOW.on);syncFlow()};
  $('spd').onclick=e=>{const b=e.target.closest('[data-s]');if(!b)return;FLOW.speed=+b.dataset.s;LS.set('db.speed',FLOW.speed);if(!FLOW.on){FLOW.on=true;LS.set('db.flow',true)}syncFlow()};
  $('autoAct').onchange=e=>{FLOW.autoAct=e.target.checked;LS.set('db.autoact',FLOW.autoAct);toast(FLOW.autoAct?'남은 행동력은 꿈과 직업에 맞게 자동으로 씁니다.':'남은 행동력은 쓰지 않고 넘어갑니다.')};
